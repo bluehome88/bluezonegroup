@@ -1,0 +1,42 @@
+//
+// Editor styles
+//
+// Only include stylesheets which are meant for
+// the blocks' editor (Gutenberg) appearance
+//
+
+@import "inc/variables";
+
+// Edit styles
+.maxslider-block-placeholder {
+	background: $grey-light;
+	padding: 25px;
+}
+
+.maxslider-block-placeholder-inner {
+	width: 400px;
+	max-width: 100%;
+	min-height: 300px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 0 auto;
+
+	.components-input-control__label {
+		display: none !important;
+	}
+}
+
+.maxslider-block-placeholder-logo {
+	width: 160px;
+	max-width: 100%;
+	height: auto;
+	margin: 0 auto 18px;
+	display: block;
+}
+
+.maxslider-loading-response-placeholder {
+	text-align: center;
+	display: block;
+	padding: 20px;
+}

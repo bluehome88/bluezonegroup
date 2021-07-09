@@ -1,0 +1,60 @@
+//
+// Mixins
+//
+@mixin clearfix {
+	&::after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+@mixin btn-reset {
+	display: inline-block;
+	font-weight: normal;
+	margin: 0;
+	padding: 0;
+	line-height: normal;
+	border: 0;
+	appearance: none;
+	text-align: center;
+	box-shadow: none;
+	vertical-align: middle;
+	cursor: pointer;
+	white-space: normal;
+	user-select: none;
+	border-radius: 0;
+	min-width: 0;
+	max-width: 100%;
+	min-height: 0;
+	width: auto;
+	height: auto;
+	background-image: none;
+	background-color: transparent;
+
+	&::before,
+	&::after {
+		display: none;
+	}
+}
+
+@mixin sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+}
+
+@mixin dashicon($icon) {
+	content: $icon;
+	display: inline-block;
+	font: 400 20px/1 dashicons;
+	speak: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-decoration: none !important;
+}
