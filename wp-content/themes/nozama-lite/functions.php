@@ -519,3 +519,37 @@ function term_link_filter( $url, $term, $taxonomy ) {
     $url=str_replace("/./","/",$url);
     return $url;
 }
+
+if( isset($_GET['importer']) ){
+	echo "Run script";
+
+	$dom = new DOMDocument();
+
+	$dom->loadHTMLFile(get_theme_file_path('/news.html'));
+	$documentElement = $dom->documentElement; 
+
+	$arrPosts = array();
+	$h2s = $dom->getElementsByTagName('h2');
+	foreach( $h2s as $h2 ) {
+	    $child_elements = $h2->getElementsByTagName('span');
+		$title = $h2->textContent;
+		$date = $child_elements[0]->textContent;
+		$title = str_replace($date, "", $title);
+		$arrPosts[] = array( "title"=>$title, "date" => $date );
+	}
+	// $arrPosts = array_reverse( $arrPosts );
+
+	for( $i = count( $arrPosts )-1; $i >= 0; $i--){
+		$my_post = array(
+		  'post_title'    => $arrPosts[$i]['title'],
+		  'post_content'  => "",
+		  'post_status'   => 'publish',
+		  'post_author'   => 1,
+		  'post_category' => array( 1 ),
+		  'post_date'	  => date( 'Y-m-d H:i:s', strtotime($arrPosts[$i]['date']))
+		);
+		// Insert the post into the database
+		wp_insert_post( $my_post );
+	}
+	exit;
+}
