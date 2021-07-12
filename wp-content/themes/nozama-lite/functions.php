@@ -491,7 +491,7 @@ require_once get_theme_file_path( '/inc/class-scss-colors.php' );
  */
 require_once get_theme_file_path( '/inc/custom-fields-page.php' );
 
-
+// remove base url for product category
 add_filter('request', function( $vars ) {
     global $wpdb;
 
@@ -520,6 +520,7 @@ function term_link_filter( $url, $term, $taxonomy ) {
     return $url;
 }
 
+// Post Import from html file ( Latet News )
 if( isset($_GET['importer']) ){
 	echo "Run script";
 
@@ -554,17 +555,30 @@ if( isset($_GET['importer']) ){
 	exit;
 }
 
+// Exclude proudcts for child categories on Category page
 function exclude_product_cat_children($wp_query) {
 if ( isset ( $wp_query->query_vars['product_cat'] ) && $wp_query->is_main_query()) {
     $wp_query->set('tax_query', array(
-                                    array (
-                                        'taxonomy' => 'product_cat',
-                                        'field' => 'slug',
-                                        'terms' => $wp_query->query_vars['product_cat'],
-                                        'include_children' => false
-                                    )
-                                 )
+        array (
+            'taxonomy' => 'product_cat',
+            'field' => 'slug',
+            'terms' => $wp_query->query_vars['product_cat'],
+            'include_children' => false
+        )
+      )
     );
   }
 }
 add_filter('pre_get_posts', 'exclude_product_cat_children');
+
+// Sepaprate Subcategories and products on Category page
+remove_filter( 'woocommerce_product_loop_start', 'woocommerce_maybe_show_product_subcategories' );
+// add subcategories before the product loop (yet after catalog_ordering and result_count -> see priority 40)
+add_action( 'woocommerce_before_shop_loop', 'wp56123_show_product_subcategories', 40 );
+function wp56123_show_product_subcategories() {
+    $subcategories = woocommerce_maybe_show_product_subcategories();
+        if ($subcategories) {
+        	echo '<h3>SubCategories</h3>';
+          	echo '<ul class="row subcategories">',$subcategories,'</ul>';
+    }
+}
