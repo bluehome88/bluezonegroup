@@ -1653,6 +1653,7 @@ button.category-search-btn {
 
 .item-product .item-thumb img {
   border-radius: 3px;
+  width: 100%;
 }
 
 .item-media .item-thumb {

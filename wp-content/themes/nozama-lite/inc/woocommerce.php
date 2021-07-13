@@ -14,7 +14,7 @@ function nozama_lite_woocommerce_activation() {
 	add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 
 	add_theme_support( 'woocommerce', array(
-		'thumbnail_image_width'         => 630,
+		'thumbnail_image_width'         => 330,
 		'single_image_width'            => 690,
 		'gallery_thumbnail_image_width' => 160,
 		'product_grid'                  => array(
