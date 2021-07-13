@@ -1649,6 +1649,8 @@ button.category-search-btn {
 
 .item-product .item-thumb {
   padding: 15px 15px 0 15px;
+  max-height: 180px;
+  overflow: hidden;
 }
 
 .item-product .item-thumb img {
