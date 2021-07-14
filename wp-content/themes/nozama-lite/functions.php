@@ -590,6 +590,61 @@ if( isset($_GET['importer']) ){
 	exit;
 }
 
+// import products
+if( isset($_GET['import_product']) ){
+	echo "Run script<br>";
+	$url = $_GET["import_product"];
+	echo $url."<br>";
+
+	// load page html
+	$dom = new DOMDocument();
+	$dom->loadHTMLFile($url);
+	$finder = new DomXPath($dom);
+	$classname="details";
+	$nodes = $finder->query("//*[contains(concat(' ', normalize-space(@class), ' '), ' $classname ')]");
+	$h2 = $dom->getElementsByTagName('h2');
+	$product_name = $h2[0]->textContent;
+	$innerHTML = ""; 
+    $children  = $nodes[0]->childNodes;
+
+    // get contents html
+    foreach ($children as $child) 
+    {
+    	$className = "";
+    	if ($child->nodeType == XML_ELEMENT_NODE)
+    		$className = $child->getAttribute('class');
+
+    	if( $className == "date" || $className == "comment-form" || $className == "goBack")
+    		continue;
+
+        $innerHTML .= $nodes[0]->ownerDocument->saveHTML($child);
+        $innerHTML = str_replace('https://www.bluezonegroup.com.au/announcements', 'https://bluezonegroup.rbdev.com.au/announcements', $innerHTML);
+        $innerHTML = str_replace('src="/', 'src="https://www.bluezonegroup.com.au/', $innerHTML);
+    }
+
+	echo $product_name."<br>".$innerHTML;
+	$posts = get_posts([
+	    'title' => $product_name,
+	    'post_type' => 'product'
+	]);
+
+	// store to DB
+	if(!empty($posts))
+		wp_update_post( array("ID"=>$posts[0]->ID, "post_content"=>$innerHTML));
+	else{
+		$my_post = array(
+		  'post_title'    => $arrPosts[$i]['title'],
+		  'post_content'  => $innerHTML,
+		  'post_status'   => 'publish',
+		  'post_author'   => 1,
+		);
+		// Insert the post into the database
+		wp_insert_post( $my_post );			
+	}
+
+	exit;
+}
+
 // Exclude proudcts for child categories on Category page
 function exclude_product_cat_children($wp_query) {
 if ( isset ( $wp_query->query_vars['product_cat'] ) && $wp_query->is_main_query()) {
@@ -608,9 +663,10 @@ add_filter('pre_get_posts', 'exclude_product_cat_children');
 
 // Sepaprate Subcategories and products on Category page
 remove_filter( 'woocommerce_product_loop_start', 'woocommerce_maybe_show_product_subcategories' );
+
 // add subcategories before the product loop (yet after catalog_ordering and result_count -> see priority 40)
-add_action( 'woocommerce_before_shop_loop', 'wp56123_show_product_subcategories', 40 );
-function wp56123_show_product_subcategories() {
+add_action( 'woocommerce_before_shop_loop', 'woocommerce_show_product_subcategories', 40 );
+function woocommerce_show_product_subcategories() {
     $subcategories = woocommerce_maybe_show_product_subcategories();
         if ($subcategories) {
         	echo '<h3>SubCategories</h3>';
