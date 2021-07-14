@@ -6653,13 +6653,13 @@ button.single_add_to_cart_button:focus {
   }
 
   .header-branding-wrap {
-    flex: 0 0 16.66667%;
-    max-width: 16.66667%;
+    flex: 0 0 36.66667%;
+    max-width: 36.66667%;
   }
 
   .head-search-form-wrap {
-    flex: 0 0 83.33333%;
-    max-width: 83.33333%;
+    flex: 0 0 63.33333%;
+    max-width: 63.33333%;
   }
 
   .footer-fullwidth .container {
