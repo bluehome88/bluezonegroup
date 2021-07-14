@@ -522,7 +522,7 @@ function term_link_filter( $url, $term, $taxonomy ) {
 
 // Post Import from html file ( Latet News )
 if( isset($_GET['importer']) ){
-	echo "Run script";
+	echo "Run script<br>";
 
 	$dom = new DOMDocument();
 	$dom->loadHTMLFile(get_theme_file_path('/news.html'));
@@ -569,9 +569,23 @@ if( isset($_GET['importer']) ){
 		$posts = get_posts([
 		    'title' => $arrPosts[$i]['title'],
 		]);
-		echo $arrPosts[$i]['title']."<br>";
-		if( !empty($posts))
+
+		// store to DB
+		echo "No ".++$index.": ".$arrPosts[$i]['title']."<br>";
+		if(!empty($posts))
 			wp_update_post( array("ID"=>$posts[0]->ID, "post_content"=>$innerHTML));
+		else{
+			$my_post = array(
+			  'post_title'    => $arrPosts[$i]['title'],
+			  'post_content'  => $innerHTML,
+			  'post_status'   => 'publish',
+			  'post_author'   => 1,
+			  'post_category' => array( 1 ),
+			  'post_date'	  => date( 'Y-m-d H:i:s', strtotime($arrPosts[$i]['date']))
+			);
+			// Insert the post into the database
+			wp_insert_post( $my_post );			
+		}
 	}
 	exit;
 }
