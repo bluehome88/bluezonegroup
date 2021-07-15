@@ -280,20 +280,20 @@ if( isset($_GET['issued_news']) ){
 			$content = str_replace($old_domain.'/services', $new_domain.'/services', $content);
 			// wp_update_post( array("ID"=>$post->ID, "post_content"=>$content));
 		}
-/*
-		if( strpos($content, '/Literature') !== false && strpos($content, '/Literature') !== false){
-			$arrRes['has_pdf_link'][] = "<a href='".get_permalink($post->ID)."'>".$post->post_title."</a><br>";
-			$content = str_replace('href="/Literature', 'href="https://www.bluezonegroup.com.au/Literature', $content);
+
+		// PDF link issue
+		if( strpos($content, 'href="/Literature') !== false || strpos($content, $new_domain.'/Literature') !== false){
+			$arrRes['Has PDF issue'][] = "<a href='".get_permalink($post->ID)."'>".$post->post_title."</a><br>";
+			$content = str_replace('href="/Literature', 'href="https://'.$old_domain.'/Literature', $content);
+			$content = str_replace($new_domain.'/Literature', $old_domain.'/Literature', $content);
 			// wp_update_post( array("ID"=>$post->ID, "post_content"=>$content));
 		}
-*/
-/*
-		if( strpos($content, '/_literature') !== false){
-			$arrRes['has_pdf_link_with_icon'][] = "<a href='".get_permalink($post->ID)."'>".$post->post_title."</a><br>";
-			$content = str_replace('href="/_literature', 'href="https://www.bluezonegroup.com.au/_literature', $content);
+		if( strpos($content, 'href="/_literature') !== false || strpos($content, $new_domain.'/_literature') !== false){
+			$arrRes['Has PDF _literature'][] = "<a href='".get_permalink($post->ID)."'>".$post->post_title."</a><br>";
+			$content = str_replace('href="/_literature', 'href="https://'.$old_domain.'/_literature', $content);
+			$content = str_replace($new_domain.'/_literature', $old_domain.'/_literature', $content);
 			// wp_update_post( array("ID"=>$post->ID, "post_content"=>$content));
 		}
-*/
 /*
 		if( strpos($content, '//www.youtube') !== false){
 			$arrRes['has_video_youtube'][] = "<a href='".get_permalink($post->ID)."'>".$post->post_title."</a><br>";
