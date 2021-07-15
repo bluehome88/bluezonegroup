@@ -294,13 +294,13 @@ if( isset($_GET['issued_news']) ){
 			$content = str_replace($new_domain.'/_literature', $old_domain.'/_literature', $content);
 			// wp_update_post( array("ID"=>$post->ID, "post_content"=>$content));
 		}
-/*
+		
+		// Youtube IFrame issue
 		if( strpos($content, '//www.youtube') !== false){
-			$arrRes['has_video_youtube'][] = "<a href='".get_permalink($post->ID)."'>".$post->post_title."</a><br>";
+			$arrRes['Youtube Issue'][] = "<a href='".get_permalink($post->ID)."'>".$post->post_title."</a><br>";
 			$content = str_replace('//www.youtube', 'src="https://www.youtube', $content);
 			// wp_update_post( array("ID"=>$post->ID, "post_content"=>$content));
 		}
-*/
 		
 /*
 		// Fix Image issue
