@@ -618,8 +618,24 @@ if( isset($_GET['import_product']) ){
     		continue;
 
         $innerHTML .= $nodes[0]->ownerDocument->saveHTML($child);
+        
+        // adjust news url
         $innerHTML = str_replace('https://www.bluezonegroup.com.au/announcements', 'https://bluezonegroup.rbdev.com.au/announcements', $innerHTML);
+
+        // adjust youtube url
+        if( strpos($innerHTML, '//www.youtube') !== false)
+        	$innerHTML = str_replace('src="//www.youtube', 'src="https://www.youtube', $innerHTML);
+
+        // adjust image url
         $innerHTML = str_replace('src="/', 'src="https://www.bluezonegroup.com.au/', $innerHTML);
+
+        // Fix PDF link issue
+        if( strpos($innerHTML, '/Literature') !== false)
+        	$innerHTML = str_replace('href="/Literature', 'href="https://www.bluezonegroup.com.au/Literature', $innerHTML);
+
+        if( strpos($innerHTML, '/_literature') !== false)
+        	$innerHTML = str_replace('href="/_literature', 'href="https://www.bluezonegroup.com.au/_literature', $innerHTML);
+
     }
 
 	echo $product_name."<br>".$innerHTML;
@@ -672,4 +688,46 @@ function woocommerce_show_product_subcategories() {
         	echo '<h3>SubCategories</h3>';
           	echo '<ul class="row subcategories">',$subcategories,'</ul>';
     }
+}
+
+// scan issued products
+if( isset($_GET['issued_product']) ){
+	wp_reset_query();
+
+	$posts = get_posts([
+	    'post_type' => 'product',
+	    'posts_per_page' => 500
+	]);
+
+	$arrRes = array();
+	foreach( $posts as $product ){
+
+		// check empty contents
+		if( $product->post_content == "" ){
+			$arrRes['empty_content'][] = "<a href='".get_permalink($product->ID)."'>".$product->post_title."</a><br>";
+		}
+
+		if( strpos($product->post_content, '/announcements/') !== false){
+			$arrRes['has_news_link'][] = "<a href='".get_permalink($product->ID)."'>".$product->post_title."</a><br>";
+		}
+		if( strpos($product->post_content, '/Literature') !== false){
+			$arrRes['has_pdf_link'][] = "<a href='".get_permalink($product->ID)."'>".$product->post_title."</a><br>";
+			// $content = str_replace('href="/Literature', 'href="https://www.bluezonegroup.com.au/Literature', $product->post_content);
+			// wp_update_post( array("ID"=>$product->ID, "post_content"=>$content));
+		}
+		if( strpos($product->post_content, 'Literature/pdf.png') !== false){
+			$arrRes['has_pdf_link_with_icon'][] = "<a href='".get_permalink($product->ID)."'>".$product->post_title."</a><br>";
+			// $content = str_replace('href="/_literature', 'href="https://www.bluezonegroup.com.au/_literature', $product->post_content);
+			// wp_update_post( array("ID"=>$product->ID, "post_content"=>$content));
+		}
+		if( strpos($product->post_content, 'youtube') !== false){
+			$arrRes['has_video_youtuve'][] = "<a href='".get_permalink($product->ID)."'>".$product->post_title."</a><br>";
+			// wp_update_post( array("ID"=>$product->ID, "post_content"=>$content));
+		}
+	}
+
+echo "<pre>";
+print_r( $arrRes );
+
+	exit;
 }
