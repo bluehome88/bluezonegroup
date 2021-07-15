@@ -302,14 +302,12 @@ if( isset($_GET['issued_news']) ){
 			// wp_update_post( array("ID"=>$post->ID, "post_content"=>$content));
 		}
 		
-/*
 		// Fix Image issue
 		if( strpos($content, 'src="/') !== false){
-			$arrRes['without_baselink'][] = "<a href='".get_permalink($post->ID)."'>".$post->post_title."</a><br>";
-			$content = str_replace('src="/', 'src="https://www.bluezonegroup.com.au/', $content);
+			$arrRes['Image Base Link'][] = "<a href='".get_permalink($post->ID)."'>".$post->post_title."</a><br>";
+			$content = str_replace('src="/', 'src="https://'.$old_domain.'/', $content);
 			// wp_update_post( array("ID"=>$post->ID, "post_content"=>$content));
 		}
-*/
 		
 		// wp_update_post( array("ID"=>$post->ID, "post_content"=>$content));
 	}
