@@ -260,14 +260,12 @@ if( isset($_GET['issued_news']) ){
 		}
 */
 
-/*
 		// Fix news link
 		if( strpos($content, $old_domain.'/announcements') !== false){
-			$arrRes['has_news_link'][] = "<a href='".get_permalink($post->ID)."'>".$post->post_title."</a><br>";
-			$content = str_replace($old_domain.'/announcements', 'bluezonegroup.rbdev.com.au/announcements', $content);
+			$arrRes['Has News Links'][] = "<a href='".get_permalink($post->ID)."'>".$post->post_title."</a><br>";
+			$content = str_replace($old_domain.'/announcements', $new_domain.'/announcements', $content);
 			// wp_update_post( array("ID"=>$post->ID, "post_content"=>$content));
 		}
-*/
 
 /*
 		if( strpos($content, 'http://www.uvs.com.au/') !== false){
