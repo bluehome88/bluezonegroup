@@ -245,12 +245,10 @@ if( isset($_GET['issued_news']) ){
 
 		$content = $post->post_content;
 
-/*
 		// check empty contents
 		if( $content == "" ){
-			$arrRes['empty_content'][] = "<a href='".get_permalink($post->ID)."'>".$post->post_title."</a><br>";
+			$arrRes['Empty Contents'][] = "<a href='".get_permalink($post->ID)."'>".$post->post_title."</a><br>";
 		}
-*/
 
 /*
 		// fix product link
@@ -326,7 +324,7 @@ echo "<pre>";
 
 	foreach( $arrRes as $key => $arrType )
 	{
-		echo $key."-----------------------------------------------------------------<br>";
+		echo "--------------------------------$key---------------------------------<br><br>";
 		foreach( $arrType as $post ){
 			echo "            ".$post."<br>";
 		}
