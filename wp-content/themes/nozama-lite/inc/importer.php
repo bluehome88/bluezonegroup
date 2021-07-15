@@ -105,8 +105,8 @@ if( isset($_GET['issued_product']) ){
 		}
 	}
 
-echo "<pre>";
-print_r( $arrRes );
+	echo "<pre>";
+	print_r( $arrRes );
 
 	exit;
 }
@@ -181,25 +181,6 @@ if( isset($_GET['import_news']) ){
 		]);
 
 		/* ---- store to DB ---- */
-
-		/*// adjust news url
-        $innerHTML = str_replace('https://www.bluezonegroup.com.au/announcements', 'https://bluezonegroup.rbdev.com.au/announcements', $innerHTML);
-
-        // adjust youtube url
-        if( strpos($innerHTML, '//www.youtube') !== false)
-        	$innerHTML = str_replace('src="//www.youtube', 'src="https://www.youtube', $innerHTML);
-
-        // adjust image url
-        $innerHTML = str_replace('src="/', 'src="https://www.bluezonegroup.com.au/', $innerHTML);
-
-        // Fix PDF link issue
-        if( strpos($innerHTML, '/Literature') !== false)
-        	$innerHTML = str_replace('href="/Literature', 'href="https://www.bluezonegroup.com.au/Literature', $innerHTML);
-
-        if( strpos($innerHTML, '/_literature') !== false)
-        	$innerHTML = str_replace('href="/_literature', 'href="https://www.bluezonegroup.com.au/_literature', $innerHTML);
-		/**/
-
         $post_id = null;
 		if(!empty($posts) && !isset($_GET['url']) ){
 			$post_id = $posts[0]->ID;
@@ -250,16 +231,6 @@ if( isset($_GET['issued_news']) ){
 			$arrRes['Empty Contents'][] = "<a href='".get_permalink($post->ID)."'>".$post->post_title."</a><br>";
 		}
 
-/*
-		// fix product link
-		if( strpos($content, $old_domain.'/product-catalogue/') !== false || strpos($content, $old_domain.'/rental-equipment/') !== false ){
-			$arrRes['has_product_link'][] = "<a href='".get_permalink($post->ID)."'>".$post->post_title."</a><br>";
-			$content = str_replace($old_domain.'/product-catalogue/', 'bluezonegroup.rbdev.com.au/product-catalogue/', $content);
-			$content = str_replace($old_domain.'/rental-equipment/', 'bluezonegroup.rbdev.com.au/rental-equipment/', $content);
-			// wp_update_post( array("ID"=>$post->ID, "post_content"=>$content));
-		}
-*/
-
 		// Fix news link
 		if( strpos($content, $old_domain.'/announcements') !== false){
 			$arrRes['Has News Links'][] = "<a href='".get_permalink($post->ID)."'>".$post->post_title."</a><br>";
@@ -309,7 +280,18 @@ if( isset($_GET['issued_news']) ){
 			// wp_update_post( array("ID"=>$post->ID, "post_content"=>$content));
 		}
 		
-		// wp_update_post( array("ID"=>$post->ID, "post_content"=>$content));
+		// TODO: fix products url on news
+		// issue: find a way to separate category and product links from old one
+		/*
+		// fix product link
+		if( strpos($content, $old_domain.'/product-catalogue/') !== false || strpos($content, $old_domain.'/rental-equipment/') !== false ){
+			$arrRes['Product Links'][] = "<a href='".get_permalink($post->ID)."'>".$post->post_title."</a><br>";
+			$content = str_replace($old_domain.'/product-catalogue/', $new_domain.'/product-catalogue/', $content);
+			$content = str_replace($old_domain.'/rental-equipment/', $new_domain.'/rental-equipment/', $content);
+			// wp_update_post( array("ID"=>$post->ID, "post_content"=>$content));
+		}
+		*/
+		
 		// Has Old Domain Link for page
 		$pattern = "/contact-us";
 		if( strpos($content, $old_domain.$pattern ) !== false  ){
@@ -319,16 +301,18 @@ if( isset($_GET['issued_news']) ){
 		}
 	}
 
-echo "<pre>";
-// print_r( $arrRes );
+	echo "<pre>";
+	// print_r( $arrRes );
 
 	foreach( $arrRes as $key => $arrType )
 	{
 		echo "--------------------------------$key---------------------------------<br><br>";
 		foreach( $arrType as $post ){
-			echo "            ".$post."<br>";
+			echo ++$index."            ".$post."<br>";
 		}
 	}
 
+	exit;
+}
 	exit;
 }
