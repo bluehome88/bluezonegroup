@@ -267,22 +267,19 @@ if( isset($_GET['issued_news']) ){
 			// wp_update_post( array("ID"=>$post->ID, "post_content"=>$content));
 		}
 
-/*
+		// Fix Old redirect
 		if( strpos($content, 'http://www.uvs.com.au/') !== false){
-			$arrRes['has_old_link'][] = "<a href='".get_permalink($post->ID)."'>".$post->post_title."</a><br>";
-			$content = str_replace('http://www.uvs.com.au/', 'https://bluezonegroup.rbdev.com.au/', $content);
+			$arrRes['Has Old link'][] = "<a href='".get_permalink($post->ID)."'>".$post->post_title."</a><br>";
+			$content = str_replace('http://www.uvs.com.au', "https://".$new_domain, $content);
 			// wp_update_post( array("ID"=>$post->ID, "post_content"=>$content));
 		}		
-*/
-
-/*
-		if( strpos($content, '/services/') !== false){
-			$arrRes['has_service_link'][] = "<a href='".get_permalink($post->ID)."'>".$post->post_title."</a><br>";
-			$content = str_replace($old_domain.'/services', '/services', $content);
-			$content = str_replace('https:///services', '/services', $content);
+		
+		// Service page link issue
+		if( strpos($content, $old_domain.'/services/') !== false ){ 
+			$arrRes['Has Service Link'][] = "<a href='".get_permalink($post->ID)."'>".$post->post_title."</a><br>";
+			$content = str_replace($old_domain.'/services', $new_domain.'/services', $content);
 			// wp_update_post( array("ID"=>$post->ID, "post_content"=>$content));
 		}
-*/
 /*
 		if( strpos($content, '/Literature') !== false && strpos($content, '/Literature') !== false){
 			$arrRes['has_pdf_link'][] = "<a href='".get_permalink($post->ID)."'>".$post->post_title."</a><br>";
