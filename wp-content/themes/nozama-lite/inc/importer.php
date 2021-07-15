@@ -269,7 +269,7 @@ if( isset($_GET['issued_news']) ){
 		// Youtube IFrame issue
 		if( strpos($content, '//www.youtube') !== false){
 			$arrRes['Youtube Issue'][] = "<a href='".get_permalink($post->ID)."'>".$post->post_title."</a><br>";
-			$content = str_replace('//www.youtube', 'src="https://www.youtube', $content);
+			$content = str_replace('src="//www.youtube', 'src="https://www.youtube', $content);
 			// wp_update_post( array("ID"=>$post->ID, "post_content"=>$content));
 		}
 		
@@ -354,11 +354,6 @@ if( isset($_GET['import_page']) ){
 	$old_domain = "www.bluezonegroup.com.au";
 	$new_domain = "bluezonegroup.rbdev.com.au";
 
-	// check empty contents
-	if( $content == "" ){
-		$arrRes['Empty Contents'][] = "<a href='".get_permalink($post->ID)."'>".$post->post_title."</a><br>";
-	}
-
 	// Fix news link
 	if( strpos($content, $old_domain.'/announcements') !== false){
 		$content = str_replace($old_domain.'/announcements', $new_domain.'/announcements', $content);
@@ -386,17 +381,33 @@ if( isset($_GET['import_page']) ){
 	
 	// Youtube IFrame issue
 	if( strpos($content, '//www.youtube') !== false){
-		$content = str_replace('//www.youtube', 'src="https://www.youtube', $content);
+		$content = str_replace('src="//www.youtube', 'src="https://www.youtube', $content);
 	}
 	
 	// Fix Image issue
 	if( strpos($content, 'src="/') !== false){
 		$content = str_replace('src="/', 'src="https://'.$old_domain.'/', $content);
 	}
+	if( strpos($content, 'src="https://'.$new_domain."/") !== false){
+		$content = str_replace('src="https://'.$new_domain."/", 'src="https://'.$old_domain."/", $content);
+	}
 
 	// Fix contact mail issue
 	if( strpos($content, 'href="hrm@bzg.com.au') !== false){
 		$content = str_replace('href="hrm@bzg.com.au', 'href="mailto:hrm@bzg.com.au', $content);
+	}
+	
+	// Fix by Pattern
+	$arrPatterns = array(
+		"/contact-us",
+		"/equipment-return-information",
+		"/rental-equipment",
+		"/product-catalogue"	
+	);
+	foreach( $arrPatterns as $pattern ){
+		if( strpos($content, $old_domain.$pattern ) !== false  ){
+			$content = str_replace($old_domain.$pattern, $new_domain.$pattern, $content);
+		}
 	}
 
     // Process DB
@@ -409,7 +420,7 @@ if( isset($_GET['import_page']) ){
 	if(!empty($posts)){
 		$post_id = $posts[0]->ID;
 
-		echo "Existing Page: $page_title<br>".$content;
+		echo "Existing Page: <a href='".get_permalink($post_id)."' target='_blank'>".$page_title."</a><br>".$content;
 		wp_update_post( array("ID"=>$post_id, "post_content"=>$content, 'post_status'   => 'publish')); 
 	}else{
 		$my_post = array(
@@ -422,6 +433,43 @@ if( isset($_GET['import_page']) ){
 		// Insert the post into the database
 		// $post_id = wp_insert_post( $my_post );
 		echo "New Page: $page_title<br>".$content;
+	}
+
+	exit;
+}
+
+if( isset($_GET['issued_page']) ){
+	wp_reset_query();
+
+	$posts = get_posts([
+	    'post_type' => 'page',
+	    'posts_per_page' => 500
+	]);
+
+	$arrRes = array();
+	
+	$old_domain = "www.bluezonegroup.com.au";
+	$new_domain = "bluezonegroup.rbdev.com.au";
+	
+	foreach( $posts as $post ){
+
+		$content = $post->post_content;
+
+		// check empty contents
+		if( $content == "" ){
+			$arrRes['Empty Contents'][] = "<a href='".get_permalink($post->ID)."'>".$post->post_title."</a><br>";
+		}
+	}
+	
+	echo "<pre>";
+	// print_r( $arrRes );
+
+	foreach( $arrRes as $key => $arrType )
+	{
+		echo "--------------------------------$key---------------------------------<br><br>";
+		foreach( $arrType as $post ){
+			echo ++$index."            ".$post."<br>";
+		}
 	}
 
 	exit;
