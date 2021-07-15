@@ -394,17 +394,23 @@ if( isset($_GET['import_page']) ){
 		$content = str_replace('src="/', 'src="https://'.$old_domain.'/', $content);
 	}
 
+	// Fix contact mail issue
+	if( strpos($content, 'href="hrm@bzg.com.au') !== false){
+		$content = str_replace('href="hrm@bzg.com.au', 'href="mailto:hrm@bzg.com.au', $content);
+	}
+
     // Process DB
     $posts = get_posts([
-	    'title' => htmlspecialchars($page_title),
+	    'title' => $page_title,
+	    'post_type' => 'page'
 	]);
 
 	$post_id = null;
-	if(!empty($posts) && !isset($_GET['url']) ){
+	if(!empty($posts)){
 		$post_id = $posts[0]->ID;
 
 		echo "Existing Page: $page_title<br>".$content;
-		// wp_update_post( array("ID"=>$post_id, "post_content"=>$content, 'post_status'   => 'publish')); 
+		wp_update_post( array("ID"=>$post_id, "post_content"=>$content, 'post_status'   => 'publish')); 
 	}else{
 		$my_post = array(
 		  'post_title'    => $page_title,
