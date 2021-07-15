@@ -314,5 +314,109 @@ if( isset($_GET['issued_news']) ){
 
 	exit;
 }
+
+// Post Import Page Contents
+if( isset($_GET['import_page']) ){
+	$link = $_GET['url'];
+	echo "Start Importing Page from $link<br>";
+
+	$dom = new DOMDocument();
+	$dom->loadHTMLFile($link);
+	$documentElement = $dom->documentElement; 
+	$finder = new DomXPath($dom);
+
+	// get page title
+	$classname = "pageTitle";
+	$nodes = $finder->query("//*[contains(concat(' ', normalize-space(@class), ' '), ' $classname ')]");
+	$children  = $nodes[0]->childNodes;
+	$page_title = $children[0]->textContent;
+
+	// get contents
+	$classname="main";
+	$nodes = $finder->query("//*[contains(concat(' ', normalize-space(@class), ' '), ' $classname ')]");
+
+	$content = ""; 
+    $children  = $nodes[0]->childNodes;
+
+    foreach ($children as $child) 
+    {
+    	$className = "";
+    	if ($child->nodeType == XML_ELEMENT_NODE)
+    		$className = $child->getAttribute('class');
+
+    	if( $className == "pageTitle" || $className == "breadcrumb")
+    		continue;
+
+        $content .= $nodes[0]->ownerDocument->saveHTML($child);
+    }
+
+    // process contents issues
+	$old_domain = "www.bluezonegroup.com.au";
+	$new_domain = "bluezonegroup.rbdev.com.au";
+
+	// check empty contents
+	if( $content == "" ){
+		$arrRes['Empty Contents'][] = "<a href='".get_permalink($post->ID)."'>".$post->post_title."</a><br>";
+	}
+
+	// Fix news link
+	if( strpos($content, $old_domain.'/announcements') !== false){
+		$content = str_replace($old_domain.'/announcements', $new_domain.'/announcements', $content);
+	}
+
+	// Fix Old redirect
+	if( strpos($content, 'http://www.uvs.com.au/') !== false){
+		$content = str_replace('http://www.uvs.com.au', "https://".$new_domain, $content);
+	}		
+	
+	// Service page link issue
+	if( strpos($content, $old_domain.'/services/') !== false ){ 
+		$content = str_replace($old_domain.'/services', $new_domain.'/services', $content);
+	}
+
+	// PDF link issue
+	if( strpos($content, 'href="/Literature') !== false || strpos($content, $new_domain.'/Literature') !== false){
+		$content = str_replace('href="/Literature', 'href="https://'.$old_domain.'/Literature', $content);
+		$content = str_replace($new_domain.'/Literature', $old_domain.'/Literature', $content);
+	}
+	if( strpos($content, 'href="/_literature') !== false || strpos($content, $new_domain.'/_literature') !== false){
+		$content = str_replace('href="/_literature', 'href="https://'.$old_domain.'/_literature', $content);
+		$content = str_replace($new_domain.'/_literature', $old_domain.'/_literature', $content);
+	}
+	
+	// Youtube IFrame issue
+	if( strpos($content, '//www.youtube') !== false){
+		$content = str_replace('//www.youtube', 'src="https://www.youtube', $content);
+	}
+	
+	// Fix Image issue
+	if( strpos($content, 'src="/') !== false){
+		$content = str_replace('src="/', 'src="https://'.$old_domain.'/', $content);
+	}
+
+    // Process DB
+    $posts = get_posts([
+	    'title' => htmlspecialchars($page_title),
+	]);
+
+	$post_id = null;
+	if(!empty($posts) && !isset($_GET['url']) ){
+		$post_id = $posts[0]->ID;
+
+		echo "Existing Page: $page_title<br>".$content;
+		// wp_update_post( array("ID"=>$post_id, "post_content"=>$content, 'post_status'   => 'publish')); 
+	}else{
+		$my_post = array(
+		  'post_title'    => $page_title,
+		  'post_content'  => $content,
+		  'post_status'   => 'publish',
+		  'post_author'   => 1
+		);
+
+		// Insert the post into the database
+		// $post_id = wp_insert_post( $my_post );
+		echo "New Page: $page_title<br>".$content;
+	}
+
 	exit;
 }
