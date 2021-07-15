@@ -310,6 +310,13 @@ if( isset($_GET['issued_news']) ){
 		}
 		
 		// wp_update_post( array("ID"=>$post->ID, "post_content"=>$content));
+		// Has Old Domain Link for page
+		$pattern = "/contact-us";
+		if( strpos($content, $old_domain.$pattern ) !== false  ){
+			$arrRes['Has Old link'][] = "<a href='".get_permalink($post->ID)."'>".$post->post_title."</a><br>";
+			$content = str_replace($old_domain.$pattern, $new_domain.$pattern, $content);
+			// wp_update_post( array("ID"=>$post->ID, "post_content"=>$content));
+		}
 	}
 
 echo "<pre>";
