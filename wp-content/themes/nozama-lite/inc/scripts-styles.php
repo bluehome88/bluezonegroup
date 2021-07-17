@@ -96,6 +96,7 @@ function nozama_lite_register_scripts() {
 	wp_register_style( 'nozama-lite-google-font', nozama_lite_fonts_url(), array(), null );
 	wp_register_style( 'nozama-lite-base', get_template_directory_uri() . '/css/base.css', array(), $theme->get( 'Version' ) );
 	wp_register_style( 'mmenu', get_template_directory_uri() . '/css/mmenu.css', array(), '5.5.3' );
+	wp_register_style( 'nozama-lite-custom', get_template_directory_uri() . '/css/custom.css', array(), $theme->get( 'Version' ) );
 
 	wp_register_style( 'nozama-lite-dependencies', false, array(
 		'nozama-lite-google-font',
@@ -104,6 +105,7 @@ function nozama_lite_register_scripts() {
 		'mmenu',
 		'slick',
 		'font-awesome-5',
+		'nozama-lite-custom',
 	), $theme->get( 'Version' ) );
 
 	if ( is_child_theme() ) {
