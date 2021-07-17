@@ -52,6 +52,13 @@ function nozama_lite_customize_register( $wp_customize ) {
 			'priority' => 30,
 		) );
 		require_once get_theme_file_path( 'inc/customizer/options/theme-header-primary-menu.php' );
+
+		$wp_customize->add_section( 'theme_header_topnav', array(
+			'title'    => esc_html_x( 'Top Nav bar', 'customizer top navbar text', 'nozama-lite' ),
+			'panel'    => 'theme_header',
+			'priority' => 40,
+		) );
+		require_once get_theme_file_path( 'inc/customizer/options/theme-header-navbar.php' );
 	} // filter nozama_lite_customizable_header
 
 	//

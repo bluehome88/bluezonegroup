@@ -20,7 +20,19 @@ function nozama_lite_header() {
 
 	?>
 	<header class="<?php nozama_lite_the_header_classes(); ?>">
-
+		<?php 
+			if( get_theme_mod( 'show-topnav' ) ? 'show-topnav' : '' ){
+		?>
+			<div class="topnav">
+				<?php 
+					$nav_contact = get_theme_mod( 'navbar_text' ); 
+					if ( $nav_contact || is_customize_preview() ) : ?>
+					<div class="container"><?php echo nozama_lite_sanitize_navbar_text( $nav_contact ); ?></div>
+				<?php endif; ?>		
+			</div>
+		<?php
+			}
+		?>
 		<?php do_action( 'nozama_lite_before_head_mast' ); ?>
 
 		<div class="head-mast">
@@ -154,6 +166,10 @@ function nozama_lite_footer_bottom_bar() {
 
 	do_action( 'nozama_lite_after_footer_info' );
 
+}
+
+function nozama_lite_sanitize_navbar_text( $text ) {
+	return wp_kses( $text, nozama_lite_get_allowed_tags( 'guide' ) );
 }
 
 function nozama_lite_get_default_footer_text( $position = 'left' ) {
