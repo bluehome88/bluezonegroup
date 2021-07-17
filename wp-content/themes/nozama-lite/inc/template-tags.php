@@ -27,7 +27,13 @@ function nozama_lite_header() {
 				<?php 
 					$nav_contact = get_theme_mod( 'navbar_text' ); 
 					if ( $nav_contact || is_customize_preview() ) : ?>
-					<div class="container"><?php echo nozama_lite_sanitize_navbar_text( $nav_contact ); ?></div>
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12 text-right">
+								<?php echo nozama_lite_sanitize_navbar_text( $nav_contact ); ?>
+							</div>
+						</div>
+					</div>
 				<?php endif; ?>		
 			</div>
 		<?php

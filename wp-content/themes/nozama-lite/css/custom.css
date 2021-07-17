@@ -1,0 +1,9 @@
+header .topnav{
+	background-color: #ebebeb;
+}
+header .topnav a{
+	font-size: 20px;
+    margin-left: 20px;
+    line-height: 50px;
+    font-weight: bold;
+}
