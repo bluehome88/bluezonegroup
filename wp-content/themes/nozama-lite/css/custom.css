@@ -7,3 +7,10 @@ header .topnav a{
     line-height: 50px;
     font-weight: bold;
 }
+#custom_html-6{
+	background: url("https://www.bluezonegroup.com.au/20 - February/Solstice_mounted_on_Saab_Double_Eagle.png");
+	background-size: cover;
+    background-attachment: fixed;
+    min-height: 500px;
+    background-repeat: no-repeat;
+}
