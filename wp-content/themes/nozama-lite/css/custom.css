@@ -14,3 +14,10 @@ header .topnav a{
     min-height: 500px;
     background-repeat: no-repeat;
 }
+
+/*-- header --*/
+
+.widget .list-social-icons li{
+    display: block;
+}
+

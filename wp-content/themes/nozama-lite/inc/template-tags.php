@@ -4,7 +4,8 @@
  */
 
 add_action( 'nozama_lite_head_mast', 'nozama_lite_header_branding', 10 );
-add_action( 'nozama_lite_head_mast', 'nozama_lite_header_search', 20 );
+add_action( 'nozama_lite_head_mast', 'nozama_lite_header_menu', 20 );
+add_action( 'nozama_lite_head_mast', 'nozama_lite_header_search', 30 );
 
 add_action( 'nozama_lite_the_post_header', 'nozama_lite_the_post_entry_date', 10 );
 add_action( 'nozama_lite_the_post_header', 'nozama_lite_the_post_entry_title', 20 );
@@ -68,13 +69,6 @@ function nozama_lite_header() {
 					<div class="col-12">
 						<nav class="nav">
 							<?php
-								wp_nav_menu( array(
-									'theme_location' => 'menu-1',
-									'container'      => '',
-									'menu_id'        => 'header-menu-1',
-									'menu_class'     => 'navigation-main',
-								) );
-
 								wp_nav_menu( array(
 									'theme_location' => 'menu-2',
 									'container'      => '',
@@ -249,6 +243,21 @@ function nozama_lite_header_branding() {
 	<?php
 }
 
+function nozama_lite_header_menu() {
+	?>
+	<div class="header-main-menu">
+		<?php
+			wp_nav_menu( array(
+				'theme_location' => 'menu-1',
+				'container'      => '',
+				'menu_id'        => 'header-menu-1',
+				'menu_class'     => 'navigation-main',
+			) );
+		?>
+	</div>
+	<?php
+}
+
 function nozama_lite_header_search() {
 	if ( ! class_exists( 'WooCommerce' ) ) {
 		return;
@@ -256,6 +265,7 @@ function nozama_lite_header_search() {
 
 	?>
 	<div class="head-search-form-wrap">
+		<?php nozama_lite_the_social_icons(); ?>
 		<form class="category-search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get">
 			<label for="category-search-name" class="sr-only" >
 				<?php esc_html_e( 'Category name', 'nozama-lite' ); ?>
