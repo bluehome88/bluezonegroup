@@ -989,11 +989,15 @@ button.mfp-arrow:hover {
 .category-search-form {
   display: flex;
   align-items: center;
-  height: 40px;
+  /* height: 40px; */
   position: relative;
+  border: 1px solid #b8e4f8;
+  padding: 0 20px 0 5px;
+  border-radius: 15px;
 }
 
 .category-search-select {
+  display: none;
   max-width: 178px;
   height: 100%;
   background-color: #F5F5F5;
@@ -1084,6 +1088,8 @@ button.category-search-btn {
   justify-content: center;
   border-radius: 0 3px 3px 0;
   border: 0;
+  background: transparent;
+  color: #054884;
 }
 
 .head-mast-container {
@@ -6078,8 +6084,8 @@ button.single_add_to_cart_button:focus {
     min-height: 1px;
     padding-right: 15px;
     padding-left: 15px;
-    flex: 0 0 66.66667%;
-    max-width: 66.66667%;
+    flex: 0 0 56.66667%;
+    max-width: 56.66667%;
   }
 
   .entry-content-column-split {
@@ -6653,13 +6659,13 @@ button.single_add_to_cart_button:focus {
   }
 
   .header-branding-wrap {
-    flex: 0 0 26.66667%;
-    max-width: 26.66667%;
+    flex: 0 0 23.66667%;
+    max-width: 23.66667%;
   }
 
   .head-search-form-wrap {
-    flex: 0 0 33.33333%;
-    max-width: 33.33333%;
+    flex: 0 0 30.33333%;
+    max-width: 30.33333%;
   }
 
   .footer-fullwidth .container {

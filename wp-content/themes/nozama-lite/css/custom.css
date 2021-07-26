@@ -1,11 +1,16 @@
+*{
+    outline: none !important;
+}
 header .topnav{
 	background-color: #ebebeb;
 }
 header .topnav a{
-	font-size: 20px;
+	font-size: 16px;
     margin-left: 20px;
     line-height: 50px;
     font-weight: bold;
+    color: #054881;
+    font-family: 'Roboto', sans-serif;
 }
 #custom_html-6{
 	background: url("https://www.bluezonegroup.com.au/20 - February/Solstice_mounted_on_Saab_Double_Eagle.png");
@@ -14,10 +19,37 @@ header .topnav a{
     min-height: 500px;
     background-repeat: no-repeat;
 }
-
 /*-- header --*/
-
+.navigation-main > li > a{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 17px;
+}
+header .list-social-icons{
+    text-align: right;
+    margin-bottom: 20px;
+}
+.list-social-icons li{
+    margin: 0 5px;
+}
+.list-social-icons li a.social-icon{
+    color: white;
+    background: #85cbf1;
+    border: 2px solid #85cbf1;
+}
+.list-social-icons li a.social-icon:hover{
+  background-color: #054881;
+  color: #054881;
+}
+.head-search-form-wrap{
+    margin-left: auto;
+}
 .widget .list-social-icons li{
     display: block;
 }
 
+@media ( max-width: 991px ) {
+    .header-main-menu{
+        display: none;
+    }
+}

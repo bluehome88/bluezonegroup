@@ -283,6 +283,9 @@ function nozama_lite_header_search() {
 				'id'                => 'category-search-name',
 				'class'             => 'category-search-select',
 			) ); ?>
+			<button type="submit" class="category-search-btn">
+				<i class="fas fa-search"></i><span class="sr-only"><?php echo esc_html_x( 'Search', 'submit button', 'nozama-lite' ); ?></span>
+			</button>
 
 			<div class="category-search-input-wrap">
 				<label for="category-search-input" class="sr-only">
@@ -307,10 +310,6 @@ function nozama_lite_header_search() {
 				<span class="category-search-spinner"></span>
 				<input type="hidden" name="post_type" value="product" />
 			</div>
-
-			<button type="submit" class="category-search-btn">
-				<i class="fas fa-search"></i><span class="sr-only"><?php echo esc_html_x( 'Search', 'submit button', 'nozama-lite' ); ?></span>
-			</button>
 		</form>
 	</div>
 	<?php
