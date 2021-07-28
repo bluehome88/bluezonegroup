@@ -82,3 +82,12 @@ header .list-social-icons{
     line-height: 70px;
     color: #054881;
 }
+
+.footer{
+    background: url('./img/footer_bg.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.footer-widgets, .footer-info{
+    background: transparent !important;
+}
