@@ -72,7 +72,7 @@ if ( ! class_exists( 'CI_Widget_Home_Latest_Products' ) ) :
 
 				if ( $title ) {
 					echo wp_kses(
-						$args['before_title'] . $title . ' <a href="' . esc_url( $more_url ) . '">' . esc_html__( 'See More', 'nozama-lite' ) . '</a>' . $args['after_title'],
+						$args['before_title'] . $title . $args['after_title'],
 						nozama_lite_get_allowed_sidebar_wrappers()
 					);
 				}
