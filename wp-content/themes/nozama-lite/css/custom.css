@@ -1,5 +1,6 @@
 *{
     outline: none !important;
+    font-family: 'Roboto', sans-serif;
 }
 header .topnav{
 	background-color: #ebebeb;
@@ -62,12 +63,13 @@ header .list-social-icons li a.social-icon:hover{
     background-size: cover;
     background-position: center;
     margin-bottom: 0;
-    padding: 70px 0;
+    padding: 60px 0;
 }
 .home_brief{
     color: white;
     text-align: center;
     font-size: 25px;
+    font-weight: 100;
 }
 .features > .col-md-4{
     text-align: center;
@@ -101,8 +103,17 @@ header .list-social-icons li a.social-icon:hover{
     background: #85caf3;
     color: white;
 }
+#custom_html-3 h4{
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+#custom_html-3 p{
+    font-size: 13px;
+}
 #custom_html-3 a, .footer a{
     color: white;
+    font-size: 13px;
 }
 #custom_html-3 a:hover, .footer a: hover{
     color: #12c5ff;
@@ -131,6 +142,9 @@ header .list-social-icons li a.social-icon:hover{
 #custom_html-8 h4{
     color: #054881;
     margin-top: 30px;
+    letter-spacing: 1px;
+    font-weight: 300;
+    padding-left: 20px;
 }
 #custom_html-8 .newsletter_form{
     padding: 30px 20px;
@@ -171,7 +185,22 @@ header .list-social-icons li a.social-icon:hover{
 }
 #ci-home-latest-products-2 .item-content{
     border-top: 1px solid #ececec;
-    padding: 30px 30px 25px;
+    padding: 30px 40px 25px;
+}
+#ci-home-latest-products-2 .item-content .item-title a{
+    color: #71797e;
+    font-weight: 600;
+}
+#ci-home-latest-products-2 .item-content .subtitle{
+    font-size: 13px;
+    color: #71797e;
+    font-weight: 400;
+}
+#ci-home-latest-products-2 .item-content > a{
+    color: #054881;
+}
+#ci-home-latest-products-2 .item-content > a i{
+    margin-right: 10px;
 }
 .home i.fa-chevron-right{
     border: 1px solid #12c5ff;
@@ -224,10 +253,16 @@ header .list-social-icons li a.social-icon:hover{
     color: #85cbf1;
     font-size: 32px;
 }
+#custom_html-6 .textwidget .border-left h4{
+    font-size: 18px;
+}
+#custom_html-6 .textwidget .border-left p{
+    font-size: 13px;
+}
 #custom_html-6 .textwidget .second a{
     display: block;
     color: #85cbf1;
-    font-size: 20px;
+    font-size: 18px;
 }
 #custom_html-6 .textwidget .second i{
     border: 2px solid #85cbf1;
@@ -254,7 +289,7 @@ header .list-social-icons li a.social-icon:hover{
 }
 #ci-latest-posts-3 .item-media .item-content{
     background: #ececec;
-    padding: 10px 30px;
+    padding: 15px 30px;
 }
 #ci-latest-posts-3 .row > .col-lg-6{
     margin-bottom: 30px;
@@ -262,10 +297,10 @@ header .list-social-icons li a.social-icon:hover{
 #ci-latest-posts-3 .item-content .post_date{
     background: #85caf3;
     color: white;
-    font-size: 35px;
-    font-weight: bold;
+    font-size: 32px;
+    font-weight: 500;
     text-transform: uppercase;
-    padding: 10px 30px;
+    padding: 15px 40px;
     margin-left: -50px;
 }
 #ci-latest-posts-3 .item-content .post_title a{
@@ -290,7 +325,7 @@ header .list-social-icons li a.social-icon:hover{
 #ci-latest-posts-3 .item-content .read_more i{
     color: #054881;
     border-color: #054881;
-    padding-left: 6px;
+    padding-left: 5px;
 }
 .footer{
     background: url('./img/footer_bg.png') no-repeat;
@@ -312,6 +347,7 @@ header .list-social-icons li a.social-icon:hover{
     padding: 20px;
     margin-top: -20px;
     line-height: 32px;
+    letter-spacing: -1px;
 }
 /* max-slider */
 .page-hero-content{
@@ -319,13 +355,13 @@ header .list-social-icons li a.social-icon:hover{
     display: flex;
 }
 .page-hero-content .border{
-    border-left: 2px solid #85cbf1;
-    border-top: 2px solid #85cbf1;
+    border-left: 3px solid #85cbf1;
+    border-top: 3px solid #85cbf1;
     width: 30px;
     float: left;
 }
 .page-hero-content .text_container{
-    margin-top: -12px;
+    margin-top: -10px;
     padding-left: 10px;
 }
 .page-hero-content .page-hero-subtitle{
@@ -333,11 +369,11 @@ header .list-social-icons li a.social-icon:hover{
     font-weight: bold;
 }
 .page-hero-content .page-hero-title{
-    font-weight: 100;
-    font-size: 52px;
-    margin-top: 10px;
-    padding-bottom: 30px;
-    line-height: 52px;
+    font-weight: 300;
+    font-size: 55px;
+    margin-top: 30px;
+    padding-bottom: 40px;
+    line-height: 62px;
 }
 .page-hero-content a{
     background: transparent !important;
@@ -347,6 +383,7 @@ header .list-social-icons li a.social-icon:hover{
     margin-left: -48px;
     position: absolute;
     margin-top: -3px !important;
+    font-weight: 300;
 }
 .page-hero-content a:hover{
     box-shadow: none;
