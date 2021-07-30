@@ -161,7 +161,7 @@ header .list-social-icons li a.social-icon{
     background-position: center;
     min-height: 500px;
     background-repeat: no-repeat;
-    margin-bottom: 30vh;
+    margin-bottom: 25vh;
 }
 #custom_html-6 .textwidget{
     max-width: 60%;
@@ -209,6 +209,57 @@ header .list-social-icons li a.social-icon{
     padding: 4px 8px;
     color: #85cbf1;
     margin-right: 21px;
+}
+#ci-latest-posts-3{
+    margin-bottom: 0;
+}
+#ci-latest-posts-3 .item-media-sm{
+    height: 100%;
+}
+#ci-latest-posts-3 .item-media-sm .item-thumb{
+    width: 50%;
+    margin-right: 0;
+    background-position: center;
+    background-size: cover;
+}
+#ci-latest-posts-3 .item-media .item-content{
+    background: #ececec;
+    padding: 10px 30px;
+}
+#ci-latest-posts-3 .row > .col-lg-6{
+    margin-bottom: 30px;
+}
+#ci-latest-posts-3 .item-content .post_date{
+    background: #85caf3;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px 30px;
+    margin-left: -50px;
+}
+#ci-latest-posts-3 .item-content .post_title a{
+    margin-top: 40px;
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    color: #054881;
+}
+#ci-latest-posts-3 .item-content .item-excerpt{
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 22px;
+    color: #054881;
+}
+#ci-latest-posts-3 .item-content .read_more{
+    position: absolute;
+    display: block;
+    right: 20px;
+    bottom: 20px;
+}
+#ci-latest-posts-3 .item-content .read_more i{
+    color: #054881;
+    border-color: #054881;
 }
 .footer{
     background: url('./img/footer_bg.png') no-repeat;

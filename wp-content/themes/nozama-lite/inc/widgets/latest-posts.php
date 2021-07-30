@@ -73,12 +73,13 @@ if ( ! class_exists( 'CI_Widget_Latest_Posts' ) ) :
 			if ( ! empty( $title ) ) {
 				echo wp_kses( $args['before_title'] . $title . $args['after_title'], nozama_lite_get_allowed_sidebar_wrappers() );
 			}
-
+			echo "<div class='row'>";
 			while ( $q->have_posts() ) {
 				$q->the_post();
 
 				get_template_part( 'template-parts/widgets/sidebar-item' );
 			}
+			echo "</div>";
 			wp_reset_postdata();
 
 			echo wp_kses( $after_widget, nozama_lite_get_allowed_sidebar_wrappers() );
