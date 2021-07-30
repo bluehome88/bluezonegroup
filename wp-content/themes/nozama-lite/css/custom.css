@@ -422,3 +422,85 @@ header .list-social-icons li a.social-icon:hover{
 .single figure.entry-thumb{
     display: none;
 }
+#maxslider-241::before{
+    content: " ";
+    position: absolute;
+    width: 15vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vw;
+    background-image: url('./img/corner-bg1.png');
+    right: 0;
+    bottom: 0;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    z-index: 1000;
+}
+#custom_html-5::before{
+    content: " ";
+    position: absolute;
+    width: 15vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vw;
+    background-image: url('./img/corner-bg2.png');
+    right: 0;
+    top: 0;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+#ci-home-latest-products-2::before{
+    content: " ";
+    position: absolute;
+    width: 15vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vw;
+    background-image: url('./img/corner-bg3.png');
+    bottom: 0;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+#ci-latest-posts-3::before{
+    content: " ";
+    position: absolute;
+    width: 15vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vw;
+    background-image: url('./img/corner-bg4.png');
+    top: 0;
+    background-size: 100%;
+    background-repeat: no-repeat; 
+}
+#media_image-7::before{
+    content: " ";
+    position: absolute;
+    width: 15vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vw;
+    background-image: url('./img/corner-bg5.png');
+    right: 0;
+    bottom: -70px;
+    background-size: 100%;
+    background-repeat: no-repeat; 
+}
+.footer::before{
+    content: " ";
+    position: absolute;
+    width: 15vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vw;
+    background-image: url('./img/corner-bg6.png');
+    right: 0;
+    background-size: 100%;
+    background-repeat: no-repeat; 
+}
