@@ -3,7 +3,11 @@
  * Template Name: Front page
  */
 get_header(); ?>
-
+<div class="page_badge">
+	<div class="container">
+		<span class="home_badge">AHEAD <br>OF THE <br>TIDE™</span>
+	</div>
+</div>
 <?php
 	$slider_id = get_post_meta( get_queried_object_id(), 'nozama_lite_front_slider_id', true );
 	if ( $slider_id && function_exists( 'MaxSlider' ) ) {

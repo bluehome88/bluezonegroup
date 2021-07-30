@@ -134,7 +134,7 @@ if ( ! function_exists( 'nozama_lite_get_columns_classes' ) ) :
 				$classes = 'col-sm-6 col-12';
 				break;
 			case 3:
-				$classes = 'col-lg-4 col-sm-6 col-12';
+				$classes = 'col-lg-4 col-md-4 col-12';
 				break;
 			case 4:
 			default:

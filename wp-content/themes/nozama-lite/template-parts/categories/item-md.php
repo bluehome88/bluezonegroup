@@ -17,13 +17,8 @@ $link_url  = get_term_link( $term->term_id );
 >
 	<div class="block-item-content-wrap">
 		<div class="block-item-content">
-			<p class="block-item-title"><?php echo esc_html( $title ); ?></p>
-			<?php if ( $subtitle ) : ?>
-				<p class="block-item-subtitle"><?php echo wp_kses( $subtitle, nozama_lite_get_allowed_tags( 'guide' ) ); ?></p>
-			<?php endif; ?>
-
 			<a href="<?php echo esc_url( $link_url ); ?>" class="btn btn-sm btn-block-item">
-				<?php esc_html_e( 'Shop now', 'nozama-lite' ); ?>
+				<?php echo esc_html( $title ); ?>
 			</a>
 		</div>
 	</div>

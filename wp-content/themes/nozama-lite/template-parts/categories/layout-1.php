@@ -12,14 +12,42 @@ if ( empty( $term_ids ) || ! is_array( $term_ids ) || count( $term_ids ) < $requ
 <div class="block-layout">
 	<div class="row">
 		<div class="col-md-6 col-12">
-			<?php nozama_lite_get_template_part( 'template-parts/categories/item', 'md', array(
-				'term' => get_term( $term_ids[0] ),
-			) ); ?>
+			<div class="row">
+				<div class="col-md-6 col-12">
+					<?php nozama_lite_get_template_part( 'template-parts/categories/item', 'md', array(
+						'term' => get_term( $term_ids[0] ),
+					) ); ?>
+					<?php nozama_lite_get_template_part( 'template-parts/categories/item', 'md', array(
+						'term' => get_term( $term_ids[1] ),
+					) ); ?>
+				</div>
+				<div class="col-md-6 col-12 full-height">
+					<?php nozama_lite_get_template_part( 'template-parts/categories/item', 'lg', array(
+						'term' => get_term( $term_ids[2] ),
+					) ); ?>
+				</div>
+			</div>
 		</div>
 		<div class="col-md-6 col-12">
-			<?php nozama_lite_get_template_part( 'template-parts/categories/item', 'md', array(
-				'term' => get_term( $term_ids[1] ),
-			) ); ?>
+			<div class="row">
+				<div class="col-md-6 col-12">
+					<?php nozama_lite_get_template_part( 'template-parts/categories/item', 'md', array(
+						'term' => get_term( $term_ids[3] ),
+					) ); ?>
+				</div>
+				<div class="col-md-6 col-12">
+					<?php nozama_lite_get_template_part( 'template-parts/categories/item', 'md', array(
+						'term' => get_term( $term_ids[4] ),
+					) ); ?>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 col-12">
+					<?php nozama_lite_get_template_part( 'template-parts/categories/item', 'md', array(
+						'term' => get_term( $term_ids[5] ),
+					) ); ?>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

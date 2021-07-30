@@ -1,4 +1,4 @@
-<div class="col-lg-6 col-sm-6 col-12">
+<div class="col-lg-6 col-md-6 col-12">
 	<div class="item item-media item-media-sm">
 		<?php if ( has_post_thumbnail() ) : ?>
 			<div class="item-thumb" style="background-image:url('<?php the_post_thumbnail_url( 'nozama_lite_item_media' );?>')">

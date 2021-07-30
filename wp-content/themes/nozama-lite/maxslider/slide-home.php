@@ -33,23 +33,26 @@ $slide_class = "maxslider-{$slider['id']}-slide-{$slide['id']}";
 				<div class="col-12">
 
 					<div class="page-hero-content">
-						<?php if ( ! empty( $slide['title'] ) ) : ?>
-							<h3 class="page-hero-title">
-								<?php echo wp_kses( $slide['title'], MaxSlider()->sanitizer->allowed_tags( 'title' ) ); ?>
-							</h3>
-						<?php endif; ?>
+						<div class="border">
+						</div>
+						<div class="text_container">
+							<?php if ( ! empty( $slide['subtitle'] ) ) : ?>
+								<span class="page-hero-subtitle">
+									<?php echo wp_kses( $slide['subtitle'], MaxSlider()->sanitizer->allowed_tags( 'subtitle' ) ); ?>
+								</span>
+							<?php endif; ?>
 
-						<?php if ( ! empty( $slide['subtitle'] ) ) : ?>
-							<p class="page-hero-subtitle">
-								<?php echo wp_kses( $slide['subtitle'], MaxSlider()->sanitizer->allowed_tags( 'subtitle' ) ); ?>
-							</p>
-						<?php endif; ?>
-
-						<?php if ( ! empty( $slide['button'] ) && ! empty( $slide['button_url'] ) ) : ?>
-							<a href="<?php echo esc_url( $slide['button_url'] ); ?>" class="btn <?php echo esc_attr( str_replace( 'maxslider-', '', $slide['button_size'] ) ); ?>">
-								<?php echo wp_kses( $slide['button'], MaxSlider()->sanitizer->allowed_tags( 'button' ) ); ?>
-							</a>
-						<?php endif; ?>
+							<?php if ( ! empty( $slide['title'] ) ) : ?>
+								<h3 class="page-hero-title">
+									<?php echo wp_kses( $slide['title'], MaxSlider()->sanitizer->allowed_tags( 'title' ) ); ?>
+								</h3>
+							<?php endif; ?>
+							<?php if ( ! empty( $slide['button'] ) && ! empty( $slide['button_url'] ) ) : ?>
+								<a href="<?php echo esc_url( $slide['button_url'] ); ?>" class="btn <?php echo esc_attr( str_replace( 'maxslider-', '', $slide['button_size'] ) ); ?>">
+									<i class="fas fa-chevron-right"></i> <?php echo wp_kses( $slide['button'], MaxSlider()->sanitizer->allowed_tags( 'button' ) ); ?>
+								</a>
+							<?php endif; ?>
+						</div>
 					</div>
 
 				</div>
