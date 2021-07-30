@@ -22,18 +22,20 @@ header .list-social-icons{
     text-align: right;
     margin-bottom: 20px;
 }
-.list-social-icons li{
+header .list-social-icons li{
     margin: 0 5px;
 }
-.list-social-icons li a.social-icon{
-    color: #054881;
+header .list-social-icons li a.social-icon{
     background: #85cbf1;
     border: 2px solid #85cbf1;
-}
-header .list-social-icons li a.social-icon{
     color: white;
 }
-.list-social-icons li a.social-icon:hover{
+footer .list-social-icons li a.social-icon{
+    background: #85cbf1;
+    border: 2px solid #85cbf1;
+    color: #054881;
+}
+header .list-social-icons li a.social-icon:hover{
   background-color: #054881;
   border-color: #054881;
   color: white;
@@ -271,4 +273,8 @@ header .list-social-icons li a.social-icon{
 }
 .footer-widgets, .footer-info{
     background: transparent !important;
+}
+
+.single figure.entry-thumb{
+    display: none;
 }
