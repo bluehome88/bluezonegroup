@@ -6599,7 +6599,7 @@ button.single_add_to_cart_button:focus {
   }
 
   .text-lg-left {
-    text-align: left !important;
+    /* text-align: left !important; */
   }
 
   .text-lg-right {

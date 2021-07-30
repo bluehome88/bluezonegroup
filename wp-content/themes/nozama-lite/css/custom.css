@@ -34,13 +34,17 @@ header .list-social-icons{
     margin: 0 5px;
 }
 .list-social-icons li a.social-icon{
-    color: white;
+    color: #054881;
     background: #85cbf1;
     border: 2px solid #85cbf1;
 }
+header .list-social-icons li a.social-icon{
+    color: white;
+}
 .list-social-icons li a.social-icon:hover{
   background-color: #054881;
-  color: #054881;
+  border-color: #054881;
+  color: white;
 }
 .head-search-form-wrap{
     margin-left: auto;
@@ -82,11 +86,87 @@ header .list-social-icons{
     line-height: 70px;
     color: #054881;
 }
+#media_image-7 .section-heading{
+    display: block;
+}
+#media_image-7 .section-title{
+    text-align: center;
+    font-weight: bold;
+    width: 100%;
+}
+.home .section-title{
+    padding: 10px 20px;
+    width: 400px;
+}
+#media_gallery-5 .section-title, 
+#ci-home-latest-products-2 .section-title{
+    background: #011d4f;
+    color: white;
+}
+#ci-latest-posts-3 .section-title{
+    background: #85caf3;
+    color: white;
+}
+#custom_html-3 a, .footer a{
+    color: white;
+}
+#custom_html-3 a:hover, .footer a: hover{
+    color: #12c5ff;
+}
+#ci-socials-3{
+    text-align: center;
+}
+#custom_html-8{
+    background: url('./img/home_gray_bg.png') no-repeat;
+    margin-bottom: 0;
+    padding-bottom: 70px;
+    background-size: cover;
+}
+#custom_html-8 img{
+    max-width: 150px;
+    margin-top: 100px;
+}
+#custom_html-8 h4{
+}
+.home .section-heading{
+    margin-top: -20px;
+}
+
+/* featured product */
+#ci-home-latest-products-2{
+    background: url('./img/home_dark_green_bg.png') no-repeat;
+    margin-bottom: 0;
+    padding-bottom: 70px;
+    background-size: cover;
+}
+#ci-home-latest-products-2 .item-product .item-thumb{
+    max-height: 280px;
+    padding: 0;
+}
+#ci-home-latest-products-2 .row-items .item{
+    background: white;
+}
+#ci-home-latest-products-2 .item-content{
+    border-top: 1px solid #ececec;
+    padding: 30px 30px 25px;
+}
+#ci-home-latest-products-2 .row-items .item i{
+    border: 1px solid #12c5ff;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 10px;
+    padding: 3px 4.5px;
+    color: #12c5ff;
+}
 
 .footer{
-    background: url('./img/footer_bg.jpg') no-repeat;
+    background: url('./img/footer_bg.png') no-repeat;
     background-size: cover;
     background-position: center;
+}
+.footer-info{
+    padding-bottom: 40px !important;
 }
 .footer-widgets, .footer-info{
     background: transparent !important;
