@@ -12,14 +12,6 @@ header .topnav a{
     color: #054881;
     font-family: 'Roboto', sans-serif;
 }
-#custom_html-6{
-	background: url('./img/home_fixed_bg.jpg');
-	background-size: cover;
-    /* background-attachment: fixed; */
-    background-position: center;
-    min-height: 500px;
-    background-repeat: no-repeat;
-}
 /*-- header --*/
 .navigation-main > li > a{
     font-family: 'Roboto', sans-serif;
@@ -127,6 +119,8 @@ header .list-social-icons li a.social-icon{
     margin-top: 100px;
 }
 #custom_html-8 h4{
+    color: #054881;
+    margin-top: 30px;
 }
 .home .section-heading{
     margin-top: -20px;
@@ -150,7 +144,7 @@ header .list-social-icons li a.social-icon{
     border-top: 1px solid #ececec;
     padding: 30px 30px 25px;
 }
-#ci-home-latest-products-2 .row-items .item i{
+.home i.fa-chevron-right{
     border: 1px solid #12c5ff;
     border-radius: 50%;
     width: 18px;
@@ -160,6 +154,62 @@ header .list-social-icons li a.social-icon{
     color: #12c5ff;
 }
 
+#custom_html-6{
+    background: url('./img/home_fixed_bg.jpg');
+    background-size: cover;
+    position: relative;
+    background-position: center;
+    min-height: 500px;
+    background-repeat: no-repeat;
+    margin-bottom: 30vh;
+}
+#custom_html-6 .textwidget{
+    max-width: 60%;
+    margin-top: 40vh;
+    margin-bottom: -20vh;
+    color: white;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+@media (max-width: 1200px){
+    #custom_html-6 .textwidget{
+        max-width: 100%;
+    }
+}
+#custom_html-6 .textwidget .first {
+    background: url('./img/WaveGlider-on-Globe.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+#custom_html-6 .textwidget .second {
+    background: #054881;
+    padding: 40px;
+}
+#custom_html-6 .textwidget .border-left{
+    border-left: 2px solid #85cbf1;
+    padding-left: 40px;
+    padding-bottom: 30px;
+    margin-left: 14px;
+}
+#custom_html-6 .textwidget h3{
+    color: #85cbf1;
+    font-size: 32px;
+}
+#custom_html-6 .textwidget .second a{
+    display: block;
+    color: #85cbf1;
+    font-size: 20px;
+}
+#custom_html-6 .textwidget .second i{
+    border: 2px solid #85cbf1;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+    padding: 4px 8px;
+    color: #85cbf1;
+    margin-right: 21px;
+}
 .footer{
     background: url('./img/footer_bg.png') no-repeat;
     background-size: cover;
