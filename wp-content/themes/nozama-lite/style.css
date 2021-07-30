@@ -16,7 +16,7 @@ Text Domain: nozama-lite
 */
 
 /* -----------------------------------------
-	Table of Contents
+  Table of Contents
 --------------------------------------------
 
 .. 01. General
@@ -46,7 +46,7 @@ Text Domain: nozama-lite
 }
 
 /* -----------------------------------------
-	01. General
+  01. General
 ----------------------------------------- */
 
 html {
@@ -648,7 +648,7 @@ button.mfp-arrow:hover {
 }
 
 /* -----------------------------------------
-	02. Main Navigation
+  02. Main Navigation
 ----------------------------------------- */
 
 .nav {
@@ -946,7 +946,7 @@ button.mfp-arrow:hover {
 }
 
 /* -----------------------------------------
-	03. Header
+  03. Header
 ----------------------------------------- */
 
 .header {
@@ -974,8 +974,8 @@ button.mfp-arrow:hover {
 }
 
 .head-mast {
-  background-color: #white;
-  padding: 30px 0;
+  background-color: white;
+  padding: 20px 0 40px;
   color: #054884;
 }
 
@@ -987,6 +987,7 @@ button.mfp-arrow:hover {
 =================================== */
 
 .category-search-form {
+  background-color: white;
   display: flex;
   align-items: center;
   height: 35px;
@@ -1107,7 +1108,7 @@ button.category-search-btn {
 }
 
 /* -----------------------------------------
-	04. Hero Area
+  04. Hero Area
 ----------------------------------------- */
 
 /* Basic Styles
@@ -1335,7 +1336,7 @@ button.category-search-btn {
 }
 
 /* -----------------------------------------
-	05. Modules
+  05. Modules
 ----------------------------------------- */
 
 /* General Layout
@@ -1658,6 +1659,7 @@ button.category-search-btn {
   padding: 15px 15px 0 15px;
   max-height: 180px;
   overflow: hidden;
+  text-align: center;
 }
 
 .item-product .item-thumb img {
@@ -2038,7 +2040,7 @@ button.category-search-btn {
 }
 
 /* -----------------------------------------
-	06. Footer
+  06. Footer
 ----------------------------------------- */
 
 .footer {
@@ -2064,7 +2066,7 @@ button.category-search-btn {
 }
 
 /* -----------------------------------------
-	07. Comments
+  07. Comments
 ----------------------------------------- */
 
 .comments-area {
@@ -2221,7 +2223,7 @@ button.category-search-btn {
 }
 
 /* -----------------------------------------
-	08. Widgets Styling
+  08. Widgets Styling
 ----------------------------------------- */
 
 .widget {
@@ -2641,7 +2643,7 @@ button.category-search-btn {
 }
 
 /* -----------------------------------------
-	09. WordPress Defaults
+  09. WordPress Defaults
 ----------------------------------------- */
 
 /* WordPress Galleries
@@ -2858,7 +2860,7 @@ p .alignnone {
 }
 
 /* -----------------------------------------
-	10. Mobile menu
+  10. Mobile menu
 ----------------------------------------- */
 
 .mm-page {
@@ -2926,7 +2928,7 @@ p .alignnone {
 }
 
 /* -----------------------------------------
-	11. E-Commerce (WooCommerce)
+  11. E-Commerce (WooCommerce)
 ----------------------------------------- */
 
 /* General
@@ -5405,7 +5407,7 @@ button.single_add_to_cart_button:focus {
 }
 
 /* -----------------------------------------
-	12. External Plugins
+  12. External Plugins
 ----------------------------------------- */
 
 /* Jetpack Sharing */
@@ -5450,7 +5452,7 @@ button.single_add_to_cart_button:focus {
 }
 
 /* -----------------------------------------
-	13. Utilities
+  13. Utilities
 ----------------------------------------- */
 
 .flex-row-reverse {
@@ -5567,7 +5569,7 @@ button.single_add_to_cart_button:focus {
 }
 
 /* -----------------------------------------
-	14. Global Mediaqueries
+  14. Global Mediaqueries
 ----------------------------------------- */
 
 @media (min-width: 576px) and (min-width: 1350px) {
@@ -7104,7 +7106,7 @@ button.single_add_to_cart_button:focus {
   }
 
   .head-search-form-wrap {
-    padding: 15px 15px;
+    padding: 15px 15px 30px;
     width: 100%;
     flex: none;
     background-color: #283848;
