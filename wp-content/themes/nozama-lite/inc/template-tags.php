@@ -140,14 +140,14 @@ function nozama_lite_footer_bottom_bar() {
 	<div class="footer-info">
 		<div class="container">
 			<div class="row align-items-center">
-				<div class="col-lg-6 col-12">
+				<div class="col-lg-12 col-12">
 					<?php $credits = get_theme_mod( 'footer_text', nozama_lite_get_default_footer_text() ); ?>
 					<?php if ( $credits || is_customize_preview() ) : ?>
 						<p class="footer-copy text-lg-left text-center"><?php echo nozama_lite_sanitize_footer_text( $credits ); ?></p>
 					<?php endif; ?>
 				</div>
 
-				<div class="col-lg-6 col-12">
+				<div class="col-lg-6 col-12" style="display:none;">
 					<div class="footer-info-addons text-lg-right text-center">
 						<?php $icons = nozama_lite_get_card_icons_array( get_theme_mod( 'footer_card_icons', nozama_lite_get_default_footer_card_icons() ) ); ?>
 						<?php if ( ! empty( $icons ) ) : ?>
