@@ -91,11 +91,10 @@ function nozama_lite_register_scripts() {
 	wp_register_script( 'jquery-magnific-popup', get_template_directory_uri() . '/assets/vendor/magnific-popup/jquery.magnific-popup.js', array( 'jquery' ), '1.0.0', true );
 	wp_register_script( 'nozama-lite-magnific-init', get_template_directory_uri() . '/js/magnific-init.js', array( 'jquery' ), $theme->get( 'Version' ), true );
 
-
-
 	wp_register_style( 'nozama-lite-google-font', nozama_lite_fonts_url(), array(), null );
 	wp_register_style( 'nozama-lite-base', get_template_directory_uri() . '/css/base.css', array(), $theme->get( 'Version' ) );
 	wp_register_style( 'mmenu', get_template_directory_uri() . '/css/mmenu.css', array(), '5.5.3' );
+	wp_register_style( 'nozama-lite-widget', get_template_directory_uri() . '/css/widget.css', array(), $theme->get( 'Version' ) );
 	wp_register_style( 'nozama-lite-custom', get_template_directory_uri() . '/css/custom.css', array(), $theme->get( 'Version' ) );
 
 	wp_register_style( 'nozama-lite-dependencies', false, array(
