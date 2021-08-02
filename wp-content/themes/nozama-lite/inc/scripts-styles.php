@@ -105,6 +105,7 @@ function nozama_lite_register_scripts() {
 		'slick',
 		'font-awesome-5',
 		'nozama-lite-custom',
+		'nozama-lite-widget',
 	), $theme->get( 'Version' ) );
 
 	if ( is_child_theme() ) {

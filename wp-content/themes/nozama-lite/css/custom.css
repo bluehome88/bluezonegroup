@@ -2,11 +2,14 @@
     outline: none !important;
     font-family: 'Roboto', sans-serif;
 }
+header .head-nav{
+    background: transparent;
+}
 header .topnav{
-    background-color: #ebebeb;
+    background-color: #ececec;
 }
 header .topnav a{
-    font-size: 16px;
+    font-size: 14px;
     margin-left: 20px;
     line-height: 50px;
     font-weight: bold;
@@ -441,11 +444,11 @@ button.category-search-btn:hover{
 #maxslider-241::before{
     content: " ";
     position: absolute;
-    width: 15vw;
+    width: 12vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 15vw;
+    height: 12vw;
     background-image: url('./img/corner-bg1.png');
     right: 0;
     bottom: 0;
@@ -456,7 +459,7 @@ button.category-search-btn:hover{
 #custom_html-5::before{
     content: " ";
     position: absolute;
-    width: 15vw;
+    width: 12vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -470,11 +473,11 @@ button.category-search-btn:hover{
 #ci-home-latest-products-2::before{
     content: " ";
     position: absolute;
-    width: 15vw;
+    width: 12vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 15vw;
+    height: 12vw;
     background-image: url('./img/corner-bg3.png');
     bottom: 0;
     background-size: 100%;
@@ -483,11 +486,11 @@ button.category-search-btn:hover{
 #ci-latest-posts-3::before{
     content: " ";
     position: absolute;
-    width: 15vw;
+    width: 12vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 15vw;
+    height: 12vw;
     background-image: url('./img/corner-bg4.png');
     top: 0;
     background-size: 100%;
@@ -496,25 +499,25 @@ button.category-search-btn:hover{
 .footer::before{
     content: " ";
     position: absolute;
-    width: 15vw;
+    width: 12vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 15vw;
+    height: 12vw;
     background-image: url('./img/corner-bg5.png');
     right: 0;
-    top: -15vw;
+    top: -12vw;
     background-size: 100%;
     background-repeat: no-repeat; 
 }
 .footer::after{
     content: " ";
     position: absolute;
-    width: 15vw;
+    width: 12vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 15vw;
+    height: 12vw;
     right: 0;
     top: 0;
     background-size: 100%;
@@ -617,4 +620,18 @@ button.category-search-btn:hover{
         display: block;
         text-align: center;
     }
+}
+
+/* about page custom */
+.page-id-4135 .footer::before{
+    background-image: url('./img/corner-bg2.png');
+    transform: scaleY(-1);
+}
+.page-id-4135 .nozama_banner::before{
+    background-image: url('./img/corner-bg1.png');
+    transform: scaleX(-1);
+}
+.page-id-4135 .nozama_banner::after{
+    background-image: url('./img/corner-bg5.png');
+    transform: scale(-1, -1);
 }
