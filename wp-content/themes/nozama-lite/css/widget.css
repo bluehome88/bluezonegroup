@@ -1,4 +1,7 @@
-a i.fa-chevron-right{
+.elementor a{
+	color: #054881;
+}
+.elementor a i.fa-chevron-right{
 	border: 1px solid #054881;
     border-radius: 50%;
     width: 18px;
@@ -7,6 +10,13 @@ a i.fa-chevron-right{
     padding: 3px 4.5px;
     color: #054881;
     vertical-align: middle;
+}
+.elementor a:hover{
+	color: #84cbf1;
+}
+.elementor a:hover i.fa-chevron-right{
+	color: #84cbf1;
+	border: 1px solid #84cbf1;
 }
 /* gallery widget */
 .nozama_gallery{
@@ -39,13 +49,13 @@ a i.fa-chevron-right{
 /* video widet css */
 .nozama_video{
 	padding: 60px 0;
-	margin-top: -20px;
+	margin-top: -40px;
 	z-index: -1;
 }
 
 /* featured product widget */
 .nozama_featured_product{
-	padding: 60px 0;
+	padding-bottom: 60px;
 }
 .nozama_featured_product h5{
 	background: #84cbf1;
@@ -85,4 +95,63 @@ a i.fa-chevron-right{
 }
 .nozama_featured_product .item-content > a i{
     margin-right: 5px;
+}
+
+/* News Widget */
+.nozama_news h5{
+	background: #054881;
+    color: white;
+    padding: 10px 20px;
+    width: 300px;
+    margin-top: -20px;
+    font-size: 24px;
+}
+.nozama_news .item-media-sm{
+    height: 100%;
+}
+.nozama_news .item-media-sm .item-thumb{
+    width: 50%;
+    margin-right: 0;
+    background-position: center;
+    background-size: cover;
+}
+.nozama_news .item-media .item-content{
+    background: #ececec;
+    padding: 15px 30px;
+}
+.nozama_news .row > .col-lg-6{
+    margin-bottom: 30px;
+}
+.nozama_news .item-content .post_date{
+    background: #85caf3;
+    color: white;
+    font-size: 32px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 15px 40px;
+    margin-left: -50px;
+}
+.nozama_news .item-content .post_title a{
+    margin-top: 40px;
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    color: #054881;
+}
+.nozama_news .item-content .item-excerpt{
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 22px;
+    color: #054881;
+}
+.nozama_news .item-content .read_more{
+    position: absolute;
+    display: block;
+    right: 20px;
+    bottom: 20px;
+}
+.nozama_news .item-content .read_more i{
+    color: #054881;
+    border-color: #054881;
+    padding-left: 5px;
 }
