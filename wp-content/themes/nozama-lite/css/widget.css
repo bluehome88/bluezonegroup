@@ -1,0 +1,27 @@
+/* gallery widget */
+.nozama_gallery{
+	padding-bottom: 50px;
+}
+.nozama_gallery h5{
+	background: #011d4f;
+    color: white;
+    padding: 10px 20px;
+    width: 300px;
+    margin-top: -20px;
+    font-size: 24px;
+}
+.nozama_gallery .gallery-item{
+	padding: 10px !important;
+}
+.nozama_gallery .gallery-item .landscape{
+	height: 100%;
+}
+.nozama_gallery .gallery-item .landscape img{
+	height: 100%;
+}
+@media (min-width: 1350px){
+	.gallery {
+	    margin-right: -10px !important;
+	    margin-left: -10px !important;
+	}
+}
