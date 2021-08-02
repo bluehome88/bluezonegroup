@@ -44,6 +44,9 @@ header .list-social-icons li a.social-icon:hover{
 .head-search-form-wrap{
     margin-left: auto;
 }
+button.category-search-btn:hover{
+    color: #85cbf1 !important;
+}
 .widget .list-social-icons li{
     display: block;
 }
@@ -59,6 +62,7 @@ header .list-social-icons li a.social-icon:hover{
 /* -- Homepage --  */
 .home .main{
     padding-top: 0;
+    padding-bottom: 70px !important;
 }
 #custom_html-5{
     background: url('./img/banner_bg.png');
@@ -90,6 +94,7 @@ header .list-social-icons li a.social-icon:hover{
 #media_image-7 .section-title{
     text-align: center;
     font-weight: bold;
+    width: 100%;
 }
 .home .section-title{
     padding: 10px 20px;
@@ -183,6 +188,11 @@ header .list-social-icons li a.social-icon:hover{
 }
 #ci-home-latest-products-2 .row-items .item{
     background: white;
+    height: 100%;
+    margin-bottom: 0;
+}
+#ci-home-latest-products-2 .row-items{
+    margin-bottom: 0;
 }
 #ci-home-latest-products-2 .item-content{
     border-top: 1px solid #ececec;
@@ -332,6 +342,7 @@ header .list-social-icons li a.social-icon:hover{
     background: url('./img/footer_bg.png') no-repeat;
     background-size: cover;
     background-position: center;
+    position: relative;
 }
 .footer-info{
     padding-bottom: 40px !important;
@@ -389,10 +400,14 @@ header .list-social-icons li a.social-icon:hover{
 .page-hero-content a:hover{
     box-shadow: none;
 }
+.page-hero-content a{
+    color: #85cbf1;
+}
 .page-hero-content a i{
     border: 2px solid #85cbf1 !important;
     margin-right: 30px;
     padding-top: 2.5px !important;
+    color: #85cbf1 !important;;
 }
 #ci-home-woocommerce-categories-2 .container div{
     padding: 0;
@@ -478,7 +493,7 @@ header .list-social-icons li a.social-icon:hover{
     background-size: 100%;
     background-repeat: no-repeat; 
 }
-#media_image-7::before{
+.footer::before{
     content: " ";
     position: absolute;
     width: 15vw;
@@ -488,11 +503,11 @@ header .list-social-icons li a.social-icon:hover{
     height: 15vw;
     background-image: url('./img/corner-bg5.png');
     right: 0;
-    bottom: -70px;
+    top: -15vw;
     background-size: 100%;
     background-repeat: no-repeat; 
 }
-.footer::before{
+.footer::after{
     content: " ";
     position: absolute;
     width: 15vw;
@@ -500,11 +515,20 @@ header .list-social-icons li a.social-icon:hover{
     justify-content: center;
     align-items: center;
     height: 15vw;
-    background-image: url('./img/corner-bg6.png');
     right: 0;
+    top: 0;
     background-size: 100%;
     background-repeat: no-repeat; 
 }
+.footer::after{
+    background-image: url('./img/corner-bg1.png');
+    transform: scaleY(-1);
+}
+.home .footer::after{
+    background-image: url('./img/corner-bg6.png');
+    transform: scaleY(1);
+}
+
 @media (min-width: 768px) {
     #ci-home-woocommerce-categories-2 .block-item::after,
     #ci-home-woocommerce-categories-2 .category-item::before{
@@ -521,47 +545,47 @@ header .list-social-icons li a.social-icon:hover{
     #ci-home-woocommerce-categories-2 .item-1 .block-item:first-child::after{
         right: -35px;
         bottom: -35px;
-        background: radial-gradient(ellipse at center, rgba(255, 113, 12, 0) 60%, #85cbf1 51.5%);
+        background: radial-gradient(ellipse at center, rgba(255, 113, 12, 0) 58%, #85cbf1 60%);
     }
     #ci-home-woocommerce-categories-2 .item-1 .block-item:last-child::after{
         right: -35px;
         top: -35px;
-        background: radial-gradient(ellipse at center, rgba(255, 113, 12, 0) 60%, #094881 51.5%);
+        background: radial-gradient(ellipse at center, rgba(255, 113, 12, 0) 58%, #094881 60%);
     }
     #ci-home-woocommerce-categories-2 .category-item.item-2::before{
         left: -35px;
         top: calc( 50% - 35px);
-        background: radial-gradient(ellipse at center, rgba(255, 113, 12, 0) 60%, white 51.5%);
+        background: radial-gradient(ellipse at center, rgba(255, 113, 12, 0) 58%, white 60%);
     }
     #ci-home-woocommerce-categories-2 .item-2 .block-item::after{
         right: -35px;
         top: calc( 50% - 35px);
-        background: radial-gradient(ellipse at center, rgba(255, 113, 12, 0) 60%, white 51.5%);
+        background: radial-gradient(ellipse at center, rgba(255, 113, 12, 0) 58%, white 60%);
     }
     #ci-home-woocommerce-categories-2 .category-item.item-3::before{
         left: -35px;
         bottom: -35px;
-        background: radial-gradient(ellipse at center, rgba(255, 113, 12, 0) 60%, #094881 51.5%);
+        background: radial-gradient(ellipse at center, rgba(255, 113, 12, 0) 58%, #094881 60%);
     }
     #ci-home-woocommerce-categories-2 .item-3 .block-item::after{
         right: -35px;
         bottom: -35px;
-        background: radial-gradient(ellipse at center, rgba(255, 113, 12, 0) 60%, #094881 51.5%);
+        background: radial-gradient(ellipse at center, rgba(255, 113, 12, 0) 58%, #094881 60%);
     }
     #ci-home-woocommerce-categories-2 .item-4 .block-item::after{
         left: -35px;
         bottom: -35px;
-        background: radial-gradient(ellipse at center, rgba(255, 113, 12, 0) 60%, #85cbf1 51.5%);
+        background: radial-gradient(ellipse at center, rgba(255, 113, 12, 0) 58%, #85cbf1 60%);
     }
     #ci-home-woocommerce-categories-2 .category-item.item-5::before{
         left: calc( 50% - 35px);
         top: -35px;
-        background: radial-gradient(ellipse at center, rgba(255, 113, 12, 0) 60%, white 51.5%);
+        background: radial-gradient(ellipse at center, rgba(255, 113, 12, 0) 58%, white 60%);
     }
     #ci-home-woocommerce-categories-2 .item-5 .block-item::after{
         left: -35px;
         top: -35px;
-        background: radial-gradient(ellipse at center, rgba(255, 113, 12, 0) 60%, #85cbf1 51.5%);
+        background: radial-gradient(ellipse at center, rgba(255, 113, 12, 0) 58%, #85cbf1 60%);
     }
 }
 @media (max-width: 991px) {
@@ -587,6 +611,10 @@ header .list-social-icons li a.social-icon:hover{
         display: inline-block;
     }
     header .list-social-icons{
+        text-align: center;
+    }
+    header .topnav a{
+        display: block;
         text-align: center;
     }
 }
