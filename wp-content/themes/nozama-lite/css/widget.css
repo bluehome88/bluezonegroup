@@ -7,8 +7,9 @@
     width: 18px;
     height: 18px;
     font-size: 10px;
-    padding: 3px 4.5px;
+    padding: 3px 5px;
     color: #054881;
+    margin-right: 5px;
     vertical-align: middle;
 }
 .elementor a:hover{
@@ -50,7 +51,6 @@
 .nozama_video{
 	padding: 60px 0;
 	margin-top: -40px;
-	z-index: -1;
 }
 
 /* featured product widget */
@@ -103,7 +103,7 @@
     color: white;
     padding: 10px 20px;
     width: 300px;
-    margin-top: -20px;
+    margin-top: -26px;
     font-size: 24px;
 }
 .nozama_news .item-media-sm{
@@ -178,8 +178,10 @@
     background-image: url('./img/corner-bg1.png');
     left: 0;
     bottom: 0;
+    z-index: 2;
     background-size: 100%;
     background-repeat: no-repeat; 
+    transform: scaleX(-1);
 }
 .nozama_banner::after{
     content: " ";
@@ -191,7 +193,9 @@
     height: 12vw;
     left: 0;
     bottom: -12vw;
+    z-index: 2;
     background-size: 100%;
     background-repeat: no-repeat; 
     background-image: url('./img/corner-bg5.png');
+    transform: scale(-1, -1);
 }

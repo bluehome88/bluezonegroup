@@ -627,11 +627,20 @@ button.category-search-btn:hover{
     background-image: url('./img/corner-bg2.png');
     transform: scaleY(-1);
 }
-.page-id-4135 .nozama_banner::before{
-    background-image: url('./img/corner-bg1.png');
-    transform: scaleX(-1);
+.page-id-4275 .nozama_banner::after{
+    background-image: url('./img/defence_ring_bg.png');
+    transform: scale(1, 1);
 }
-.page-id-4135 .nozama_banner::after{
-    background-image: url('./img/corner-bg5.png');
-    transform: scale(-1, -1);
+.page-id-4275 .footer::before{
+    background-image: url('./img/corner-bg7.png');
+    transform: scale(1, 1);
+}
+.page-id-4275 .nozama_featured_product h5{
+    background: #001c4f;
+}
+.page-id-4275 .nozama_news h5{
+    background: #85caf3;
+}
+.page-id-4275 .nozama_gallery h5{
+    background: #054881;
 }
