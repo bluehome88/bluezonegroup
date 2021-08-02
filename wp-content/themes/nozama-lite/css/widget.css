@@ -155,3 +155,43 @@
     border-color: #054881;
     padding-left: 5px;
 }
+
+/* banner menu */
+.nozama_banner nav{
+	margin-top: -30px;
+	background: transparent;
+}
+.nozama_banner .ubermenu .ubermenu-item.ubermenu-item-level-0{
+	width: 200px;
+    margin-bottom: 2px;
+    background: #011d4f;
+    display: block;
+}
+.nozama_banner::before{
+    content: " ";
+    position: absolute;
+    width: 12vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 12vw;
+    background-image: url('./img/corner-bg1.png');
+    left: 0;
+    bottom: 0;
+    background-size: 100%;
+    background-repeat: no-repeat; 
+}
+.nozama_banner::after{
+    content: " ";
+    position: absolute;
+    width: 12vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 12vw;
+    left: 0;
+    bottom: -12vw;
+    background-size: 100%;
+    background-repeat: no-repeat; 
+    background-image: url('./img/corner-bg5.png');
+}
