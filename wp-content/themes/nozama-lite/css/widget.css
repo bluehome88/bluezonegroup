@@ -167,6 +167,9 @@
     background: #011d4f;
     display: block;
 }
+.nozama_banner .ubermenu .ubermenu-item.ubermenu-item-level-0.ubermenu-current-menu-item > .ubermenu-target{
+	background: #85caf3;
+}
 .nozama_banner::before{
     content: " ";
     position: absolute;
