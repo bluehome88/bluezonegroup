@@ -96,8 +96,9 @@ button.category-search-btn:hover{
 }
 #media_image-7 .section-title{
     text-align: center;
-    font-weight: bold;
+    font-weight: 500;
     width: 100%;
+    font-size: 30px;
 }
 .home .section-title{
     padding: 10px 20px;
