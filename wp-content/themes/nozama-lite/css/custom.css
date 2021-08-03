@@ -199,14 +199,17 @@ button.category-search-btn:hover{
 }
 #ci-home-latest-products-2 .item-content{
     border-top: 1px solid #ececec;
-    padding: 30px 40px 25px;
+    padding: 40px 40px 35px;
 }
 #ci-home-latest-products-2 .item-content .item-title a{
     color: #71797e;
     font-weight: 600;
+    font-size: 32px;
+    line-height: 45px;
 }
 #ci-home-latest-products-2 .item-content .subtitle{
-    font-size: 13px;
+    font-size: 16px;
+    line-height: 30px;
     color: #71797e;
     font-weight: 400;
 }
