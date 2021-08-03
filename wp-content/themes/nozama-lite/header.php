@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<?php wp_head(); ?>
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto" media="screen">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto+Condensed" media="screen">
 </head>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>

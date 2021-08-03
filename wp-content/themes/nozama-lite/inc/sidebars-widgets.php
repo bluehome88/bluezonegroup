@@ -315,11 +315,11 @@ function nozama_lite_footer_widget_area_classes( $layout ) {
 				),
 				'footer-2' => array(
 					'active' => true,
-					'class'  => 'col-lg-3 col-md-6 col-12',
+					'class'  => 'col-lg-4 col-md-6 col-12',
 				),
 				'footer-3' => array(
 					'active' => true,
-					'class'  => 'col-lg-3 col-md-6 col-12',
+					'class'  => 'col-lg-2 col-md-6 col-12',
 				),
 				'footer-4' => array(
 					'active' => true,
