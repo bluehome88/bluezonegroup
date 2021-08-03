@@ -21,7 +21,7 @@
 				</a>
 			</p>
 			<p class="item-excerpt">
-				<?php echo wp_trim_words( get_the_excerpt(), 40, "..." ); ?>
+				<?php echo wp_trim_words( get_the_excerpt(), 30, "..." ); ?>
 			</p>
 			<a href="<?php the_permalink(); ?>" class="read_more">
 				<i class="fas fa-chevron-right"></i> <span>Read More</span>

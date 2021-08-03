@@ -299,7 +299,7 @@ button.category-search-btn:hover{
     height: 100%;
 }
 #ci-latest-posts-3 .item-media-sm .item-thumb{
-    width: 50%;
+    width: 45%;
     margin-right: 0;
     background-position: center;
     background-size: cover;
@@ -343,6 +343,9 @@ button.category-search-btn:hover{
     color: #054881;
     border-color: #054881;
     padding-left: 5px;
+}
+#ci-latest-posts-3 .item-content .read_more span{
+    display: none;
 }
 .footer{
     background: url('./img/footer_bg.png') no-repeat;
