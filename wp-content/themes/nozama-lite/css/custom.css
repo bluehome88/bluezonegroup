@@ -358,15 +358,16 @@ button.category-search-btn:hover{
     z-index: 10000;
     background: #71c9f1;
     color: #035188;
-    font-size: 30px;
+    font-size: 1.5vw;
     padding: 20px;
     margin-top: -20px;
-    line-height: 32px;
+    line-height: 1.7vw;
     letter-spacing: -1px;
+    font-weight: 300;
 }
 /* max-slider */
 .page-hero-content{
-    padding-top: 100px;
+    padding-top: 3vw;
     display: flex;
 }
 .page-hero-content .border{
@@ -380,15 +381,14 @@ button.category-search-btn:hover{
     padding-left: 10px;
 }
 .page-hero-content .page-hero-subtitle{
-    font-size: 16px;
+    font-size: 0.8vw;
     font-weight: bold;
 }
 .page-hero-content .page-hero-title{
     font-weight: 300;
-    font-size: 55px;
-    margin-top: 30px;
-    padding-bottom: 40px;
-    line-height: 62px;
+    font-size: 3.5vw;
+    margin-top: 1.8vw;
+    padding-bottom: 2vw;
 }
 .page-hero-content a{
     background: transparent !important;
@@ -399,12 +399,10 @@ button.category-search-btn:hover{
     position: absolute;
     margin-top: -3px !important;
     font-weight: 300;
+    color: #85cbf1 !important;
 }
 .page-hero-content a:hover{
     box-shadow: none;
-}
-.page-hero-content a{
-    color: #85cbf1;
 }
 .page-hero-content a i{
     border: 2px solid #85cbf1 !important;
@@ -647,4 +645,11 @@ button.category-search-btn:hover{
 }
 .page-id-4275 .nozama_gallery h5{
     background: #054881;
+}
+
+#maxslider-241{
+    height: 40vw !important;
+}
+.home .page-hero{
+    padding: 8vw 0;
 }
