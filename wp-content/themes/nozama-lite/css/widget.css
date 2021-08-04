@@ -79,14 +79,17 @@
 }
 .nozama_featured_product .item-content{
     border-top: 1px solid #ececec;
-    padding: 30px 40px 25px;
+    padding: 40px 40px 35px;
 }
 .nozama_featured_product .item-content .item-title a{
     color: #71797e;
     font-weight: 600;
+    font-size: 32px;
+    line-height: 45px;
 }
 .nozama_featured_product .item-content .subtitle{
-    font-size: 13px;
+    font-size: 16px;
+    line-height: 30px;
     color: #71797e;
     font-weight: 400;
 }
@@ -110,7 +113,7 @@
     height: 100%;
 }
 .nozama_news .item-media-sm .item-thumb{
-    width: 50%;
+    width: 45%;
     margin-right: 0;
     background-position: center;
     background-size: cover;
@@ -201,4 +204,17 @@
     background-repeat: no-repeat; 
     background-image: url('./img/corner-bg5.png');
     transform: scale(-1, -1);
+}
+.nozama_card_grid .item{
+    border: none !important;
+}
+.nozama_card_grid .item-content{
+    padding: 30px;
+}
+.nozama_card_grid .item-content .item-title{
+    margin-bottom: 20px;
+}
+.nozama_card_grid .item-content .item-title a{
+    color: #71797e;
+    font-size: 30px;
 }
