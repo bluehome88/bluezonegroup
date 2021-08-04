@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-if( is_plugin_active(plugin_dir_path( __DIR__ ) . 'elementor') )
+if( is_plugin_active( 'elementor/elementor.php') )
 {
 	\Elementor\Plugin::$instance->frontend->add_body_class( 'elementor-template-full-width' );
 
