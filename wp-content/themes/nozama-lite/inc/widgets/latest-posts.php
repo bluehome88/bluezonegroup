@@ -10,6 +10,7 @@ if ( ! class_exists( 'CI_Widget_Latest_Posts' ) ) :
 			'term_id'   => '',
 			'random'    => false,
 			'count'     => 3,
+			'per_line'	=> 2,
 		);
 
 		public function __construct() {
@@ -32,6 +33,9 @@ if ( ! class_exists( 'CI_Widget_Latest_Posts' ) ) :
 			$term_id   = $instance['term_id'];
 			$random    = $instance['random'];
 			$count     = $instance['count'];
+			$per_line  = $instance['per_line'] ? $instance['per_line'] : $this->defaults['per_line'];
+
+			$grid_count = 12 / $per_line;
 
 			if ( 0 === $count ) {
 				return;
@@ -77,7 +81,7 @@ if ( ! class_exists( 'CI_Widget_Latest_Posts' ) ) :
 			while ( $q->have_posts() ) {
 				$q->the_post();
 
-				get_template_part( 'template-parts/widgets/sidebar-item' );
+				get_template_part( 'template-parts/widgets/sidebar-item', null, array("grid_count" => $grid_count));
 			}
 			echo "</div>";
 			wp_reset_postdata();
@@ -95,6 +99,7 @@ if ( ! class_exists( 'CI_Widget_Latest_Posts' ) ) :
 			$instance['term_id']   = nozama_lite_sanitize_intval_or_empty( $new_instance['term_id'] );
 			$instance['random']    = isset( $new_instance['random'] );
 			$instance['count']     = absint( $new_instance['count'] );
+			$instance['per_line']     = absint( $new_instance['per_line'] );
 
 			return $instance;
 		} // save
@@ -107,6 +112,7 @@ if ( ! class_exists( 'CI_Widget_Latest_Posts' ) ) :
 			$term_id  = $instance['term_id'];
 			$random   = $instance['random'];
 			$count    = $instance['count'];
+			$per_line = $instance['per_line'];
 			?>
 			<p><label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'nozama-lite' ); ?></label><input id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" class="widefat"/></p>
 
@@ -127,6 +133,7 @@ if ( ! class_exists( 'CI_Widget_Latest_Posts' ) ) :
 
 			<p><label for="<?php echo esc_attr( $this->get_field_id( 'random' ) ); ?>"><input type="checkbox" name="<?php echo esc_attr( $this->get_field_name( 'random' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'random' ) ); ?>" value="1" <?php checked( $random, 1 ); ?> /><?php esc_html_e( 'Show random posts.', 'nozama-lite' ); ?></label></p>
 			<p><label for="<?php echo esc_attr( $this->get_field_id( 'count' ) ); ?>"><?php esc_html_e( 'Number of posts to show:', 'nozama-lite' ); ?></label><input id="<?php echo esc_attr( $this->get_field_id( 'count' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'count' ) ); ?>" type="number" min="1" step="1" value="<?php echo esc_attr( $count ); ?>" class="widefat"/></p>
+			<p><label for="<?php echo esc_attr( $this->get_field_id( 'per_line' ) ); ?>"><?php esc_html_e( 'Number of posts to show:', 'nozama-lite' ); ?></label><input id="<?php echo esc_attr( $this->get_field_id( 'per_line' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'per_line' ) ); ?>" type="number" min="1" step="1" value="<?php echo esc_attr( $per_line ); ?>" class="widefat"/></p>
 			<?php
 
 		} // form

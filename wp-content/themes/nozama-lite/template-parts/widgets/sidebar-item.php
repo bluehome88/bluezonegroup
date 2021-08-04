@@ -1,4 +1,8 @@
-<div class="col-lg-6 col-md-6 col-12">
+<?php
+	$grid_count = $args['grid_count'];
+	$grid_class="col-lg-$grid_count col-md-$grid_count col-12";
+?>
+<div class="<?php echo $grid_class;?>">
 	<div class="item item-media item-media-sm">
 		<?php if ( has_post_thumbnail() ) : ?>
 			<div class="item-thumb" style="background-image:url('<?php the_post_thumbnail_url( 'nozama_lite_item_media' );?>')">

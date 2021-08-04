@@ -90,11 +90,17 @@
 .nozama_featured_product .item-content .subtitle{
     font-size: 16px;
     line-height: 30px;
+    margin-bottom: 30px;
     color: #71797e;
     font-weight: 400;
 }
 .nozama_featured_product .item-content > a{
     color: #054881;
+    position: absolute;
+    bottom: 20px;
+}
+.nozama_featured_product .item-content > a:hover{
+    color: #84cbf1;
 }
 .nozama_featured_product .item-content > a i{
     margin-right: 5px;

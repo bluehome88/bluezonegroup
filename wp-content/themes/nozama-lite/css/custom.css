@@ -669,6 +669,33 @@ button.category-search-btn:hover{
     background-image: url('./img/corner-bg2.png');
     transform: scaleY(-1);
 }
+.page-id-4135 .nozama_news .item-media-sm .item-thumb,
+.page-id-4135 .nozama_news .item-content .post_date{
+    display: none;
+}
+.page-id-4135 .nozama_news .item-media .item-content{
+    background: transparent !important;
+    padding: 15px 0;
+    border-top: 3px solid #054881;
+    border-bottom: 3px solid #054881;
+}
+.page-id-4135 .nozama_news .item-content .item-excerpt{
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+.page-id-4135 .nozama_news .item-content .post_title a,
+.page-id-4135 .nozama_news .item-content .item-excerpt{
+    color: white;
+}
+.page-id-4135 .nozama_news .item-content .read_more{
+    left: 0;
+    color: #85cbf1;
+}
+.page-id-4135 .nozama_news .item-content .read_more i{
+    color: #85cbf1;
+    border-color: #85cbf1;
+}
+/* defence page custom */
 .page-id-4275 .nozama_banner::after{
     background-image: url('./img/defence_ring_bg.png');
     transform: scale(1, 1);
