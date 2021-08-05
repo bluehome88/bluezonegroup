@@ -4,6 +4,7 @@
 }
 header .head-nav{
     background: transparent;
+    border-bottom: 1px solid #eee;
 }
 header .topnav{
     background-color: #ececec;
@@ -734,4 +735,66 @@ button.category-search-btn:hover{
 }
 .fluid-width-video-wrapper{
     padding-top: 50vw !important;
+}
+.woocommerce .item-product{
+    height: 95%;
+    background: white;
+    border-color: #efefef;
+}
+.woocommerce .item-product .item-thumb{
+    padding: 0;
+    max-height: 240px;
+}
+.woocommerce .item-product .item-title{
+    padding: 10px 0;
+    font-size: 16px;
+}
+.woocommerce .item-product .subtitle{
+    color: #71797e;
+    font-weight: 300;
+    padding: 0px 0 30px;
+}
+.woocommerce .item-product .item-title a{
+    font-size: 24px;
+    color: #71797e;
+}
+.woocommerce .item-product .item-content > a{
+    position: absolute;
+    bottom: 20px;
+}
+.woocommerce .shop-actions{
+    display: none;
+}
+.woocommerce .woocommerce-pagination{
+    background: transparent;
+}
+.woocommerce > h3{
+    padding: 10px 20px;
+    width: 300px;
+    background: #011d4f;
+    color: white;
+    font-size: 26px;
+}
+.woocommerce .subcategories{
+    border-bottom: 2px solid #ddd;
+}
+.tax-product_cat .nozama_banner::before{
+    background-image: url(./img/corner-bg2.png);
+    transform: scale(-1, -1);
+}
+.tax-product_cat .nozama_banner::after{
+    background-image: url(./img/corner-bg1.png);
+    transform: scale(-1, -1);
+}
+.tax-product_cat .footer::before{
+    background-image: url(./img/corner-bg7.png);
+}
+.tax-product_cat .footer::after{
+    background-image: url(./img/corner-bg5.png);
+}
+.tax-product_cat .elementor-widget-heading .elementor-heading-title.elementor-size-large{
+    font-size: 40px;
+    color: #054881;
+    font-weight: normal;
+    margin-bottom: 10px;
 }
