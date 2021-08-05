@@ -120,7 +120,11 @@ function nozama_lite_woocommerce_show_product_loop_categories() {
 function nozama_lite_woocommerce_show_product_excerp(){
 	global $product;
 	$product_details = $product->get_data();
-	$product_short_description = $product_details['short_description'];
+
+	// Temp code for product short description when it's empty
+	$temp_desc = 'Sum ditium es et etur, cusdae ipsum qui qui corum quas quaepro vitatus eium cumFicipsanis cus';
+
+    $product_short_description = $product_details['short_description'] ? $product_details['short_description'] : $temp_desc;
 	$product_short_description = wp_trim_words( $product_short_description, 30, "..." );
 	?>
 	<p class="subtitle"><?php echo $product_short_description; ?></p>
