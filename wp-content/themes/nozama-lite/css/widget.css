@@ -166,13 +166,17 @@
 }
 
 /* banner menu */
+.nozama_banner{
+    min-height: 300px;
+}
 .nozama_banner nav{
+    width: 250px;
 	margin-top: -30px;
 	background: transparent;
 }
 .nozama_banner .ubermenu .ubermenu-item.ubermenu-item-level-0{
 	width: 200px;
-    margin-bottom: 2px;
+    margin-bottom: 3px;
     background: #011d4f;
     display: block;
 }
@@ -210,6 +214,49 @@
     background-repeat: no-repeat; 
     background-image: url('./img/corner-bg5.png');
     transform: scale(-1, -1);
+}
+.nozama_banner .title_container{
+    display: flex;
+    position: absolute;
+    padding-top: 40px;
+}
+.nozama_banner .title_container .title_line{
+    width: 30px;
+    height: auto;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    margin-top: 10px;
+    margin-right: 20px;
+}
+.nozama_banner .title_container .title_line::after{
+    content: " ";
+    width: 16px;
+    height: 16px;
+    border: 2px solid white;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    bottom: -16px;
+    left: -7px;
+}
+.nozama_banner .title_container h3{
+    padding-bottom: 70px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+}
+.nozama_banner .elementor-widget-theme-post-title h1{
+    font-size: 3vw;
+    font-family: 'Roboto';
+    font-weight: 300;
+    color: white;
+    margin-top: 70px;
+    margin-left: 50px;
+}
+@media ( max-width: 991px ) {
+    .nozama_banner .elementor-widget-theme-post-title{
+        font-size: 30px;
+    }
 }
 .nozama_card_grid .item{
     border: none !important;

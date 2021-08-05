@@ -725,3 +725,7 @@ button.category-search-btn:hover{
 .home .page-hero{
     padding: 8vw 0;
 }
+.page .elementor-section-wrap .elementor-section.elementor-top-section.elementor-section-boxed:not(.nozama_banner){
+    padding: 80px 0;
+    z-index: 10;
+}
