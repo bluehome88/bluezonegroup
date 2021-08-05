@@ -455,10 +455,10 @@ button.category-search-btn:hover{
     position: absolute;
     font-size: 1vw;
     bottom: 1vw;
+    box-shadow: none !important;
 }
 #ci-home-woocommerce-categories-2 .btn-block-item:hover{
     background: none;
-    box-shadow: none;
     text-shadow: 8px 5px 15px black;
 }
 #ci-home-woocommerce-categories-2 .container div.full-height > div{
@@ -728,4 +728,10 @@ button.category-search-btn:hover{
 .page .elementor-section-wrap .elementor-section.elementor-top-section.elementor-section-boxed:not(.nozama_banner){
     padding: 80px 0;
     z-index: 10;
+}
+.home #custom_html-9 > .widget_text{
+    width: 100%;
+}
+.fluid-width-video-wrapper{
+    padding-top: 50vw !important;
 }
