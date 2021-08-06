@@ -57,7 +57,11 @@
 .nozama_featured_product{
 	padding-bottom: 60px;
 }
-.nozama_featured_product h5{
+.nozama_featured_product .section-padded{
+    padding-top: 0;
+}
+.nozama_featured_product h5,
+.nozama_featured_product h3{
 	background: #84cbf1;
     color: white;
     padding: 10px 20px;
