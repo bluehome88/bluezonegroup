@@ -28,6 +28,7 @@
     height: 24px;
     border-radius: 100%;
     background: #fff;
+    border: 1px solid #ccc;
 }
 [type="radio"]:checked + span.wpcf7-list-item-label:after,
 [type="radio"]:not(:checked) + span.wpcf7-list-item-label:after {
@@ -930,4 +931,8 @@ button.category-search-btn:hover{
 }
 .wqoecf-pop-up-box label{
     margin-bottom: 15px;
+}
+.wqoecf-pop-up-box [type="radio"]:checked + span.wpcf7-list-item-label:before,
+.wqoecf-pop-up-box [type="radio"]:not(:checked) + span.wpcf7-list-item-label:before {
+    border: none;
 }

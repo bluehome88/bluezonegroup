@@ -27,8 +27,8 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 $classes = array( 'item', 'item-product' );
 
 global $woocommerce_loop;
-
-$col_class = nozama_lite_get_columns_classes( ! empty( $woocommerce_loop['columns'] ) ? $woocommerce_loop['columns'] : apply_filters( 'loop_shop_columns', 4 ) );
+$woocommerce_loop['columns'] = 3;
+$col_class = nozama_lite_get_columns_classes( ! empty( $woocommerce_loop['columns'] ) ? $woocommerce_loop['columns'] : apply_filters( 'loop_shop_columns', 3 ) );
 ?>
 <div class="<?php echo esc_attr( $col_class ); ?>">
 	<div <?php wc_product_class( $classes, $product ); ?>>
