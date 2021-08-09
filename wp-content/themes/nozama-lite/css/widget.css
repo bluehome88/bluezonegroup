@@ -75,7 +75,7 @@
 }
 .nozama_featured_product .row-items .item{
     background: white;
-    height: 100%;
+    height: 95%;
     margin-bottom: 0;
 }
 .nozama_featured_product .row-items{
@@ -88,8 +88,8 @@
 .nozama_featured_product .item-content .item-title a{
     color: #71797e;
     font-weight: 600;
-    font-size: 32px;
-    line-height: 45px;
+    font-size: 24px;
+    line-height: 40px;
 }
 .nozama_featured_product .item-content .subtitle{
     font-size: 16px;

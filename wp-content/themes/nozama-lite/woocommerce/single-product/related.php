@@ -22,7 +22,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( $related_products ) : ?>
 
 	<div class="section-padded related products">
-		<div class="container">
 			<div class="row">
 				<div class="col-12">
 					<div class="section-heading">
@@ -53,7 +52,6 @@ if ( $related_products ) : ?>
 
 				</div>
 			</div>
-		</div>
 	</div>
 
 	<?php
