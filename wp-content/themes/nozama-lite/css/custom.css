@@ -952,3 +952,56 @@ button.category-search-btn:hover{
     object-fit: cover;
     height: 200px;
 }
+.col-md-4 .item-product .item-thumb img{
+    height: 280px;
+}
+.widget_media_gallery .gallery{
+    padding: 5px;
+}
+
+/* product download block */
+.elementor-widget-wrap>.elementor-element.elementor-widget-woocommerce-product-data-tabs{
+    position: absolute;
+    bottom: 70px;
+    border-left: 2px solid #ebebeb;
+}
+.elementor-widget-woocommerce-product-data-tabs .woocommerce-tabs-container{
+    background: transparent;
+    padding: 40px 0 0;
+}
+.elementor-widget-woocommerce-product-data-tabs .woocommerce-tabs{
+    background: transparent;
+    padding: 0;
+}
+.elementor-widget-woocommerce-product-data-tabs .wc-tabs{
+    border: none;
+}
+.elementor-widget-woocommerce-product-data-tabs .wc-tabs li a{
+    color: #054881 !important;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0 !important;
+}
+.woocommerce div.product.elementor .elementor-widget-woocommerce-product-data-tabs .woocommerce-tabs .panel{
+    border-top: none;
+    padding: 20px 0;
+}
+.woocommerce div.product.elementor .woocommerce-tabs .wcpoa_attachment_name{
+    font-size: 16px;
+    margin-left: 25px;
+    color: #444648;
+    font-weight: 600;
+    line-height: 60px;
+}
+.woocommerce div.product.elementor .woocommerce-tabs .wcpoa_attachmentbtn{
+    float: left;
+    background-color: transparent;
+    background: url('./img/pdf_icon.png');
+    background-size: cover;
+    background-position: center;
+    width: 49px;
+    height: 55px;
+    color: transparent;
+    font-size: 0;
+    line-height: 0;
+}

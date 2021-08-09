@@ -586,6 +586,11 @@ add_shortcode( 'do_hook', function( $atts = array(), $content = null, $tag = '')
 	if ( isset( $atts['hook'] ) ) {
 		remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
 		remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+		remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
+
+		remove_filter( 'woocommerce_product_tabs', 'woocommerce_default_product_tabs' );
+		remove_filter( 'woocommerce_product_tabs', 'woocommerce_sort_product_tabs', 99 );
+
 		do_action( 'woocommerce_single_product_summary' );
 	}
 	return;
