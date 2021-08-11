@@ -103,6 +103,13 @@ if( isset($_GET['issued_product']) ){
 			$arrRes['has_video_youtuve'][] = "<a href='".get_permalink($product->ID)."'>".$product->post_title."</a><br>";
 			// wp_update_post( array("ID"=>$product->ID, "post_content"=>$content));
 		}
+
+		// /wp-content/themes/nozama-lite/css/img/pdf.png
+		if( strpos($product->post_content, 'https://www.bluezonegroup.com.au/CatalystImages/Literature/pdf.png?vs=b107.5cb054f1-phase1') !== false){
+			$arrRes['has_pdf_icon'][] = "<a href='".get_permalink($product->ID)."'>".$product->post_title."</a><br>";
+			$content = str_replace('https://www.bluezonegroup.com.au/CatalystImages/Literature/pdf.png?vs=b107.5cb054f1-phase1', '/wp-content/themes/nozama-lite/css/img/pdf.png', $product->post_content);
+			wp_update_post( array("ID"=>$product->ID, "post_content"=>$content));
+		}
 	}
 
 	echo "<pre>";
