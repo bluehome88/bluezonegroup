@@ -896,9 +896,13 @@ button.category-search-btn:hover{
 .single-product .key_features{
     margin-bottom: 0 !important;
 }
+.single-product .key_features{
+    display: none;
+}
 .single-product a.wqoecf_enquiry_button{
     margin-left: 30px;
     margin-bottom: 30px;
+    display: none;
 }
 .single-product .meta_item{
     color: white;
