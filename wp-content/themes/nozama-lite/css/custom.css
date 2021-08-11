@@ -923,24 +923,34 @@ button.category-search-btn:hover{
     background-image: url('./img/corner-bg8.png');
     transform: scaleY(1);
 }
-.wqoecf-pop-up-box > div{
-    background: #ebebeb;
+.single-product .nozama_featured_product .section-title{
+    background: #011d4f;
 }
-.wqoecf-pop-up-box .wpcf7-list-item{
+
+/* Enquiry Form */
+#product_enquiry .elementor-heading-title{
+    color: white;
+    padding: 10px 20px;
+    width: 300px;
+    background: #84cbf1;
+    margin-top: -30px;
+}
+
+#product_enquiry .wpcf7-list-item{
     margin-bottom: 20px;
 }
-.wqoecf-pop-up-box input, .wqoecf-pop-up-box textarea, .wqoecf-pop-up-box select{
+#product_enquiry input, #product_enquiry textarea, #product_enquiry select{
     border: none;
     height: 45px;
 }
-.wqoecf-pop-up-box textarea{
+#product_enquiry textarea{
     height: auto;
 }
-.wqoecf-pop-up-box label{
+#product_enquiry label{
     margin-bottom: 15px;
 }
-.wqoecf-pop-up-box [type="radio"]:checked + span.wpcf7-list-item-label:before,
-.wqoecf-pop-up-box [type="radio"]:not(:checked) + span.wpcf7-list-item-label:before {
+#product_enquiry [type="radio"]:checked + span.wpcf7-list-item-label:before,
+#product_enquiry [type="radio"]:not(:checked) + span.wpcf7-list-item-label:before {
     border: none;
 }
 .nozama_banner .ubermenu-skin-grey-white .ubermenu-item-level-0 > .ubermenu-target{
@@ -961,9 +971,10 @@ button.category-search-btn:hover{
 
 /* product download block */
 .elementor-widget-wrap>.elementor-element.elementor-widget-woocommerce-product-data-tabs{
-    position: absolute;
-    bottom: 70px;
-    border-left: 2px solid #ebebeb;
+    /* border-left: 2px solid #ebebeb; */
+    align-self: flex-end;
+    margin-top: auto;
+    margin-bottom: 60px;
 }
 .elementor-widget-woocommerce-product-data-tabs .woocommerce-tabs-container{
     background: transparent;
@@ -984,7 +995,7 @@ button.category-search-btn:hover{
 }
 .woocommerce div.product.elementor .elementor-widget-woocommerce-product-data-tabs .woocommerce-tabs .panel{
     border-top: none;
-    padding: 20px 0;
+    padding: 20px 0 0;
 }
 .woocommerce div.product.elementor .woocommerce-tabs .wcpoa_attachment_name{
     font-size: 16px;
@@ -992,6 +1003,7 @@ button.category-search-btn:hover{
     color: #444648;
     font-weight: 600;
     line-height: 60px;
+    margin-bottom: 0;
 }
 .woocommerce div.product.elementor .woocommerce-tabs .wcpoa_attachmentbtn{
     float: left;
@@ -1004,4 +1016,7 @@ button.category-search-btn:hover{
     color: transparent;
     font-size: 0;
     line-height: 0;
+}
+.elementor-column.product_info_block > div{
+    flex-direction: column;
 }
