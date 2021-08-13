@@ -534,7 +534,7 @@ if ( isset ( $wp_query->query_vars['product_cat'] ) && $wp_query->is_main_query(
     );
   }
 }
-add_filter('pre_get_posts', 'exclude_product_cat_children');
+// add_filter('pre_get_posts', 'exclude_product_cat_children');
 
 // Sepaprate Subcategories and products on Category page
 remove_filter( 'woocommerce_product_loop_start', 'woocommerce_maybe_show_product_subcategories' );
