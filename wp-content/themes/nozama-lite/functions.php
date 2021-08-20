@@ -514,7 +514,11 @@ add_filter('request', function( $vars ) {
 	        if( strpos( $vars['category_name'], 'product-catalogue' ) !== false || strpos( $vars['category_name'], 'rental-equipment' ) !== false )
 	        	$vars['post_type'] = 'product';
         }
+        
+        if( strpos( $vars['category_name'], 'announcements' ) !== false )
+	        $vars['post_type'] = 'post';
     }
+
     return $vars;
 });
 
