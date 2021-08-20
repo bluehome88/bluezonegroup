@@ -122,7 +122,7 @@ function nozama_lite_woocommerce_show_product_excerp(){
 	$product_details = $product->get_data();
 
 	// Temp code for product short description when it's empty
-	$temp_desc = 'Sum ditium es et etur, cusdae ipsum qui qui corum quas quaepro vitatus eium cumFicipsanis cus';
+	$temp_desc = 'Website under development. Please use our hire enquiry form on the right to contact UVS for further details on this equipment.';
 
     $product_short_description = $product_details['short_description'] ? $product_details['short_description'] : $temp_desc;
 	$product_short_description = wp_trim_words( $product_short_description, 30, "..." );

@@ -9,7 +9,7 @@ if ( ! class_exists( 'CI_Widget_Latest_Posts' ) ) :
 			'taxonomy'  => 'category',
 			'term_id'   => '',
 			'random'    => false,
-			'count'     => 3,
+			'count'     => 4,
 			'per_line'	=> 2,
 		);
 

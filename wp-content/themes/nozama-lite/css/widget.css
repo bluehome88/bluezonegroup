@@ -56,12 +56,14 @@
 /* featured product widget */
 .nozama_featured_product{
 	padding-bottom: 60px;
+    background: #ededed;
 }
 .nozama_featured_product .section-padded{
     padding-top: 0;
 }
 .nozama_featured_product h5,
-.nozama_featured_product h3{
+.nozama_featured_product h3,
+.nozama_featured_product h2{
 	background: #84cbf1;
     color: white;
     padding: 10px 20px;
@@ -111,7 +113,9 @@
 }
 
 /* News Widget */
-.nozama_news h5{
+.nozama_news h5,
+.nozama_news h3,
+.nozama_news h2{
 	background: #054881;
     color: white;
     padding: 10px 20px;
@@ -261,6 +265,13 @@
     .nozama_banner .elementor-widget-theme-post-title{
         font-size: 30px;
     }
+    .nozama_news .item-media.item-media-sm{
+        display: block;
+    }
+    .nozama_news .item-media-sm .item-thumb {
+        width: 100%;
+        height: 300px;
+    }
 }
 .nozama_card_grid .item{
     border: none !important;
@@ -306,4 +317,24 @@
 .widget_product_categories .product-categories .cat-parent{display:inline!important;}
 .tax-product_cat .widget_product_categories .product-categories > .cat-parent > a{
     display: none;
+}
+@media (max-width: 767px){
+    .widget_product_categories{
+        display: block;
+        width: 100%;
+    }
+    #page .elementor-widget-wrap>.elementor-element{
+        margin-top: 30px;
+    }
+    #page .select2-container .select2-selection--single,
+    #page .select2-container--default .select2-selection--single .select2-selection__arrow{
+        height: 40px;
+        border-width: 0;
+    }
+    #page .select2-container--default .select2-selection--single .select2-selection__rendered{
+        line-height: 40px;
+        padding-right: 30px;
+        background: #011d4f;
+        color: white;
+    }
 }
