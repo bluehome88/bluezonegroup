@@ -510,6 +510,10 @@ add_filter('request', function( $vars ) {
                 if ( !empty( $old_vars['order'] ) )
                     $vars['order'] = $old_vars['order'];    
         }
+        else{
+	        if( strpos( $vars['category_name'], 'product-catalogue' ) !== false || strpos( $vars['category_name'], 'rental-equipment' ) !== false )
+	        	$vars['post_type'] = 'product';
+        }
     }
     return $vars;
 });
@@ -519,6 +523,10 @@ function term_link_filter( $url, $term, $taxonomy ) {
     $url=str_replace("/./","/",$url);
     return $url;
 }
+add_filter( 'woocommerce_register_post_type_product', function($var) {
+    $var['rewrite'] = str_replace('/product/', '/', $var['rewrite']);
+    return $var;
+});
 
 // Exclude proudcts for child categories on Category page
 function exclude_product_cat_children($wp_query) {
