@@ -13,7 +13,7 @@ if ( empty( $term_ids ) || ! is_array( $term_ids ) || count( $term_ids ) < $requ
 	<div class="row">
 		<div class="col-md-6 col-12">
 			<div class="row">
-				<div class="col-md-6 col-12 item-1">
+				<div class="col-md-6 col-12 category-item item-1">
 					<?php nozama_lite_get_template_part( 'template-parts/categories/item', 'md', array(
 						'term' => get_term( $term_ids[0] ),
 					) ); ?>

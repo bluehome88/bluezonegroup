@@ -16,6 +16,10 @@
 			</a>
 		</p>
 
+		<p class="item-title">
+			<?php the_excerpt(); ?>
+		</p>
+
 		<?php the_terms( get_the_ID(), 'category', '<p class="item-inset">', ', ', '</p>' ); ?>
 	</div>
 </div>

@@ -15,7 +15,7 @@
 	<?php woocommerce_template_loop_product_thumbnail(); ?>
 
 	<div class="item-content">
-		<?php nozama_lite_woocommerce_show_product_loop_categories(); ?>
+		<?php // nozama_lite_woocommerce_show_product_loop_categories(); ?>
 
 		<?php woocommerce_template_loop_product_title(); ?>
 
