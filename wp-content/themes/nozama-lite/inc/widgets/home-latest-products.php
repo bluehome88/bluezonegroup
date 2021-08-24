@@ -10,6 +10,7 @@ if ( ! class_exists( 'CI_Widget_Home_Latest_Products' ) ) :
 			'orderby'  => 'date',
 			'count'    => 3,
 			'columns'  => 3,
+			'product_ids'  => '',
 		);
 
 		public function __construct() {
@@ -36,6 +37,7 @@ if ( ! class_exists( 'CI_Widget_Home_Latest_Products' ) ) :
 			$orderby  = $instance['orderby'];
 			$count    = $instance['count'];
 			$columns  = $instance['columns'];
+			$product_ids  = $instance['product_ids'];
 
 			if ( 0 === $count ) {
 				return;
@@ -88,12 +90,13 @@ if ( ! class_exists( 'CI_Widget_Home_Latest_Products' ) ) :
 				<?php
 			}
 
-			echo do_shortcode( sprintf( '[products limit="%1$s" columns="%2$s" orderby="%3$s" order="%4$s" category="%5$s"]',
+			echo do_shortcode( sprintf( '[products limit="%1$s" columns="%2$s" orderby="%3$s" order="%4$s" category="%5$s" ids="%6$s"]',
 				$count,
 				$columns,
 				$orderby,
 				$order,
-				$term_id
+				$term_id,
+				$product_ids
 			) );
 
 
@@ -118,6 +121,7 @@ if ( ! class_exists( 'CI_Widget_Home_Latest_Products' ) ) :
 			$instance['orderby']  = $this->sanitize_product_orderby( $new_instance['orderby'] );
 			$instance['count']    = absint( $new_instance['count'] );
 			$instance['columns']  = absint( $new_instance['columns'] );
+			$instance['product_ids']  = sanitize_text_field( $new_instance['product_ids'] );
 
 			return $instance;
 		} // save
@@ -131,6 +135,7 @@ if ( ! class_exists( 'CI_Widget_Home_Latest_Products' ) ) :
 			$orderby  = $instance['orderby'];
 			$count    = $instance['count'];
 			$columns  = $instance['columns'];
+			$product_ids  = $instance['product_ids'];
 
 			if ( ! class_exists( 'WooCommerce' ) ) {
 				?><p><?php echo wp_kses( __( 'This widget requires that <strong>WooCommerce</strong> is installed and active.', 'nozama-lite' ), nozama_lite_get_allowed_tags( 'guide' ) ); ?></label></p><?php
@@ -183,7 +188,7 @@ if ( ! class_exists( 'CI_Widget_Home_Latest_Products' ) ) :
 					?>
 				</select>
 			</p>
-
+			<p><label for="<?php echo esc_attr( $this->get_field_id( 'product_ids' ) ); ?>"><?php esc_html_e( 'Special IDs', 'nozama-lite' ); ?></label><input id="<?php echo esc_attr( $this->get_field_id( 'product_ids' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'product_ids' ) ); ?>" type="text" value="<?php echo esc_attr( $product_ids ); ?>" class="widefat"/></p>
 			<?php
 
 		} // form
