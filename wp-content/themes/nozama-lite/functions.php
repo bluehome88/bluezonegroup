@@ -511,8 +511,19 @@ add_filter('request', function( $vars ) {
                     $vars['order'] = $old_vars['order'];    
         }
         else{
-	        if( strpos( $vars['category_name'], 'product-catalogue' ) !== false || strpos( $vars['category_name'], 'rental-equipment' ) !== false )
+	        if( strpos( $vars['category_name'], 'product-catalogue' ) !== false || strpos( $vars['category_name'], 'rental-equipment' ) !== false ){
 	        	$vars['post_type'] = 'product';
+	        	if( $vars['name'] == 'page'){
+		        	$old_vars = $vars;
+		            $vars = array('product_cat' => $vars['category_name'] );
+		            if ( !empty( $old_vars['paged'] ) || !empty( $old_vars['page'] ) )
+		                $vars['paged'] = ! empty( $old_vars['paged'] ) ? $old_vars['paged'] : $old_vars['page'];
+		            if ( !empty( $old_vars['orderby'] ) )
+		                    $vars['orderby'] = $old_vars['orderby'];
+		                if ( !empty( $old_vars['order'] ) )
+		                    $vars['order'] = $old_vars['order'];   
+	        	}	        	
+	        }
         }
         
         if( strpos( $vars['category_name'], 'announcements' ) !== false )
