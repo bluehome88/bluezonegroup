@@ -513,7 +513,8 @@ add_filter('request', function( $vars ) {
         else{
 	        if( strpos( $vars['category_name'], 'product-catalogue' ) !== false || strpos( $vars['category_name'], 'rental-equipment' ) !== false ){
 	        	$vars['post_type'] = 'product';
-	        	if( $vars['name'] == 'page'){
+
+	        	if( $vars['name'] == 'page' && $vars['page'] > 1 ){
 		        	$old_vars = $vars;
 		            $vars = array('product_cat' => $vars['category_name'] );
 		            if ( !empty( $old_vars['paged'] ) || !empty( $old_vars['page'] ) )
@@ -618,3 +619,9 @@ add_shortcode( 'do_hook', function( $atts = array(), $content = null, $tag = '')
 	}
 	return;
 });
+
+
+add_action( 'admin_init', 'disable_autosave' );
+function disable_autosave() {
+	wp_deregister_script( 'autosave' );
+}
