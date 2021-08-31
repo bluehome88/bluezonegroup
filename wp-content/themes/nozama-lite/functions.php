@@ -525,6 +525,12 @@ add_filter('request', function( $vars ) {
 		                    $vars['order'] = $old_vars['order'];   
 	        	}	        	
 	        }
+
+	        else if( $vars['category_name'] != "" ){
+				$vars['pagename'] = $slug;
+				$vars['page'] = "";
+			}
+
         }
         
         if( strpos( $vars['category_name'], 'announcements' ) !== false )
