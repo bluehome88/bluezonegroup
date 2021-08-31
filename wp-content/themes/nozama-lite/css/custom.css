@@ -153,7 +153,8 @@ button.category-search-btn:hover{
 #media_image-7 .section-heading{
     display: block;
 }
-#media_image-7 .section-title{
+#media_image-7 .section-title,
+#text-2 .section-title{
     text-align: center;
     font-weight: 500;
     width: 100%;
@@ -354,7 +355,7 @@ button.category-search-btn:hover{
 #custom_html-6 .textwidget .border-left p{
     font-size: 13px;
 }
-#custom_html-6 .textwidget .second a{
+#custom_html-6 .textwidget .second > a{
     display: block;
     color: #85cbf1;
     font-size: 18px;
@@ -1038,4 +1039,23 @@ button.category-search-btn:hover{
 }
 .elementor-column.product_info_block > div{
     flex-direction: column;
+}
+
+#text-2 .item{
+    border-color: transparent;
+    margin-bottom: 0;
+}
+#text-2 .lgx-logo-slider-wp .hover-zoomin .lgx-logo-item .lgx-logo-img{
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+}
+#text-2 .lgx-logo-slider-wp .hover-zoomin .lgx-logo-item:hover .lgx-logo-img{
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
 }
