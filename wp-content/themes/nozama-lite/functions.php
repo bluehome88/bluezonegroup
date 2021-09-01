@@ -631,3 +631,5 @@ add_action( 'admin_init', 'disable_autosave' );
 function disable_autosave() {
 	wp_deregister_script( 'autosave' );
 }
+
+add_filter( 'woocommerce_subcategory_count_html', '__return_false' );
