@@ -599,9 +599,9 @@ remove_action( 'woocommerce_archive_description', 'woocommerce_taxonomy_archive_
 remove_action( 'woocommerce_archive_description', 'woocommerce_product_archive_description', 10 );
 add_action( 'woocommerce_archive_description', 'ts_add_to_category_description' );
     function ts_add_to_category_description() {
-    	$temp_description = '<p>Bhicipit maiossus volo dolor a quas ne nihilia aut ma dolorroria autatia tectur? Quiaestio odi sae vel molore nis des consequ atianditi ommodit aut quiam, consequia quae restint uribusam eostiate de voluptur, cus is sincitiorem quatur? Namus quam ex etur sume velectur?</p>
-<p>Cepedis doluptatur simpos dunturibus doluptate del ipsa quis ne expel ma coritio berspientio. Otasperspel maioriassus verit vellorposto tem apedit repratur, non essi inci unt ipsaect usaeribusci untenecae. Et excesci occus, ut quibearunt ab ipienim peruptat.</p>
-<p>Is esequasperis autem faceptiusae pereptaqui optas eatiis prati offic tem nobisseque liquia es consequ idendes venihictem. Ehenda simolo volorro dolut latia nisi init recaborum liqui bearumquati dolentotae volo exerumet hilit pratque nus nus is sitae ma derum quia vendand igent.</p>';
+    	$temp_description = '<p>BlueZone has a wide product portfolio representing the leading product manufacturers worldwide.</p>
+<p>Our sales team has the experience to advise you on the right product for your application.</p>
+<p>View our complete range of equipment  online and <a href="/contact-us">Contact BlueZone</a> for more information.</p>';
 
         if ( is_product_category()) {
             $cat_desc = term_description( $cat_id, 'product_cat' );
