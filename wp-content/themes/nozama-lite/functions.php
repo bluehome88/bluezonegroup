@@ -525,7 +525,14 @@ add_filter('request', function( $vars ) {
 		                    $vars['order'] = $old_vars['order'];   
 	        	}	        	
 	        }
+	        else if( $vars['category_name'] == "latest-news" ){
+				$vars['pagename'] = $vars['category_name'];
+				$vars['paged'] = $vars['page'] > 1 ? $vars['page'] : 1;
 
+				unset($vars['name']);
+				unset($vars['page']);
+				unset($vars['category_name']);
+			}
 	        else if( $vars['category_name'] != "" ){
 				$vars['pagename'] = $slug;
 				$vars['page'] = "";
