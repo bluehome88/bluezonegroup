@@ -56,8 +56,9 @@ if( isset($_GET['import_product']) ){
 	]);
 
 	// store to DB
-	if(!empty($posts))
-		wp_update_post( array("ID"=>$posts[0]->ID, "post_content"=>$innerHTML));
+	if(!empty($posts)){
+		// wp_update_post( array("ID"=>$posts[0]->ID, "post_content"=>$innerHTML));
+	}
 	else{
 		$my_post = array(
 		  'post_title'    => $arrPosts[$i]['title'],
@@ -66,7 +67,7 @@ if( isset($_GET['import_product']) ){
 		  'post_author'   => 1,
 		);
 		// Insert the post into the database
-		wp_insert_post( $my_post );			
+		//wp_insert_post( $my_post );			
 	}
 
 	exit;
@@ -131,6 +132,11 @@ if( isset($_GET['issued_product']) ){
 		if( strpos($product->post_content, $pattern ) !== false ){
 			//$arrRes['Has News link'][] = "<a href='".get_permalink($product->ID)."'>".$product->post_title."</a><br>";
 			$content = str_replace($old_domain.$pattern, $new_domain.$pattern, $product->post_content);
+			// wp_update_post( array("ID"=>$post->ID, "post_content"=>$content));
+		}
+
+		if( strpos(get_permalink($product->ID), '-1') !== false || strpos(get_permalink($product->ID), '-2') !== false ){
+			$arrRes['permalinks'][] = "<a href='".get_permalink($product->ID)."'>".$product->post_title."</a><br>";
 			// wp_update_post( array("ID"=>$post->ID, "post_content"=>$content));
 		}
 	}
@@ -229,7 +235,7 @@ if( isset($_GET['import_news']) ){
 			);
 
 			// Insert the post into the database
-			$post_id = wp_insert_post( $my_post );			
+			// $post_id = wp_insert_post( $my_post );			
 			echo ++$index.":New Post <a href='".get_permalink($post_id)."'>".$arrPosts[$i]['title']."</a><br><br>";
 		}
 	}
@@ -308,9 +314,7 @@ if( isset($_GET['issued_news']) ){
 			// wp_update_post( array("ID"=>$post->ID, "post_content"=>$content));
 		}
 		
-		// TODO: fix products url on news
-		// issue: find a way to separate category and product links from old one
-		/*
+
 		// fix product link
 		if( strpos($content, $old_domain.'/product-catalogue/') !== false || strpos($content, $old_domain.'/rental-equipment/') !== false ){
 			$arrRes['Product Links'][] = "<a href='".get_permalink($post->ID)."'>".$post->post_title."</a><br>";
@@ -318,7 +322,7 @@ if( isset($_GET['issued_news']) ){
 			$content = str_replace($old_domain.'/rental-equipment/', $new_domain.'/rental-equipment/', $content);
 			// wp_update_post( array("ID"=>$post->ID, "post_content"=>$content));
 		}
-		*/
+		
 		
 		// Has Old Domain Link for page
 		$pattern = ".au/contact-us";
@@ -341,6 +345,10 @@ if( isset($_GET['issued_news']) ){
 		// 	$content = str_replace('https://bluezonegroup.rbdev.com.au/', '/', $post->post_content);
 		// 	// wp_update_post( array("ID"=>$post->ID, "post_content"=>$content));
 		// }
+
+		if( !has_post_thumbnail($post->ID)){
+			$arrRes['No Featured Image'][] = "<a href='".get_permalink($post->ID)."'>".$post->post_title."</a><br>";
+		}
 	}
 
 	echo "<pre>";
@@ -463,7 +471,7 @@ if( isset($_GET['import_page']) ){
 		$post_id = $posts[0]->ID;
 
 		echo "Existing Page: <a href='".get_permalink($post_id)."' target='_blank'>".$page_title."</a><br>".$content;
-		wp_update_post( array("ID"=>$post_id, "post_content"=>$content, 'post_status'   => 'publish')); 
+		// wp_update_post( array("ID"=>$post_id, "post_content"=>$content, 'post_status'   => 'publish')); 
 	}else{
 		$my_post = array(
 		  'post_title'    => $page_title,
@@ -500,6 +508,10 @@ if( isset($_GET['issued_page']) ){
 		// check empty contents
 		if( $content == "" ){
 			$arrRes['Empty Contents'][] = "<a href='".get_permalink($post->ID)."'>".$post->post_title."</a><br>";
+		}
+
+		if( strpos($content, $old_domain ) !== false  || strpos($content, "www.uvs.com.au" ) !== false ){
+			$arrRes['Has Old link'][] = "<a href='".get_permalink($post->ID)."'>".$post->post_title."</a><br>";
 		}
 	}
 	
