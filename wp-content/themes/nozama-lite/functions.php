@@ -500,7 +500,7 @@ add_filter('request', function( $vars ) {
 
         $exists = $wpdb->get_var( $wpdb->prepare( "SELECT t.term_id FROM $wpdb->terms t LEFT JOIN $wpdb->term_taxonomy tt ON tt.term_id = t.term_id WHERE tt.taxonomy = 'product_cat' AND t.slug = %s" ,array( $slug )));
 
-        if( $exists ){
+        if( $exists && (strpos( $vars['category_name'], 'product-catalogue' ) !== false || strpos( $vars['category_name'], 'rental-equipment' ) !== false )){
             $old_vars = $vars;
             $vars = array('product_cat' => $slug );
             if ( !empty( $old_vars['paged'] ) || !empty( $old_vars['page'] ) )
