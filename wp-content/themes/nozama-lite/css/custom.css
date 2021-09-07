@@ -1059,3 +1059,8 @@ button.category-search-btn:hover{
     -ms-transform: scale(1.2);
     transform: scale(1.2);
 }
+
+#media_gallery-5 .gallery-item,
+#media_gallery-5 .section-title{
+    cursor: pointer;
+}

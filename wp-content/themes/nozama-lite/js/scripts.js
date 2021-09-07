@@ -103,6 +103,10 @@ jQuery(function ($) {
 			});
 		}
 	});
+
+	$body.on("click", "#media_gallery-5 .gallery-item", function(){
+		window.location.href = "/gallery";
+	})
 });
 
 /**
