@@ -786,13 +786,25 @@ button.category-search-btn:hover{
 .page-id-4275 .nozama_featured_product h5{
     background: #001c4f;
 }
-.page-id-4275 .nozama_news h5{
+.page-id-4275 .nozama_news h5,
+.page-id-3900 .nozama_news h5,
+.page-id-1547 .nozama_news h5,
+.page-id-1556 .nozama_news h5,
+.page-id-1567 .nozama_news h5,
+.page-id-1570 .nozama_news h5
+{
     background: #85caf3;
 }
 .page-id-4275 .nozama_gallery h5{
     background: #054881;
 }
-.page-id-4275 .nozama_news .item-media .item-content{
+.page-id-4275 .nozama_news .item-media .item-content,
+.page-id-3900 .nozama_news .item-media .item-content,
+.page-id-1547 .nozama_news .item-media .item-content,
+.page-id-1556 .nozama_news .item-media .item-content,
+.page-id-1567 .nozama_news .item-media .item-content,
+.page-id-1570 .nozama_news .item-media .item-content
+{
     background: white;
 }
 .page-id-4275 .nozama_featured_product .item{
@@ -1063,4 +1075,13 @@ button.category-search-btn:hover{
 #media_gallery-5 .gallery-item,
 #media_gallery-5 .section-title{
     cursor: pointer;
+}
+#custom_html-9 .container,
+#custom_html-9 .widget_text.col-12{
+    padding-left: 0;
+    padding-right: 0;
+}
+#custom_html-9 .container .row{
+    margin-left: 0;
+    margin-right: 0;
 }
