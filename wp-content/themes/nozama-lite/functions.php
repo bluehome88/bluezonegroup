@@ -581,7 +581,7 @@ add_action( 'woocommerce_before_shop_loop', 'woocommerce_show_product_subcategor
 function woocommerce_show_product_subcategories() {
     $subcategories = woocommerce_maybe_show_product_subcategories();
         if ($subcategories) {
-        	echo '<h3>SubCategories</h3>';
+        	echo '<h3>Product Categories</h3>';
           	echo '<ul class="row subcategories">',$subcategories,'</ul>';
     }
 }
