@@ -306,7 +306,7 @@ button.category-search-btn:hover{
 
 #custom_html-6{
     margin-top: -50px;
-    background: url('./img/home_fixed_bg.jpg');
+    background: url('./img/home_fixed_bg.png');
     background-size: cover;
     position: relative;
     background-position: center;
@@ -807,7 +807,13 @@ button.category-search-btn:hover{
 {
     background: white;
 }
-.page-id-4275 .nozama_featured_product .item{
+.page-id-4275 .nozama_featured_product .item,
+.page-id-3900 .nozama_featured_product .item,
+.page-id-1547 .nozama_featured_product .item,
+.page-id-1556 .nozama_featured_product .item,
+.page-id-1567 .nozama_featured_product .item,
+.page-id-1570 .nozama_featured_product .item
+{
     border-width: 0 0 3px 0;
 }
 #maxslider-241{
