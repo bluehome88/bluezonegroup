@@ -338,3 +338,11 @@
         color: white;
     }
 }
+@media (max-width: 1024px){
+    .elementor-4562 .elementor-element.elementor-element-7c5a3ae{
+        top: 90px;
+    }
+}
+.ubermenu .ubermenu-submenu .ubermenu-column-auto{
+    width: 100% !important;
+}
