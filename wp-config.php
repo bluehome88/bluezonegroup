@@ -1,4 +1,5 @@
 <?php
+define( 'WP_CACHE', true );
 /**
  * The base configuration for WordPress
  *
@@ -18,26 +19,29 @@
  * @package WordPress
  */
 
-@include __DIR__ . '/local-config.php';
-
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'database_name_here' );
+define( 'DB_NAME', 'bluezonegroupcom_rbdev' );
 
 /** MySQL database username */
-define( 'DB_USER', 'username_here' );
+define( 'DB_USER', 'bluezonegroupcom_wp1' );
 
 /** MySQL database password */
-define( 'DB_PASSWORD', 'password_here' );
+define( 'DB_PASSWORD', 'A.7UvffXqNgcDecIGLW29' );
 
 /** MySQL hostname */
 define( 'DB_HOST', 'localhost' );
 
 /** Database Charset to use in creating database tables. */
-define( 'DB_CHARSET', 'utf8mb4' );
+define( 'DB_CHARSET', 'utf8' );
 
 /** The Database Collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', '' );
+
+$table_prefix = 'bzg_';
+
+// define( 'DISALLOW_FILE_EDIT', true );
+// define( 'DISALLOW_FILE_MODS', true );
 
 /**#@+
  * Authentication Unique Keys and Salts.
@@ -48,14 +52,30 @@ define( 'DB_COLLATE', '' );
  *
  * @since 2.6.0
  */
-define( 'AUTH_KEY',         'Vu%i:e{oA6Ys *@.`LF*b)V[)1z|P@]^Atc2S>t!J#|<L(2 +;85N3T.1D^pBd&*' );
-define( 'SECURE_AUTH_KEY',  'mx(f9YGO[`2}r_;}(:NP&31,yzOg(=[PL|aAF2@Z0<.T:Wp1` yc*s);z9x>kmr9' );
-define( 'LOGGED_IN_KEY',    'AQza}<tV;jm?JF+V*AdVa9F7 Q o<?r`XWqBD;_%Zo7z0[]7>D/d:!l!FXK8a|NZ' );
-define( 'NONCE_KEY',        '[xO>R7|0W0[Db0T6;LTw*I0lId3t{l~|LauUE`U/KJX-^rqs%*kB#w5HkrFS,MO,' );
-define( 'AUTH_SALT',        '#&EwCJzE:G$Crh$v}NrHBO_dIsYG@LF7uJE D((PRMBiS#j0?=&{As7s;/-##mmh' );
-define( 'SECURE_AUTH_SALT', '<R@#)a1oRPV-,m?}bXIy5tIDf<USir>0]w/#Q-vxb1HY+=#$vyIlO$m0Fy[)Iyb5' );
-define( 'LOGGED_IN_SALT',   '.~$E/t,fEKDC9^C2vt]xmHb^+on/|F&!u67tU ,yyHycO>mqNdFt]ZaNF,{.6N64' );
-define( 'NONCE_SALT',       'D=9[tEt&:Ev`AxL)&Nt--Jm.dnd@YpyZ&>]je/(D)uN@]U4V<=mG;8Wu#xnMBW$g' );
+define('AUTH_KEY',         'mdnABwyN04zDx9SDH7s7YHoLojzZW5dzpASeLXb9aDnw1N6Sd6JZ8yz7IGYkHikX');
+define('SECURE_AUTH_KEY',  'um7ic1hh7RRk6Px2UNJT90ZfPOiaExkhsrRWRX5fL9tcksoYrxul6kUUplsYjC6q');
+define('LOGGED_IN_KEY',    'A5xZbWeGfFaRYBsdo6JvupQtkrYLqm2Ungd1NOKo6Cyf71oLHAY3bsjioLqzpCh1');
+define('NONCE_KEY',        '4cNfxO1klHOnD0oroNYssXY2wJOKvhIlmrG5XhX2BS84WEEb7RTwV3baD46IVzMC');
+define('AUTH_SALT',        '2xPax1u6J6FUqg36Ni68pZqZV246B7rwYGRCOLmIrcMWnsEYLLU7AsbciUTqSKuT');
+define('SECURE_AUTH_SALT', 'oPv1TKnLKixqY2vi988NXEVRvErifcJMaLcxVJWjqFbHzS1hvenMeMxHf9ggHI2h');
+define('LOGGED_IN_SALT',   'U4lCIBAGgfzESGZhgVpvhxh5O3Ol7BweanlHiHS310iFm8N5YhZxDNswjb238Lq1');
+define('NONCE_SALT',       '9KklzseYhQnQ9fXGt1WzTVm72UhfEoo8VWja7S87MPaQLdEKcfCyapno3bkXOeoP');
+
+/**
+ * Other customizations.
+ */
+define('FS_METHOD','direct');
+define('FS_CHMOD_DIR',0755);
+define('FS_CHMOD_FILE',0644);
+define('WP_TEMP_DIR',dirname(__FILE__).'/wp-content/uploads');
+
+/**
+ * Turn off automatic updates since these are managed externally by Installatron.
+ * If you remove this define() to re-enable WordPress's automatic background updating
+ * then it's advised to disable auto-updating in Installatron.
+ */
+define('AUTOMATIC_UPDATER_DISABLED', true);
+define( 'AUTOSAVE_INTERVAL', 999999 ); 
 
 /**#@-*/
 
@@ -65,8 +85,6 @@ define( 'NONCE_SALT',       'D=9[tEt&:Ev`AxL)&Nt--Jm.dnd@YpyZ&>]je/(D)uN@]U4V<=m
  * You can have multiple installations in one database if you give each
  * a unique prefix. Only numbers, letters, and underscores please!
  */
-$table_prefix = 'bzg_';
-
 /**
  * For developers: WordPress debugging mode.
  *
