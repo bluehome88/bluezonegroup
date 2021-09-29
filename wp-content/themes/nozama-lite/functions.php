@@ -540,8 +540,17 @@ add_filter('request', function( $vars ) {
 
         }
         
-        if( strpos( $vars['category_name'], 'announcements' ) !== false )
-	        $vars['post_type'] = 'post';
+        if( strpos( $vars['category_name'], 'announcements' ) !== false ){
+	        
+	        // single post
+	        if( $vars['name'] != "" )
+		        $vars['post_type'] = 'post';
+		    else
+	    	{
+		    	unset($vars['page']);
+		    	unset($vars['pagename']);
+	    	}
+	    }
     }
 
     return $vars;

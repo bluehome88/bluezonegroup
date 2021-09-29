@@ -346,3 +346,6 @@
 .ubermenu .ubermenu-submenu .ubermenu-column-auto{
     width: 100% !important;
 }
+.grecaptcha-badge{
+    z-index: 10000;
+}
