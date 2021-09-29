@@ -504,32 +504,7 @@ class Logo_Slider_WP_Admin {
                     'desc_tip' => true,
                 ),
 
-                array(
-                    'name'             => 'logosliderwp_settings_order',
-                    'label'            => __('Item Order', 'logo-slider-wp'),
-                    'desc'             => __('Direction to sort item.', 'logo-slider-wp'),
-                    'type'             => 'select',
-                    'default'          => 'DESC',
-                    'options'          => array(
-                        'ASC' => __( 'Ascending', 'logo-slider-wp' ),
-                        'DESC'   => __( 'Descending', 'logo-slider-wp' ),
-                    ),
-                ),
 
-                array(
-                    'name'             => 'logosliderwp_settings_orderby',
-                    'label'            => __('Item Order By', 'logo-slider-wp'),
-                    'desc'             => __('Sort retrieved item.', 'logo-slider-wp'),
-                    'type'             => 'select',
-                    'default'          => 'date',
-                    'options'          => array(
-                        'date'      => __( 'Date', 'logo-slider-wp' ),
-                        'ID'        => __( 'ID', 'logo-slider-wp' ),
-                        'title'     => __( 'Title', 'logo-slider-wp' ),
-                        'modified'  => __( 'Modified', 'logo-slider-wp' ),
-                        'rand'      => __( 'Random', 'logo-slider-wp' ),
-                    ),
-                ),
 
 
                 array(
@@ -764,7 +739,7 @@ class Logo_Slider_WP_Admin {
                 array(
                     'name'     => 'logosliderwp_settings_autoplay',
                     'label'         => __('Enabled Autoplay', 'logo-slider-wp'),
-                    'desc'          => __( 'Carousel item autoplay by default.', 'logo-slider-wp' ),
+                    'desc'          => __( 'Carousel item autoplay by default. ', 'logo-slider-wp' ),
                     'type'          => 'radio',
                     'tooltip'       => __('Enabled by default','logo-slider-wp'),
                     'required'      => false,
@@ -778,11 +753,23 @@ class Logo_Slider_WP_Admin {
                 array(
                     'name'     => 'logosliderwp_settings_autoplay_timeout',
                     'label'    => __('Autoplay Timeout', 'logo-slider-wp'),
-                    'desc'     => __('autoplayTimeout', 'logo-slider-wp'),
+                    'desc'     => __('Autoplay Timeout. This is not applicable for ticker.', 'logo-slider-wp'),
                     'type'     => 'number',
                     'default'  => '2000',
                     'desc_tip' => true,
                 ),
+
+
+                array(
+                    'name'     => 'logosliderwp_settings_autoplay_slidespeed',
+                    'label'    => __('Autoplay Speed', 'logo-slider-wp'),
+                    'desc'     => __('Set Slide autoplay Speed. This is not applicable for ticker.', 'logo-slider-wp'),
+                    'type'     => 'number',
+                    'default'  => '1000',
+                    'desc_tip' => true,
+                ),
+
+
 
                 array(
                     'name'     => 'logosliderwp_settings_hover_pause',
@@ -798,36 +785,6 @@ class Logo_Slider_WP_Admin {
                     )
                 ),
 
-
-
-
-                array(
-                    'name'     => 'logosliderwp_settings_autoplay_slidespeed',
-                    'label'    => __('Slide Speed', 'logo-slider-wp'),
-                    'desc'     => __('Set Slide Speed', 'logo-slider-wp'),
-                    'type'     => 'number',
-                    'default'  => '200',
-                    'desc_tip' => true,
-                ),
-
-
-                array(
-                    'name'     => 'logosliderwp_settings_autoplay_paginationspeed',
-                    'label'    => __('Pagination Speed', 'logo-slider-wp'),
-                    'desc'     => __('Set Pagination Speed', 'logo-slider-wp'),
-                    'type'     => 'number',
-                    'default'  => '800',
-                    'desc_tip' => true,
-                ),
-
-                array(
-                    'name'     => 'logosliderwp_settings_autoplay_rewindspeed',
-                    'label'    => __('Rewind Speed', 'logo-slider-wp'),
-                    'desc'     => __('Set Rewind Speed', 'logo-slider-wp'),
-                    'type'     => 'number',
-                    'default'  => '1000',
-                    'desc_tip' => true,
-                )
 
 
             ),//single
@@ -990,7 +947,7 @@ class Logo_Slider_WP_Admin {
 
         $currentScreen = get_current_screen();
 
-        if( $currentScreen->id === "edit-logosliderwp" && $currentScreen->post_type == 'logosliderwp' ) {
+        if( $currentScreen->post_type == 'logosliderwp' ) {
             wp_enqueue_style( 'admin-icon-' . $this->plugin_name, plugin_dir_url( __FILE__ ) . 'assets/css/lgx-icon.css', array(), $this->version, 'all' );
             wp_enqueue_style( 'alertify-' . $this->plugin_name, plugin_dir_url( __FILE__ ) . 'assets/css/alertify.css', array(), $this->version, 'all' );
 
@@ -1027,7 +984,7 @@ class Logo_Slider_WP_Admin {
 
         $currentScreen = get_current_screen();
 
-        if( $currentScreen->id === "edit-logosliderwp" && $currentScreen->post_type == 'logosliderwp' ) {
+        if(  $currentScreen->post_type == 'logosliderwp' ) {
             $translation_array = array(
                 'add_leftimg_title'  => __('Add Previous Arrow Image', 'wpnextpreviouslinkaddon'),
                 'add_rightimg_title' => __('Add Next Arrow Image', 'wpnextpreviouslinkaddon'),

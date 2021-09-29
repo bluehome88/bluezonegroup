@@ -5,7 +5,7 @@ Tags: attachment,woocommerce,productattchment,orderattachment,dots
 Requires at least: 5.0
 Tested up to: 5.8
 WC tested up to: 5.5.2
-Stable tag: 1.9.2
+Stable tag: 1.9.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -206,6 +206,12 @@ Ans: By Product Attachment for WooCommerce plugin you can enable “set date exp
 6.Is default behaviour of the attached PDF is viewable?
 
 == Changelog ==
+= 1.9.3 =
+* New - Fully compatible with "Enable Media Replace" plugin
+* Fixed - Minor bug
+* Compatible with WooCommerce 5.5.x
+* Compatible with WordPress 5.8.x
+
 = 1.9.2 =
 * Compatible with WooCommerce 5.8.x
 * Compatible with WordPress 5.8.x

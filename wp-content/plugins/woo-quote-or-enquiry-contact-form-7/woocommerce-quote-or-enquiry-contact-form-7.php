@@ -4,14 +4,14 @@ Plugin Name: WooCommerce Quote or Enquiry Contact Form 7
 
 Description: A plugin to add product enquiry button with contact form 7 
 
-Author: Geek Web Solution
+Author: Geek Code Lab
 
-Version: 2.0
+Version: 2.1
 
 WC tested up to: 5.3.0
 
 
-Author URI: https://www.geekwebsolution.com
+Author URI: https://geekcodelab.com/
 
 */
 
@@ -67,11 +67,17 @@ function wqoecf_default_color_text_options(){
 }
 add_action( 'wp_default_color_text_options', 'wqoecf_default_color_text_options' );
 
-function wqoecf_plugin_add_settings_link( $links ) { 	
-	$settings_link = '<a href="admin.php?page=wqoecf-quote-or-enquiry-contact-form">' . __( 'Settings' ) . '</a>'; 
-	array_push( $links, $settings_link );	
+
+function wqoecf_plugin_add_settings_link( $links ) { 
+	$support_link = '<a href="https://geekcodelab.com/contact/"  target="_blank" >' . __( 'Support' ) . '</a>'; 
+	array_unshift( $links, $support_link );	
+
+	$settings_link = '<a href="admin.php?page=wqoecf-quote-or-enquiry-contact-form">' . __( 'Settings' ) . '</a>'; 	
+	array_unshift( $links, $settings_link );	
+
 	return $links;	
 }
+
 $plugin = plugin_basename( __FILE__ );
 add_filter( "plugin_action_links_$plugin", 'wqoecf_plugin_add_settings_link');
 
@@ -239,7 +245,11 @@ function wqoecf_quote_enquiry_script()
 		</div>
 	</div>
 
+
+
 	<?php
+
+	
 }
   
 add_action('wp_head','wqoecf_set_button_color');

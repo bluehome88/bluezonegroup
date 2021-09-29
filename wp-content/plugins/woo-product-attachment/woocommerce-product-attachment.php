@@ -16,7 +16,7 @@
  * Plugin Name: WooCommerce Product Attachment
  * Plugin URI:        https://www.thedotstore.com/
  * Description:       WooCommerce Product Attachment Plugin will help you to attach/ upload any kind of files for a customer orders.You can attach any type of file like Images, documents, videos and many more..
- * Version:           1.9.2
+ * Version:           1.9.3
  * Author:            theDotstore
  * Author URI:        https://profiles.wordpress.org/dots
  * License:           GPL-2.0+
@@ -88,7 +88,7 @@ if ( true === $wc_active ) {
         define( 'WCPOA_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
     }
     if ( !defined( 'WCPOA_PLUGIN_VERSION' ) ) {
-        define( 'WCPOA_PLUGIN_VERSION', '1.9.2' );
+        define( 'WCPOA_PLUGIN_VERSION', '1.9.3' );
     }
     if ( !defined( 'WCPOA_PLUGIN_BASENAME' ) ) {
         define( 'WCPOA_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );

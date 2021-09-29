@@ -247,11 +247,11 @@ class Limit_Login_Attempts {
 
 	public function login_page_gdpr_message() {
 
-	    if( ! $this->get_option( 'gdpr' )) return;
+	    if( ! $this->get_option( 'gdpr' ) || isset( $_REQUEST['interim-login'] ) ) return;
 
 	    ?>
             <div id="llar-login-page-gdpr">
-                <div class="llar-login-page-gdpr__message"><?php echo esc_html( $this->get_option( 'gdpr_message' ) ); ?></div>
+                <div class="llar-login-page-gdpr__message"><?php echo do_shortcode( stripslashes( $this->get_option( 'gdpr_message' ) ) ); ?></div>
             </div>
         <?php
     }
@@ -1647,7 +1647,7 @@ into a must-use (MU) folder. You can read more <a href="%s" target="_blank">here
                 $this->update_option('long_duration',      (int)$_POST['long_duration'] * 3600 );
                 $this->update_option('notify_email_after', (int)$_POST['email_after'] );
                 $this->update_option('active_app',       sanitize_text_field( $_POST['active_app'] ) );
-                $this->update_option('gdpr_message',       sanitize_textarea_field( $_POST['gdpr_message'] ) );
+                $this->update_option('gdpr_message',       sanitize_textarea_field( LLA_Helpers::deslash( $_POST['gdpr_message'] ) ) );
 
                 $this->update_option('admin_notify_email', sanitize_email( $_POST['admin_notify_email'] ) );
 
@@ -2226,27 +2226,14 @@ into a must-use (MU) folder. You can read more <a href="%s" target="_blank">here
 		check_ajax_referer('llar-action', 'sec');
 
 		$offset = sanitize_text_field( $_POST['offset'] );
+		$limit = sanitize_text_field( $_POST['limit'] );
 
-		$log = $this->app->log( 25, $offset );
+		$log = $this->app->log( $limit, $offset );
 
 		if( $log ) {
 
-		    ob_start(); ?>
+		    ob_start();
 
-            <tr>
-                <th scope="col"><?php _e( "Time", 'limit-login-attempts-reloaded' ); ?></th>
-                <th scope="col"><?php _e( "IP", 'limit-login-attempts-reloaded' ); ?></th>
-                <th scope="col"><?php _e( "Gateway", 'limit-login-attempts-reloaded' ); ?></th>
-                <th scope="col"><?php _e( "Login", 'limit-login-attempts-reloaded' ); ?></th>
-                <th scope="col"><?php _e( "Rule", 'limit-login-attempts-reloaded' ); ?></th>
-                <th scope="col"><?php _e( "Reason", 'limit-login-attempts-reloaded' ); ?></th>
-                <th scope="col"><?php _e( "Pattern", 'limit-login-attempts-reloaded' ); ?></th>
-                <th scope="col"><?php _e( "Attempts Left", 'limit-login-attempts-reloaded' ); ?></th>
-                <th scope="col"><?php _e( "Lockout Duration", 'limit-login-attempts-reloaded' ); ?></th>
-                <th scope="col"><?php _e( "Actions", 'limit-login-attempts-reloaded' ); ?></th>
-            </tr>
-
-			<?php
 			$date_format = get_option('date_format') . ' ' . get_option('time_format');
 			?>
 
@@ -2282,13 +2269,16 @@ into a must-use (MU) folder. You can read more <a href="%s" target="_blank">here
                     </tr>
 				<?php endforeach; ?>
 			<?php else : ?>
-                <tr class="empty-row"><td colspan="100%" style="text-align: center"><?php _e('No events yet.', 'limit-login-attempts-reloaded' ); ?></td></tr>
+                <?php if( empty( $offset ) ) : ?>
+                    <tr class="empty-row"><td colspan="100%" style="text-align: center"><?php _e('No events yet.', 'limit-login-attempts-reloaded' ); ?></td></tr>
+                <?php endif; ?>
 			<?php endif; ?>
 <?php
 
 			wp_send_json_success(array(
 				'html' => ob_get_clean(),
-                'offset' => $log['offset']
+                'offset' => $log['offset'],
+                'total_items' => count( $log['items'] )
 			));
 
         } else {
@@ -2309,19 +2299,13 @@ into a must-use (MU) folder. You can read more <a href="%s" target="_blank">here
 		check_ajax_referer('llar-action', 'sec');
 
 		$offset = sanitize_text_field( $_POST['offset'] );
+		$limit = sanitize_text_field( $_POST['limit'] );
 
-		$lockouts = $this->app->get_lockouts( 25, $offset );
+		$lockouts = $this->app->get_lockouts( $limit, $offset );
 
 		if( $lockouts ) {
 
 		    ob_start(); ?>
-
-            <tr>
-                <th scope="col"><?php _e( "IP", 'limit-login-attempts-reloaded' ); ?></th>
-                <th scope="col"><?php _e( "Login", 'limit-login-attempts-reloaded' ); ?></th>
-                <th scope="col"><?php _e( "Count", 'limit-login-attempts-reloaded' ); ?></th>
-                <th scope="col"><?php _e( "Expires in (minutes)", 'limit-login-attempts-reloaded' ); ?></th>
-            </tr>
 
 			<?php if( $lockouts['items'] ) : ?>
 				<?php foreach ( $lockouts['items'] as $item ) : ?>
@@ -2334,7 +2318,9 @@ into a must-use (MU) folder. You can read more <a href="%s" target="_blank">here
 				<?php endforeach; ?>
 
 			<?php else: ?>
+                <?php if( empty( $offset ) ) : ?>
                 <tr class="empty-row"><td colspan="4" style="text-align: center"><?php _e('No lockouts yet.', 'limit-login-attempts-reloaded' ); ?></td></tr>
+			    <?php endif; ?>
 			<?php endif; ?>
 <?php
 
@@ -2370,37 +2356,24 @@ into a must-use (MU) folder. You can read more <a href="%s" target="_blank">here
 		check_ajax_referer('llar-action', 'sec');
 
 		$type = sanitize_text_field( $_POST['type'] );
+		$limit = sanitize_text_field( $_POST['limit'] );
+		$offset = sanitize_text_field( $_POST['offset'] );
 
         $acl_list = $this->app->acl( array(
-            'type' => $type
+            'type' => $type,
+            'limit' => $limit,
+            'offset' => $offset
         ) );
 
 		if( $acl_list ) {
 
 		    ob_start(); ?>
 
-            <tr>
-                <th scope="col"><?php _e( 'Pattern', 'limit-login-attempts-reloaded' ); ?></th>
-                <th scope="col"><?php _e( 'Rule', 'limit-login-attempts-reloaded' ); ?></th>
-                <th class="llar-app-acl-action-col" scope="col"><?php _e( 'Action', 'limit-login-attempts-reloaded' ); ?></th>
-            </tr>
-            <tr>
-                <td><input class="regular-text llar-app-acl-pattern" type="text" placeholder="<?php esc_attr_e( 'Pattern', 'limit-login-attempts-reloaded' ); ?>"></td>
-                <td>
-                    <select class="llar-app-acl-rule">
-                        <option value="deny" selected><?php esc_html_e( 'Deny',  'limit-login-attempts-reloaded' ); ?></option>
-                        <option value="allow"><?php esc_html_e( 'Allow',  'limit-login-attempts-reloaded' ); ?></option>
-                        <option value="pass"><?php esc_html_e( 'Pass',  'limit-login-attempts-reloaded' ); ?></option>
-                    </select>
-                </td>
-                <td class="llar-app-acl-action-col"><button class="button llar-app-acl-add-rule" data-type="<?php echo esc_attr( $type ); ?>"><?php _e( 'Add', 'limit-login-attempts-reloaded' ); ?></button></td>
-            </tr>
-
 			<?php if( $acl_list['items'] ) : ?>
 				<?php foreach ( $acl_list['items'] as $item ) : ?>
                     <tr class="llar-app-rule-<?php echo esc_attr( $item['rule'] ); ?>">
                         <td class="rule-pattern" scope="col"><?php echo esc_html( $item['pattern'] ); ?></td>
-                        <td scope="col"><?php echo esc_html( $item['rule'] ); ?></td>
+                        <td scope="col"><?php echo esc_html( $item['rule'] ); ?><?php echo ($type === 'ip') ? '<span class="origin">'.esc_html( $item['origin'] ).'</span>' : ''; ?></td>
                         <td class="llar-app-acl-action-col" scope="col"><button class="button llar-app-acl-remove" data-type="<?php echo esc_attr( $type ); ?>" data-pattern="<?php echo esc_attr( $item['pattern'] ); ?>"><span class="dashicons dashicons-no"></span></button></td>
                     </tr>
 				<?php endforeach; ?>
@@ -2411,6 +2384,7 @@ into a must-use (MU) folder. You can read more <a href="%s" target="_blank">here
 
 			wp_send_json_success(array(
 				'html' => ob_get_clean(),
+				'offset' => $acl_list['offset']
 			));
 
         } else {

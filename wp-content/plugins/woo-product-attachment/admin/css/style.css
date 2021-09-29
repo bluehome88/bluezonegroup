@@ -28,6 +28,14 @@ header.dots-header {
     color: #000
 
 }
+.wppoa-error {
+    padding: 13px;
+    background: #e75e54;
+    font-size: 16px;
+    margin: 0 0 15px;
+    color: #fff;
+    font-weight: 600;
+}
 .hide{
     display: none !important;
 }

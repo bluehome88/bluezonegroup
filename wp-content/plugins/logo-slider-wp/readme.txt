@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=vaspa
 Tags: logo, brand slider, carousel, sponsors,  slider, our brand, logo showcase, client slider, logo carousel slider, logo slider, wordpress logo slider, wordpress logo slider carousel plugin, clients, clients logo slider, clients logos show, image carousel, image slider, logo, logo carousel, logo carousel slider, logo showcase, logo slide, logo slider, logo slideshow, logos, partners, sponsors, sponsors logo slider
 Requires at least: 4.1
 Tested up to: 5.8
-Stable tag: 2.4.2
+Stable tag: 2.5.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,9 +12,11 @@ Logo Slider WP is The Best Responsive Logo Showcase Carousel Slider. This Logo C
 
 == Description ==
 
+It's a very simple, lightweight &  easy to implement logo carousel. No need for any coding skills to showcase your company or client's brand logo.
+
 ### Logo Slider by [LogicHunt.com](https://logichunt.com)
 
->[ Plugin Page](https://logichunt.com/product/wordpress-logo-slider) | [ Live Demo](http://logichunt.net/wpdemo/wordpress-logo-slider) | [Get Support](http://logichunt.com/support) | [Paid Support](https://logichunt.com/product/wordpress-logo-slider)
+>[ Plugin Page](https://logichunt.com/product/wordpress-logo-slider) | [ Live Demo](http://logichunt.net/wpdemo/wordpress-logo-slider) | [ Get Support](https://logichunt.com/product/wordpress-logo-slider)
 
 = The Best WordPress Logo Showcase Carousel Slider with Unlimited Brand Logo with Infinity Slides Loop. Full Responsive, Multi-usage & Easy to Use. =
 
@@ -23,16 +25,21 @@ Logo Slider is a responsive and easy to implement Logo Showcase carousel slider 
 
 This Logo Carousel plugin allows you to add a logo showcase to any page of your wordPress site using an easy to use shortcodes. This Logo Carousel Slider Can Display Unlimited Logo with Infinity Slides Loop.
 
+= Enjoy Premium Feature For Free! =
 
-Available Shortcode Options : [Plugin Homepage](http://logichunt.com/product/wordpress-logo-slider/)
+*   Smooth Ticker layout. ( NEW )
+*   Custom Logo Order by Drag & Drop . ( NEW )
+*   Working External Company URL.
+*   Brand Description.
+*   Unlimited Logo Showcase.
+*   Multiple Instances on One Page.
+
+
+Available All Shortcode Options : [Plugin Homepage](http://logichunt.com/product/wordpress-logo-slider/)
+
 
 = Features of the plugin includes =
 
-*   Custom Logo Order by Drag & Drop . (NEW - Enjoy Pro Feature Free)
-*   Brand Description.(NEW)
-*   Working External Company URL.(NEW)
-*   Multiple Instances on One Page.
-*   Unlimited Logos Clients
 *   CSS3 Animation Effects
 *   Touch swipe navigation.
 *   Infinity Slides loop.
@@ -69,11 +76,12 @@ Available Shortcode Options : [Plugin Homepage](http://logichunt.com/product/wor
 = For use template php file:- =
 <code><?php echo do_shortcode('[logo-slider]'); ?></code>
 
-= Available Shortcode Options =
+= To use Ticker layout in post or page ( NEW ):- =
+<code>[logo-slider ticker="yes" ]</code>
+
+= Available All Shortcode Options =
 
 Visit Product Page for All Shortcode Options: [ Logo Slider Page.](https://logichunt.com/product/wordpress-logo-slider/)
-
-Report a Bug or Request a Feature:  [Contact Now](https://logichunt.com/contact-us/)
 
 
 == Installation ==
@@ -108,11 +116,22 @@ Now you can configure your Plugins options from settings.
 = For use template php file:- =
 <code><?php echo do_shortcode('[logo-slider]'); ?></code>
 
+= To use Ticker layout in post or page ( NEW ):- =
+<code>[logo-slider ticker="yes" ]</code>
+
 = Available Shortcode Options =
 
 Visit Product Page for All Shortcode Options: [ Logo Slider Page.](https://logichunt.com/product/wordpress-logo-slider/)
 
 Report a Bug or Request a Feature:  [Contact Now](https://logichunt.com/contact-us/)
+
+
+== Frequently Asked Questions ==
+
+= How Can I Manage Logo Order ? =
+It's very simple. You can easily do it by drag and drop and you don't need to pay to get the feature.
+
+
 
 
 
@@ -130,6 +149,17 @@ Report a Bug or Request a Feature:  [Contact Now](https://logichunt.com/contact-
 10. Demo Preview
 
 == Changelog ==
+
+= 2.5.0 =
+*Added Ticker Layout
+*Added Autoplay timeout Speed
+*Removed Slider Deprecated Settings
+
+= 2.4.4 =
+*Removed Item Order from default settings
+*Removed Order By from default settings
+*Improved Usage Guidelines
+*Managed assets enqueue only for the shortcode pages.
 
 = 2.4.3 =
 *Compatible with WordPress 5.8

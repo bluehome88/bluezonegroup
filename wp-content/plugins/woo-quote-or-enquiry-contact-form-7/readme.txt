@@ -1,4 +1,4 @@
-=== WooCommerce Quote or Enquiry Contact Form 7 ===Contributors: rajkakadiyaDonate link: https://www.geekwebsolution.com/Tags:WooCommerce Quote Contact Form 7,WooCommerce Enquiry Contact Form 7, WooCommerce Contact Form 7Requires PHP: 5.2.4Requires at least: 3.0.1Tested up to: 5.7.2Stable tag: 2.0
+=== WooCommerce Quote or Enquiry Contact Form 7 ===Contributors: rajkakadiya, rvadhelDonate link: https://paypal.me/rvadhelTags:WooCommerce Quote Contact Form 7,WooCommerce Enquiry Contact Form 7, WooCommerce Contact Form 7Requires PHP: 5.2.4Requires at least: 3.0.1Tested up to: 5.8Stable tag: 2.1
 This Plugin provide you options to select contact form 7 from lists, options to set a contact form 7 for product enquiry form of all your woocommerce products, set enquiry button color dynamically, text for enquiry button dynamically .
 You will have the flexibility to display enquiry button for particular product and hide add to cart button on both product information page and product page. 
 == Description ==
@@ -30,4 +30,4 @@ After Plugin Active go to WooCommerce-> Quote Or Enquiry Contact Form 7.
 = 1.0 =
 *Initial release
 = 1.1 =*Fix bug= 1.2 =*Fix bug
-= 1.3 =*Fix bug= 1.4 =*Fix bug= 1.5 =*Fix bug= 1.6=*Show product variation= 1.7=*fixed css issue= 1.8=**Fix bug= 1.9=**Fix bug= 2.0=**Fix bug
+= 1.3 =*Fix bug= 1.4 =*Fix bug= 1.5 =*Fix bug= 1.6=*Show product variation= 1.7=*fixed css issue= 1.8=**Fix bug= 1.9=**Fix bug= 2.0=**Fix bug= 2.1=**Disable auto close popup after submit form

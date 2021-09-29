@@ -3,7 +3,7 @@ Contributors: cssigniterteam, anastis, silencerius, tsiger
 Tags: content slider, gallery slider, image slider, layer slider, Photo Slider, responsive slider, slide, slider, slider plugin, slideshow, wordpress slider, wordpress slideshow
 Requires at least: 4.9
 Tested up to: 5.7.2
-Stable tag: 1.2.0
+Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -46,6 +46,9 @@ Check out [the demo](https://www.cssigniter.com/preview/maxslider/) now!
 1. The MaxSlider Interface
 
 == Changelog ==
+= 1.2.1 =
+* Fixed a deprecation warning that would get thrown after WP 5.8 (action 'block_categories' renamed to 'block_categories_all').
+
 = 1.2.0 =
 * Added Slider block for the block editor.
 * All color options now support opacity.

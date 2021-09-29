@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: MaxSlider\n"
-"POT-Creation-Date: 2021-05-25 15:52+0300\n"
+"POT-Creation-Date: 2021-07-30 19:10+0300\n"
 "PO-Revision-Date: 2016-08-29 19:22+0300\n"
 "Last-Translator: Anastis Sourgoutsidis <anastis@cssigniter.com>\n"
 "Language-Team: Anastis Sourgoutsidis <anastis@cssigniter.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.3\n"
+"X-Generator: Poedit 3.0\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: maxslider.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -22,7 +22,7 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
 #. Plugin Name of the plugin/theme
-#: class-maxslider-visual-composer-slider.php:37 maxslider.php:327
+#: class-maxslider-visual-composer-slider.php:37 maxslider.php:336
 msgid "MaxSlider"
 msgstr ""
 
@@ -44,382 +44,382 @@ msgstr ""
 msgid "Choose a previously created slider from the drop down list."
 msgstr ""
 
-#: maxslider.php:247
+#: maxslider.php:254
 msgid ""
 "Do you really want to remove all slides? (This will not delete your image "
 "files)."
 msgstr ""
 
-#: maxslider.php:248
+#: maxslider.php:255
 msgid "Select a slide image"
 msgstr ""
 
-#: maxslider.php:339
+#: maxslider.php:348
 msgctxt "post type general name"
 msgid "Sliders"
 msgstr ""
 
-#: maxslider.php:340 maxslider.php:355
+#: maxslider.php:349 maxslider.php:364
 msgctxt "post type singular name"
 msgid "Slider"
 msgstr ""
 
-#: maxslider.php:341
+#: maxslider.php:350
 msgctxt "admin menu"
 msgid "MaxSlider"
 msgstr ""
 
-#: maxslider.php:342
+#: maxslider.php:351
 msgctxt "add new on admin bar"
 msgid "Slider"
 msgstr ""
 
-#: maxslider.php:343
+#: maxslider.php:352
 msgid "Add New"
 msgstr ""
 
-#: maxslider.php:344
+#: maxslider.php:353
 msgid "Add New Slider"
 msgstr ""
 
-#: maxslider.php:345
+#: maxslider.php:354
 msgid "Edit Slider"
 msgstr ""
 
-#: maxslider.php:346
+#: maxslider.php:355
 msgid "New Slider"
 msgstr ""
 
-#: maxslider.php:347
+#: maxslider.php:356
 msgid "View Sliders"
 msgstr ""
 
-#: maxslider.php:348
+#: maxslider.php:357
 msgid "Search Sliders"
 msgstr ""
 
-#: maxslider.php:349
+#: maxslider.php:358
 msgid "No sliders found"
 msgstr ""
 
-#: maxslider.php:350
+#: maxslider.php:359
 msgid "No sliders found in the trash"
 msgstr ""
 
-#: maxslider.php:376
+#: maxslider.php:385
 msgid "Slides"
 msgstr ""
 
-#: maxslider.php:377
+#: maxslider.php:386
 msgid "Settings"
 msgstr ""
 
-#: maxslider.php:378
+#: maxslider.php:387
 msgid "Shortcode"
 msgstr ""
 
-#: maxslider.php:444
+#: maxslider.php:453
 msgid "MaxSlider Logo"
 msgstr ""
 
-#: maxslider.php:472
+#: maxslider.php:481
 msgid "Support"
 msgstr ""
 
-#: maxslider.php:476
+#: maxslider.php:485
 msgid "Documentation"
 msgstr ""
 
-#: maxslider.php:480
+#: maxslider.php:489
 msgid "Rate this plugin"
 msgstr ""
 
-#: maxslider.php:502
+#: maxslider.php:511
 #, php-format
 msgid ""
 "Thank you for creating with <a href=\"%s\" target=\"_blank\">MaxSlider</a>"
 msgstr ""
 
-#: maxslider.php:559
+#: maxslider.php:568
 msgid "Toggle slide visibility"
 msgstr ""
 
-#: maxslider.php:570
+#: maxslider.php:579
 msgid "Remove Image"
 msgstr ""
 
-#: maxslider.php:583
+#: maxslider.php:592
 msgid "Upload Image"
 msgstr ""
 
-#: maxslider.php:603 maxslider.php:610
+#: maxslider.php:612 maxslider.php:619
 msgid "Title"
 msgstr ""
 
-#: maxslider.php:616 maxslider.php:625
+#: maxslider.php:625 maxslider.php:634
 msgid "Title size"
 msgstr ""
 
-#: maxslider.php:631 maxslider.php:638
+#: maxslider.php:640 maxslider.php:647
 msgid "Title color"
 msgstr ""
 
-#: maxslider.php:649 maxslider.php:656
+#: maxslider.php:658 maxslider.php:665
 msgid "Subtitle"
 msgstr ""
 
-#: maxslider.php:662 maxslider.php:671
+#: maxslider.php:671 maxslider.php:680
 msgid "Subtitle size"
 msgstr ""
 
-#: maxslider.php:677 maxslider.php:684
+#: maxslider.php:686 maxslider.php:693
 msgid "Subtitle color"
 msgstr ""
 
-#: maxslider.php:695 maxslider.php:702
+#: maxslider.php:704 maxslider.php:711
 msgid "Button text"
 msgstr ""
 
-#: maxslider.php:710 maxslider.php:717
+#: maxslider.php:719 maxslider.php:726
 msgid "Button URL"
 msgstr ""
 
-#: maxslider.php:726 maxslider.php:733
+#: maxslider.php:735 maxslider.php:742
 msgid "Button background color"
 msgstr ""
 
-#: maxslider.php:739 maxslider.php:746
+#: maxslider.php:748 maxslider.php:755
 msgid "Button text color"
 msgstr ""
 
-#: maxslider.php:752 maxslider.php:758
+#: maxslider.php:761 maxslider.php:767
 msgid "Button size"
 msgstr ""
 
-#: maxslider.php:778
+#: maxslider.php:787
 msgid "Horizontal content alignment"
 msgstr ""
 
-#: maxslider.php:800
+#: maxslider.php:809
 msgid "Vertical content alignment"
 msgstr ""
 
-#: maxslider.php:822 maxslider.php:829
+#: maxslider.php:831 maxslider.php:838
 msgid "Content background color"
 msgstr ""
 
-#: maxslider.php:836 maxslider.php:843
+#: maxslider.php:845 maxslider.php:852
 msgid "Slide overlay color"
 msgstr ""
 
-#: maxslider.php:854
+#: maxslider.php:863
 msgid "Remove Slide"
 msgstr ""
 
-#: maxslider.php:868
+#: maxslider.php:877
 msgid "Add Slide"
 msgstr ""
 
-#: maxslider.php:875
+#: maxslider.php:884
 msgid "Remove all slides"
 msgstr ""
 
-#: maxslider.php:881
+#: maxslider.php:890
 msgid "Expand All"
 msgstr ""
 
-#: maxslider.php:884
+#: maxslider.php:893
 msgid "Collapse All"
 msgstr ""
 
-#: maxslider.php:928
+#: maxslider.php:937
 msgid "Auto slide"
 msgstr ""
 
-#: maxslider.php:934
+#: maxslider.php:943
 msgid "Slide effect"
 msgstr ""
 
-#: maxslider.php:954 maxslider.php:964
+#: maxslider.php:963 maxslider.php:973
 msgid "Pause between slides"
 msgstr ""
 
-#: maxslider.php:969
+#: maxslider.php:978
 msgid "Time in milliseconds."
 msgstr ""
 
-#: maxslider.php:975 maxslider.php:984
+#: maxslider.php:984 maxslider.php:993
 msgid "Height"
 msgstr ""
 
-#: maxslider.php:1014
+#: maxslider.php:1023
 msgid ""
 "Provide the height of this slider (leaving this empty will apply the default "
 "of 600px)."
 msgstr ""
 
-#: maxslider.php:1020
+#: maxslider.php:1029
 msgid "Navigation type"
 msgstr ""
 
-#: maxslider.php:1038
+#: maxslider.php:1047
 msgid ""
 "Please note that on mobile devices the slider will always display dots "
 "instead of arrows regardless of this setting. The \"none\" setting will "
 "always be respected."
 msgstr ""
 
-#: maxslider.php:1044
+#: maxslider.php:1053
 msgid "Arrows position"
 msgstr ""
 
-#: maxslider.php:1062
+#: maxslider.php:1071
 msgid "Applies only to arrow navigation."
 msgstr ""
 
-#: maxslider.php:1069 maxslider.php:1076
+#: maxslider.php:1078 maxslider.php:1085
 msgid "Navigation color"
 msgstr ""
 
-#: maxslider.php:1083 maxslider.php:1090
+#: maxslider.php:1092 maxslider.php:1099
 msgid "Navigation background color"
 msgstr ""
 
-#: maxslider.php:1097
+#: maxslider.php:1106
 msgid "Image size"
 msgstr ""
 
-#: maxslider.php:1129
+#: maxslider.php:1138
 msgid "Choose a template"
 msgstr ""
 
-#: maxslider.php:1143
+#: maxslider.php:1152
 msgid "Grab the shortcode"
 msgstr ""
 
-#: maxslider.php:1215
+#: maxslider.php:1224
 msgid "Move slide"
 msgstr ""
 
-#: maxslider.php:1230
+#: maxslider.php:1239
 msgid "Batch Upload"
 msgstr ""
 
 #. translators: %1$s is width. %2$s is height.
-#: maxslider.php:1380
+#: maxslider.php:1389
 #, php-format
 msgid "%1$s&times;%2$s"
 msgstr ""
 
-#: maxslider.php:1381
+#: maxslider.php:1390
 msgid "Full size"
 msgstr ""
 
-#: maxslider.php:1386
+#: maxslider.php:1395
 msgid "Set by: Theme / Plugin"
 msgstr ""
 
-#: maxslider.php:1399
+#: maxslider.php:1408
 msgid "Set by: MaxSlider"
 msgstr ""
 
-#: maxslider.php:1412
+#: maxslider.php:1421
 msgid "Set by: Settings > Media"
 msgstr ""
 
-#: maxslider.php:1432
+#: maxslider.php:1441
 msgid "Extra small"
 msgstr ""
 
-#: maxslider.php:1433
+#: maxslider.php:1442
 msgid "Small"
 msgstr ""
 
-#: maxslider.php:1434
+#: maxslider.php:1443
 msgid "Default"
 msgstr ""
 
-#: maxslider.php:1435
+#: maxslider.php:1444
 msgid "Large"
 msgstr ""
 
-#: maxslider.php:1441
+#: maxslider.php:1450
 msgid "Left"
 msgstr ""
 
-#: maxslider.php:1442
+#: maxslider.php:1451
 msgid "Center"
 msgstr ""
 
-#: maxslider.php:1443
+#: maxslider.php:1452
 msgid "Right"
 msgstr ""
 
-#: maxslider.php:1449
+#: maxslider.php:1458
 msgid "Top"
 msgstr ""
 
-#: maxslider.php:1450
+#: maxslider.php:1459
 msgid "Middle"
 msgstr ""
 
-#: maxslider.php:1451
+#: maxslider.php:1460
 msgid "Bottom"
 msgstr ""
 
-#: maxslider.php:1463
+#: maxslider.php:1472
 msgid "None"
 msgstr ""
 
-#: maxslider.php:1464
+#: maxslider.php:1473
 msgid "Arrows"
 msgstr ""
 
-#: maxslider.php:1465
+#: maxslider.php:1474
 msgid "Dots"
 msgstr ""
 
-#: maxslider.php:1466
+#: maxslider.php:1475
 msgid "Arrows & Dots"
 msgstr ""
 
-#: maxslider.php:1478
+#: maxslider.php:1487
 msgid "Default (vertically centered)"
 msgstr ""
 
-#: maxslider.php:1479
+#: maxslider.php:1488
 msgid "Top Left"
 msgstr ""
 
-#: maxslider.php:1480
+#: maxslider.php:1489
 msgid "Top Right"
 msgstr ""
 
-#: maxslider.php:1481
+#: maxslider.php:1490
 msgid "Bottom Left"
 msgstr ""
 
-#: maxslider.php:1482
+#: maxslider.php:1491
 msgid "Bottom Right"
 msgstr ""
 
-#: maxslider.php:1488
+#: maxslider.php:1497
 msgid "Fade"
 msgstr ""
 
-#: maxslider.php:1489
+#: maxslider.php:1498
 msgid "Slide"
 msgstr ""
 
-#: maxslider.php:1502
+#: maxslider.php:1511
 msgid "Pixels (px)"
 msgstr ""
 
-#: maxslider.php:1503
+#: maxslider.php:1512
 msgid "Viewport Height (vh)"
 msgstr ""
 
-#: maxslider.php:1837
+#: maxslider.php:1846
 msgctxt "maxslider template"
 msgid "Default"
 msgstr ""

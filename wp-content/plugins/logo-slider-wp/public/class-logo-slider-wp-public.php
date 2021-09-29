@@ -86,12 +86,12 @@ class Logo_Slider_WP_Public {
          * class.
          */
 
-        wp_enqueue_style('lgx-logo-slider-owl', plugin_dir_url( __FILE__ ) . 'assets/lib/owl/assets/owl.carousel.min.css', array(), $this->version, 'all' );
-        wp_enqueue_style('lgx-logo-slider-owltheme', plugin_dir_url( __FILE__ ) . 'assets//lib/owl/assets/owl.theme.default.min.css', array(), $this->version, 'all' );
+        wp_register_style('lgx-logo-slider-owl', plugin_dir_url( __FILE__ ) . 'assets/lib/owl/assets/owl.carousel.min.css', array(), $this->version, 'all' );
+        wp_register_style('lgx-logo-slider-owltheme', plugin_dir_url( __FILE__ ) . 'assets//lib/owl/assets/owl.theme.default.min.css', array(), $this->version, 'all' );
 
-        wp_enqueue_style( 'lgx-logo-slider-animate',  plugin_dir_url( __FILE__ ) . 'assets/lib/animate/animate-logo.css', array(), '20', 'all' );
+        wp_register_style( 'lgx-logo-slider-animate',  plugin_dir_url( __FILE__ ) . 'assets/lib/animate/animate-logo.css', array(), '20', 'all' );
 
-        wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'assets/css/logo-slider-wp-public.css', array(), $this->version, 'all' );
+        wp_register_style( 'lgx-logo-slider-style', plugin_dir_url( __FILE__ ) . 'assets/css/logo-slider-wp-public.css', array(), $this->version, 'all' );
 
     }
 
@@ -115,17 +115,18 @@ class Logo_Slider_WP_Public {
          */
 
 
-        wp_enqueue_script('lgxlogoowljs', plugin_dir_url( __FILE__ ) . 'assets/lib/owl/owl.carousel.js', array( 'jquery' ), $this->version, false );
-        wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'assets/js/logo-slider-wp-public.js', array( 'lgxlogoowljs' ), $this->version, false );
+        wp_register_script('lgxlogoowljs', plugin_dir_url( __FILE__ ) . 'assets/lib/owl/owl.carousel.js', array( 'jquery' ), $this->version, false );
+        wp_register_script('lgxlogoowljs-modified', plugin_dir_url( __FILE__ ) . 'assets/lib/owl/owl-modified.js', array( 'jquery' ), $this->version, false );
+        wp_register_script( 'lgx-logo-slider-script', plugin_dir_url( __FILE__ ) . 'assets/js/logo-slider-wp-public.js', array( 'jquery' ), $this->version, false );
 
         // Localize the script
         $translation_array = array(
             'owl_navigationTextL'    => plugin_dir_url( __FILE__ ). 'assets/img/prev.png',
             'owl_navigationTextR'    => plugin_dir_url( __FILE__ ) . 'assets/img/next.png',
         );
-        wp_localize_script( $this->plugin_name, 'logosliderwp', $translation_array );
+        wp_localize_script( 'lgx-logo-slider-script', 'logosliderwp', $translation_array );
 
-        wp_enqueue_script('jquery');
+        // wp_enqueue_script('jquery');
     }
 
 
@@ -148,6 +149,8 @@ class Logo_Slider_WP_Public {
         $orderby    = trim( $params['orderby']);
         $limit      = intval($params['limit']);
 
+        //New
+        $ticker         = $params['ticker'];
 
         $compnayanme_en     = trim($params['companyname']);
         $compnaydesc_en     = trim($params['companydesc']);
@@ -162,26 +165,40 @@ class Logo_Slider_WP_Public {
         $bgcolor    	= trim($params['bgcolor']);
         $hovertype    	= trim($params['hovertype']);
 
+
+
+
         //Data Attribute
+
         $data_attr                        = array();
+
+        if($ticker == 'yes') {
+
+            $data_attr['autoplaytimeout']   = 0;
+            $data_attr['autoplayspeed']     = 3000;
+
+        } else {
+            $data_attr['autoplaytimeout']     = intval($params['autoplay_timeout']);
+            $data_attr['autoplayspeed']     = intval($params['autoplay_speed']);
+
+        }
+
+
         $data_attr['margin']              = intval($params['margin']);
         $data_attr['loop']                = ($params['loop'] == 'no') ? 'false' : 'true';
         $data_attr['autoplay']            = ($params['autoplay'] == 'no') ? 'false' : 'true';
-        $data_attr['autoplaytimeout']     = intval($params['autoplay_timeout']);
+
+
 
         $data_attr['autoplayhoverpause']  = ($params['hover_pause'] == 'no') ? 'false' : 'true';
         $data_attr['dots']                = ($params['dots'] == 'no') ? 'false' : 'true';
-        $data_attr['smartspeed']          = trim($params['smartspeed']);
-        $data_attr['slidespeed']          = trim($params['slidespeed']);
-        $data_attr['paginationspeed']     = trim($params['paginationspeed']);
+
 
         //
         $data_attr['itemlarge']           = intval($params['itemlarge']);
         $data_attr['itemdesk']            = intval($params['itemdesk']);
         $data_attr['itemtablet']          = intval($params['itemtablet']);
         $data_attr['itemmobile']          = intval($params['itemmobile']);
-
-       // print_r($params['itemlarge']);
 
 
         $data_attr['navlarge']           = ($params['navlarge'] == 'no') ? 'false' : 'true';
@@ -236,6 +253,23 @@ class Logo_Slider_WP_Public {
         // The  Query
         $logo_post = new WP_Query( $logo_args );
         $logo_item    = '';
+
+        // Enqueue Style
+        wp_enqueue_style( 'lgx-logo-slider-owl' );
+        wp_enqueue_style( 'lgx-logo-slider-owltheme' );
+        wp_enqueue_style( 'lgx-logo-slider-animate' );
+        wp_enqueue_style( 'lgx-logo-slider-style');
+
+
+        //Enqueue Script
+        wp_enqueue_script( 'lgxlogoowljs' );
+
+        if($ticker == 'yes') {
+
+            wp_enqueue_script( 'lgxlogoowljs-modified' );
+        }
+
+        wp_enqueue_script( 'lgx-logo-slider-script' );
 
         // The Loop
         if ( $logo_post->have_posts() ) {
@@ -327,12 +361,9 @@ class Logo_Slider_WP_Public {
         $autoplay_set   = trim($this->settings_api->get_option('logosliderwp_settings_autoplay', 'logosliderwp_config', 'yes'));
 
 
-        $smartspeed_set  = intval($this->settings_api->get_option('logosliderwp_settings_smartspeed', 'logosliderwp_config', '500'));
-        $slidespeed_set  = intval($this->settings_api->get_option('logosliderwp_settings_slidespeed', 'logosliderwp_config', '200'));
-        $paginationspeed_set  = intval($this->settings_api->get_option('logosliderwp_settings_paginationspeed', 'logosliderwp_config', '800'));
-        $rewindspeed_set  = intval($this->settings_api->get_option('logosliderwp_settings_rewindspeed', 'logosliderwp_config', '1000'));
-
         $autoplay_timeout_set = intval($this->settings_api->get_option('logosliderwp_settings_autoplay_timeout', 'logosliderwp_config', 2000));
+
+        $autoplay_speed_set  = intval($this->settings_api->get_option('logosliderwp_settings_autoplay_slidespeed', 'logosliderwp_config', 1000));
 
 
         $hover_pause_set  = $this->settings_api->get_option('logosliderwp_settings_hover_pause', 'logosliderwp_config', 'no');
@@ -366,6 +397,7 @@ class Logo_Slider_WP_Public {
 
         $atts = shortcode_atts(array(
             'target'            => '_blank',
+            'ticker'            => 'no',
             'order'            => $order_set,
             'orderby'          => $orderby_set,
             'limit'            => $limit_set,
@@ -384,12 +416,9 @@ class Logo_Slider_WP_Public {
             'loop'             => $loop_set,
             'autoplay'         => $autoplay_set,
             'autoplay_timeout' => $autoplay_timeout_set,
+            'autoplay_speed'  => $autoplay_speed_set,
             'hover_pause'      => $hover_pause_set,
             'dots'             => $dots_set,
-            'smartspeed'       => $smartspeed_set,
-            'slidespeed'       => $slidespeed_set,
-            'paginationspeed'  => $paginationspeed_set,
-            'rewindspeed'      => $rewindspeed_set,
             'itemlarge'        => $item_set_lagedesctop,
             'itemdesk'         => $item_set_desctop,
             'itemtablet'       => $item_set_tablet,

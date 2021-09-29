@@ -5,7 +5,7 @@
  * Description: MaxSlider is a free WordPress slider plugin that lets you create responsive sliders for your website. Shortcode and Visual Composer support included.
  * Author: The CSSIgniter Team
  * Author URI: https://www.cssigniter.com
- * Version: 1.2.0
+ * Version: 1.2.1
  * Text Domain: maxslider
  * Domain Path: languages
  *
@@ -36,7 +36,7 @@ class MaxSlider {
 	 * @var string
 	 * @since 1.0.0
 	 */
-	public static $version = '1.2.0';
+	public static $version = '1.2.1';
 
 	/**
 	 * Instance of this class.
@@ -201,7 +201,14 @@ class MaxSlider {
 		add_action( 'maxslider_metabox_slides_field_controls', array( $this, 'action_metabox_slides_field_controls_batch_upload' ) );
 
 		// Block assets
-		add_filter( 'block_categories', array( $this, 'block_categories' ), 10, 2 );
+		global $wp_version;
+
+		// TODO: Remove the 'block_categories' filter when WordPress reaches 5.9
+		if ( version_compare( $wp_version, '5.8', '<' ) ) {
+			add_filter( 'block_categories', array( $this, 'block_categories' ), 10, 2 );
+		} else {
+			add_filter( 'block_categories_all', array( $this, 'block_categories' ), 10, 2 );
+		}
 		add_action( 'enqueue_block_editor_assets', array( $this, 'enqueue_editor_assets' ) );
 
 		do_action( 'maxslider_admin_init' );
@@ -257,7 +264,9 @@ class MaxSlider {
 			'wp-components',
 			'wp-blocks',
 			'wp-element',
-			'wp-editor',
+// TODO vmasto: Is this needed? It throws an error in the new widgets screen:
+// Notice: wp_enqueue_script() was called <strong>incorrectly</strong>. "wp-editor" script should not be enqueued together with the new widgets editor (wp-edit-widgets or wp-customize-widgets)
+//			'wp-editor',
 			'wp-block-editor',
 			'wp-data',
 			'wp-date',

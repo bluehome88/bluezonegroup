@@ -491,7 +491,10 @@ if ( ! class_exists( 'YIT_Plugin_Panel' ) ) {
 			$tabs .= '</ul>';
 			?>
 			<h2 class="<?php echo esc_attr( $wrapper_class ); ?>">
-				<?php echo $tabs; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+				<?php
+				// $tabs is already escaped, since its content is created via YIT_Plugin_Panel::get_tab_nav.
+				echo $tabs; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				?>
 			</h2>
 			<?php
 			$this->print_sub_tabs_nav( $args );

@@ -38,19 +38,17 @@
            //console.log(dataAttr.navlarge);
             var logocarouselParams = {
                 addClassActive:true,
+                responsiveClass:true,
                 loop:dataAttr.loop,
                 dots:dataAttr.dots,
                 autoplay:dataAttr.autoplay,
                 lazyLoad: dataAttr.lazyload,
+                slideTransition: 'linear',
                 autoplayTimeout:dataAttr.autoplaytimeout,
+                autoplaySpeed: dataAttr.autoplayspeed,
                 margin:dataAttr.margin,
                 autoplayHoverPause:dataAttr.autoplayhoverpause,
                 navText :['<img src="'+logosliderwp.owl_navigationTextL+'" alt="Left"/>','<img src="'+logosliderwp.owl_navigationTextR+'" alt="Right"/>'],
-                smartSpeed:dataAttr.smartspeed,
-                slideSpeed : dataAttr.slidespeed,
-                paginationSpeed : dataAttr.paginationspeed,
-                rewindSpeed : dataAttr.rewindspeed,
-                responsiveClass:true,
                 responsive:{
                     // Item in Mobile Devices (Less than 768px)
                     0:{

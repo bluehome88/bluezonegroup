@@ -109,6 +109,9 @@ class Woocommerce_Product_Attachment_Public
     // Start the download if there is a request for that
     function wcpoa_download_file()
     {
+        if ( is_admin() ) {
+            return;
+        }
         $attachment_id = filter_input( INPUT_GET, 'attachment_id', FILTER_SANITIZE_SPECIAL_CHARS );
         $download_file = filter_input( INPUT_GET, 'download_file', FILTER_SANITIZE_SPECIAL_CHARS );
         $wcpoa_attachment_order_id = filter_input( INPUT_GET, 'wcpoa_attachment_order_id', FILTER_SANITIZE_SPECIAL_CHARS );
@@ -650,7 +653,7 @@ class Woocommerce_Product_Attachment_Public
             $wcpoa_attachment_url_arg = '?';
         }
         
-        if ( $_product->is_type( 'simple' ) || $_product->is_type( 'variable' ) ) {
+        if ( !$_product->is_type( 'grouped' ) ) {
             /** Get all the main products attachments */
             
             if ( isset( $youtube_video_only ) && 'Yes' === $youtube_video_only ) {
@@ -954,15 +957,14 @@ class Woocommerce_Product_Attachment_Public
                             
                             if ( 'yes' === $wcpoa_product_logged_in_flag_value && is_user_logged_in() || 'no' === $wcpoa_product_logged_in_flag_value || '' === $wcpoa_product_logged_in_flag_value ) {
                                 $wcpoa_attachment_expired_date = strtotime( $wcpoa_expired_dates );
+                                $wcpoa_attachments_name = '<h4 class="wcpoa_attachment_name">' . __( $wcpoa_attachments_name, $wcpoa_text_domain ) . '</h4>';
                                 
                                 if ( isset( $wcpoa_show_attachment_size_flag ) && 'yes' === $wcpoa_show_attachment_size_flag ) {
                                     $attachment_size = size_format( filesize( get_attached_file( $attachment_id ) ) );
                                     if ( isset( $attachment_size ) && '' != $attachment_size ) {
                                         $wcpoa_att_btn = $wcpoa_att_btn . '<span class="attachment_size">(' . $attachment_size . ')</span>';
-                                        $wcpoa_attachments_name = $wcpoa_attachments_name.' ('.$attachment_size . ')';
                                     }
                                 }
-                                $wcpoa_attachments_name = '<a href="' . get_permalink() . $wcpoa_attachment_url_arg . 'attachment_id=' . $attachment_id . '&download_file=' . $wcpoa_attachments_id . '" rel="nofollow" ' . $download_target . '><h4 class="wcpoa_attachment_name">' . __( $wcpoa_attachments_name, $wcpoa_text_domain ) . '</h4></a>';
                                 
                                 $download_target = ( $wcpoa_product_open_window_flag_val === 'yes' ? 'target="_blank"' : '' );
                                 $wcpoa_file_url_btn = '<a class="wcpoa_attachmentbtn" href="' . get_permalink() . $wcpoa_attachment_url_arg . 'attachment_id=' . $attachment_id . '&download_file=' . $wcpoa_attachments_id . '" rel="nofollow" ' . $download_target . '> ' . $wcpoa_att_btn . '</a>';

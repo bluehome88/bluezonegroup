@@ -7,15 +7,7 @@ if ( window.jQuery ) {
 
 
 
-
-
 		/***************************** End Function Definition ****************************/
-
-
-
-
-
-
 
 
 
@@ -23,6 +15,7 @@ if ( window.jQuery ) {
 		let $wpListTable = $( 'table.wp-list-table tbody' );
 
 		lgx_logo_slider_shortcode_copy_btn.on( 'click', function (event) {
+			//console.log('I am clicked');
 			event.preventDefault();
 			let $this = $( this );
 			let shortCodeString = $this.siblings( '.lgx_logo_slider_shortcode_copy_text' ).val();

@@ -1050,7 +1050,7 @@ jQuery(document).ready(function($) {
         if ( 'product' === $post_type ) {
             $product_id = $post->ID;
             $_product = wc_get_product( $product_id );
-            if ( $_product->is_type( 'simple' ) || $_product->is_type( 'variable' ) ) {
+            if ( !$_product->is_type( 'grouped' ) ) {
                 add_meta_box(
                     'wcpoa_attachment',
                     __( 'WooCommerce Product Attachment', $plugin_txt_domain ),
