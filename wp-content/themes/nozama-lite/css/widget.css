@@ -337,9 +337,13 @@
         background: #011d4f;
         color: white;
     }
+    [type="radio"]:not(:checked) {
+	    width: auto;
+	}
 }
 @media (max-width: 1024px){
-    .elementor-4562 .elementor-element.elementor-element-7c5a3ae{
+    .elementor-4562 .elementor-element.elementor-element-7c5a3ae,
+    .elementor-5002 .elementor-element.elementor-element-2cdd05eb {
         top: 90px;
     }
 }
