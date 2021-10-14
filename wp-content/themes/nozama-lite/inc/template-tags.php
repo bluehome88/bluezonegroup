@@ -308,7 +308,7 @@ function nozama_lite_header_search() {
 					</li>
 				</ul>
 				<span class="category-search-spinner"></span>
-				<input type="hidden" name="post_type" value="product" />
+				<!--input type="hidden" name="post_type" value="product" /-->
 			</div>
 		</form>
 	</div>

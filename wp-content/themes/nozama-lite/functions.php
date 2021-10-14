@@ -553,6 +553,14 @@ add_filter('request', function( $vars ) {
 	    }
     }
 
+    if( isset($vars['s']) ){
+		$vars['paged'] = $vars['pagename'] > 1 ? $vars['pagename'] : 1;
+		unset($vars['category_name']);
+		unset($vars['pagename']);
+		unset($vars['name']);
+		unset($vars['page']);
+    }
+
     return $vars;
 });
 
@@ -649,3 +657,28 @@ function disable_autosave() {
 }
 
 add_filter( 'woocommerce_subcategory_count_html', '__return_false' );
+
+add_filter( 'the_posts', function( $posts, $q ) 
+{
+    if( $q->is_main_query() && $q->is_search() ) 
+    {
+        usort( $posts, function( $a, $b ){
+            /**
+             * Sort by post type. If the post type between two posts are the same
+             * sort by post date. Make sure you change your post types according to 
+             * your specific post types. This is my post types on my test site
+             */
+            $post_types = [
+                'product' => 1,
+                'page'       => 2,
+                'post'    => 3
+            ];              
+            if ( $post_types[$a->post_type] != $post_types[$b->post_type] ) {
+                return $post_types[$a->post_type] - $post_types[$b->post_type];
+            } else {
+                return $a->post_date < $b->post_date; // Change to > if you need oldest posts first
+            }
+        });
+    }
+    return $posts;
+}, 10, 2 );
