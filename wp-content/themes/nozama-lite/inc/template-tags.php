@@ -271,18 +271,6 @@ function nozama_lite_header_search() {
 				<?php esc_html_e( 'Category name', 'nozama-lite' ); ?>
 			</label>
 
-			<?php wp_dropdown_categories( array(
-				'taxonomy'          => 'product_cat',
-				'show_option_none'  => esc_html__( 'Search all categories', 'nozama-lite' ),
-				'option_none_value' => '',
-				'value_field'       => 'slug',
-				'hide_empty'        => 1,
-				'echo'              => 1,
-				'hierarchical'      => 1,
-				'name'              => 'product_cat',
-				'id'                => 'category-search-name',
-				'class'             => 'category-search-select',
-			) ); ?>
 			<button type="submit" class="category-search-btn">
 				<i class="fas fa-search"></i><span class="sr-only"><?php echo esc_html_x( 'Search', 'submit button', 'nozama-lite' ); ?></span>
 			</button>
