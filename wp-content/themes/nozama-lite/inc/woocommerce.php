@@ -292,7 +292,7 @@ function nozama_lite_woocommerce_subcategory_thumbnail( $category ) {
 	?>
 	<div class="item-thumb">
 		<a href="<?php echo esc_url( get_term_link( $category, 'product_cat' ) ); ?>">
-			<?php woocommerce_subcategory_thumbnail( $category ); ?>
+			<?php nozama_lite_woocommerce_category_thumbnail( $category ); ?>
 		</a>
 	</div>
 	<?php
