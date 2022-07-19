@@ -104,7 +104,8 @@ jQuery(function ($) {
 		}
 	});
 
-	$body.on("click", "#media_gallery-5 .gallery-item", function(){
+	$body.on("click", "#media_gallery-5 .gallery-item", function(e){
+	    e.preventDefault();
 		window.location.href = "/gallery";
 	})
 });
