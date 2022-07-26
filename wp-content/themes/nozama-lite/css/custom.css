@@ -1079,7 +1079,8 @@ button.category-search-btn:hover{
 }
 
 #media_gallery-5 .gallery-item,
-#media_gallery-5 .section-title{
+#media_gallery-5 .section-title,
+#ci-latest-posts-3 h2.section-title{
     cursor: pointer;
 }
 #custom_html-9 .container,

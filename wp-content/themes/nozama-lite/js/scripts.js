@@ -104,9 +104,14 @@ jQuery(function ($) {
 		}
 	});
 
-	$body.on("click", "#media_gallery-5 .gallery-item", function(e){
+	$body.on("click", "#media_gallery-5 .gallery-item, #media_gallery-5 h2.section-title", function(e){
 	    e.preventDefault();
 		window.location.href = "/gallery";
+	})
+
+	$body.on("click", "#ci-latest-posts-3 h2.section-title", function(e){
+	    e.preventDefault();
+		window.location.href = "/latest-news/";
 	})
 });
 
